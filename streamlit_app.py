@@ -110,10 +110,10 @@ def kadar_kesadahan(volume_titran, M_EDTA, BM, volume_sampel):
     return kadar_ppm 
 
 
-bobot_analit = st.number_input("Masukkan bobot analit (g): "))
-bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")) 
-BM_analit = st.number_input("Masukkan BM Analit (g/mol): "))
-BM_sampel = st.number_input("Masukkan BM sampel (g/mol): "))
+bobot_analit = st.number_input("Masukkan bobot analit (g): ")
+bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
+BM_analit = st.number_input("Masukkan BM Analit (g/mol): ")
+BM_sampel = st.number_input("Masukkan BM sampel (g/mol): ")
 faktor_gravi = BM_analit / BM_sampel
 perbandingan_bobot = bobot_analit / bobot_sampel
 st.write("Bobot analit: ", bobot_analit, "g") 
