@@ -117,8 +117,8 @@ BM_analit = float(input("Masukkan BM Analit (g/mol): "))
 BM_sampel = float(input("Masukkan BM sampel (g/mol): "))
 faktor_gravi = BM_analit / BM_sampel
 perbandingan_bobot = bobot_analit / bobot_sampel
-print("Bobot analit: ", bobot_analit, "g"); 
-print("Bobot sampel: ", bobot_sampel, "g")
-print("Faktor Gravimetri: ", faktor_gravi)
+st.write("Bobot analit: ", bobot_analit, "g") 
+st.write("Bobot sampel: ", bobot_sampel, "g")
+st.write("Faktor Gravimetri: ", faktor_gravi)
 
 
