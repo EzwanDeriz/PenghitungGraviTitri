@@ -1,4 +1,6 @@
 import streamlit as st
+import math 
+from streamlit_option_menu import option_menu
 
 st.title("🎈 Bismillah Lesgow ")
 st.write(
@@ -6,7 +8,6 @@ st.write(
 )
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
-"""GRAVIMETRI"""
 #PERHITUNGAN KADAR AIR DALAM TEPUNG
 def perhitungan_kadar_air_tepung(bobot_analit, bobot_sampel):
     kadar_analit = bobot_analit / bobot_sampel * 100
@@ -37,7 +38,7 @@ def perhitungan_kadar_barium(faktor_gravi, bobotpervolume):
     return kadar_analit 
 
 
-"""TITRIMETRI"""
+
 #STANDARISASI NaOH
 def standarisasi_asam_basa(bobot_primer, pembagi):
     normalitas = bobot_primer / pembagi
@@ -110,7 +111,6 @@ def kadar_kesadahan(volume_titran, M_EDTA, BM, volume_sampel):
     return kadar_ppm 
 
 
-"""VARIABEL GRAVIMETRI"""
 bobot_analit = float(input("Masukkan bobot analit (g): "))
 bobot_sampel = float(input("Masukkan bobot sampel (g): ")) 
 BM_analit = float(input("Masukkan BM Analit (g/mol): "))
