@@ -5,22 +5,6 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
-with st.sidebar:
-    selected = menu(
-        menu_title = "Menu",
-        options = ["Beranda", 
-            "Gravimetri", 
-            "Titrimetri",
-            "Bahaya Bahan Kimia",
-            "Latihan Soal",
-            "Tentang Aplikasi"],
-        icons = ["house-door", "calculator", "calculator", "calculator", "calculator", "exclamation-circle"],
-        styles = {
-        "icon": {"font-size": "15px"}, 
-        "nav-link": {"font-size": "15px", "text-align": "left", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "blue"}}
-    )
-
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DALAM TEPUNG
