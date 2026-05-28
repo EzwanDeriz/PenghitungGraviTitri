@@ -1,7 +1,7 @@
 import streamlit as st
 import math 
 
-st.title("🎈 Bismillah Lesgow ")
+st.set_page_config(page_title="Penghitung Gravimetri dan Titrimetri", page_icon=":1234:", layout="wide") 
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
