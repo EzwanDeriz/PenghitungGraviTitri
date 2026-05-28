@@ -6,7 +6,7 @@ st.write(
 )
 
 with st.sidebar:
-    selected = (
+    selected == menu(
         menu_title = "Menu",
         options = ["Beranda", 
             "Gravimetri", 
