@@ -110,6 +110,16 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
+fg = {
+    "Ar Sulfat / Mr Barium Sulfat": 96/233,
+    "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
+    "Ar Barium / Mr Barium Kromat": 137/253
+}
+selected_fg = st.selectbox(
+    "Pilih Faktor Gravimetri", list(fg.keys()))
+faktor_gravi = fg[selected_fg]
+st.write("Faktor Gravimetri = ", faktor_gravi)
+
 bobot_analit = st.number_input("Masukkan bobot analit (g): ")
 bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
 BM_analit = st.number_input("Masukkan BM Analit (g/mol): ")
