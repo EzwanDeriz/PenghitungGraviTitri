@@ -122,12 +122,7 @@ st.write("Faktor Gravimetri = ", faktor_gravi)
 
 bobot_analit = st.number_input("Masukkan bobot analit (g): ")
 bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
-BM_analit = st.number_input("Masukkan BM Analit (g/mol): ")
-BM_sampel = st.number_input("Masukkan BM sampel (g/mol): ")
-faktor_gravi = BM_analit / BM_sampel
-perbandingan_bobot = bobot_analit / bobot_sampel
 st.write("Bobot analit: ", bobot_analit, "g") 
 st.write("Bobot sampel: ", bobot_sampel, "g")
-st.write("Faktor Gravimetri: ", faktor_gravi)
 
 
