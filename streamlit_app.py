@@ -8,20 +8,20 @@ st.write(
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DAN ABU
 def perhitungan_kadar_air_abu(bobot_analit, bobot_sampel):
-    kadar_analit = bobot_analit / bobot_sampel * 100
-    return kadar_analit 
+    kadar_analit1 = bobot_analit / bobot_sampel * 100
+    return kadar_analit1 
 
 
 #PERHITUNGAN KADAR B/B
 def perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel):
-    kadar_analit = faktor_gravi * (bobot_analit / bobot_sampel) * 100
-    return kadar_analit
+    kadar_analit2 = faktor_gravi * (bobot_analit / bobot_sampel) * 100
+    return kadar_analit2
 
 
-#PERHITUNGAN KADAR BARIUM SEBAGAI BaCrO4
-def perhitungan_kadar_barium(faktor_gravi, bobot_analit, vol_sampel):
-    kadar_analit = faktor_gravi * (bobot_analit / vol_sampel) * 100
-    return kadar_analit 
+#PERHITUNGAN KADAR B/V
+def perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel):
+    kadar_analit3 = faktor_gravi * (bobot_analit / vol_sampel) * 100
+    return kadar_analit3
 
 
 #STANDARISASI ASAM BASA
@@ -123,9 +123,10 @@ elif menu == "Gravimetri":
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
         if st.button("Hitung Kadar", key = "T1"):
-            kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
-            st.write("Kadar Besi = ", round(kadar_analit, 4))
-            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
+            kadar_analit2 = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+            st.write("Kadar Besi = ", round(kadar_analit2, 4))
+            st.success(f"Kadar Besi adalah {kadar_analit2:.2f}%")
+            
     with tab4:
         st.write("Kadar Besi")
         fg = {
@@ -144,9 +145,9 @@ elif menu == "Gravimetri":
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
         if st.button("Hitung Kadar", key = "H1"):
-            kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
-            st.write("Kadar Besi = ", round(kadar_analit, 4))
-            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
+            kadar_analit2 = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+            st.write("Kadar Besi = ", round(kadar_analit2, 4))
+            st.success(f"Kadar Besi adalah {kadar_analit2:.2f}%")
             
     with tab5:
         st.write("Kadar Ba")
@@ -172,7 +173,7 @@ elif menu == "Titrimetri":
     st.write("Volume titran: ", round(vol_titran, 2), "mL")
     
     
-    if st.button("Hitung Normalitas", key = "G1"):
+    if st.button("Hitung Normalitas", key = "T1"):
         normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
         st.write("Normalitas = ", round(normalitas, 4))
         st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
