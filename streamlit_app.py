@@ -113,7 +113,7 @@ with st.sidebar:
             "Tentang Aplikasi"
         }
     selected_menu = st.selectbox(
-        "Pilih Menu", list(fg.keys()))
+            "Pilih Menu", list(fg.keys()))
         
 
 if selected == "Beranda":
