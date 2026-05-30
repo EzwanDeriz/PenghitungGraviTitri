@@ -121,8 +121,8 @@ st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
 
 bobot_analit = st.number_input("Masukkan bobot analit (g): ")
 bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
-st.write("Bobot analit: ", bobot_analit, "g") 
-st.write("Bobot sampel: ", bobot_sampel, "g")
+st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
+st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
 
 if st.button("Hitung Kadar", key = "T1"):
     kadar_analit = perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel)
