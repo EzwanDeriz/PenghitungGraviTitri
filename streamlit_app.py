@@ -8,7 +8,6 @@ with st.sidebar:
     st.selectbox("Choose a model", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
 
 tab1, tab2, tab3 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
-
 with tab1:
     st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
 with tab2:
