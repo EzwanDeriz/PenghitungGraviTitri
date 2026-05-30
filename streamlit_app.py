@@ -39,7 +39,7 @@ def perhitungan_kadar_barium(faktor_gravi, bobot_analit, vol_sampel):
 
 #STANDARISASI ASAM BASA
 def standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen):
-    normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
+    normalitas = (bobot_primer / (fp * vol_titran * berat_ekivalen))
     return normalitas
 
 
@@ -50,7 +50,7 @@ def kadar_asam_asetat(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_
 
 
 #PENETAPAN KADAR Na2CO3 DALAM WARDER
-def kadar_Na2CO3(b, a, Normaitas, berat_ekivalen, fk, fp, volume_sampel):
+def kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
     kadar_persen = 2 * (b-a) * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen 
 
