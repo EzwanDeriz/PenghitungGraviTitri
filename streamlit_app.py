@@ -107,6 +107,26 @@ elif menu == "Gravimetri":
         st.write("Kadar Abu")
     with tab3:
         st.write("Kadar Sulfat")
+         st.write("Kadar Besi")
+        fg = {
+        "Ar Sulfat / Mr Barium Sulfat": 96/233,
+        "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
+        "Ar Barium / Mr Barium Kromat": 137/253
+        }
+        selected_fg = st.selectbox(
+            "Pilih Faktor Gravimetri", list(fg.keys()))
+        faktor_gravi = fg[selected_fg]
+        st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
+        
+        bobot_analit = st.number_input("Masukkan bobot analit (g): ")
+        bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
+        st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
+        st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
+        
+        if st.button("Hitung Kadar", key = "T3"):
+            kadar_analit2 = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+            st.write("Kadar Besi = ", round(kadar_analit, 4))
+            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab4:
         st.write("Kadar Besi")
@@ -125,10 +145,10 @@ elif menu == "Gravimetri":
         st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
-        if st.button("Hitung Kadar", key = "H1"):
+        if st.button("Hitung Kadar", key = "T4"):
             kadar_analit2 = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
-            st.write("Kadar Besi = ", round(kadar_analit2, 4))
-            st.success(f"Kadar Besi adalah {kadar_analit2:.2f}%")
+            st.write("Kadar Besi = ", round(kadar_analit, 4))
+            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab5:
         st.write("Kadar Ba")
