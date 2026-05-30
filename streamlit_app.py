@@ -124,4 +124,9 @@ bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
 st.write("Bobot analit: ", bobot_analit, "g") 
 st.write("Bobot sampel: ", bobot_sampel, "g")
 
+if st.button("Hitung Kadar", key = "T1"):
+    kadar_analit = perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel)
+    st.write("Kadar Besi = ", round(kadar_analit, 4))
+    st.success(f"Kadar Besi adalah {kadar_analit:.2f}")
+
 
