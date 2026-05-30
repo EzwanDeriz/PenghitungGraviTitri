@@ -6,19 +6,13 @@ st.write(
 )
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
-#PERHITUNGAN KADAR AIR DALAM TEPUNG
-def perhitungan_kadar_air_tepung(bobot_analit, bobot_sampel):
+#PERHITUNGAN KADAR AIR DAN ABU
+def perhitungan_kadar_air_abu(bobot_analit, bobot_sampel):
     kadar_analit = bobot_analit / bobot_sampel * 100
     return kadar_analit 
 
 
-#PERHITUNGAN KADAR ABU DALAM TEPUNG
-def perhitungan_kadar_abu_tepung(bobot_analit, bobot_sampel):
-    kadar_analit = bobot_analit / bobot_sampel * 100
-    return kadar_analit
-
-
-#PERHITUNGAN KADAR BESI DALAM GARAM BESI
+#PERHITUNGAN KADAR B/B
 def perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel):
     kadar_analit = faktor_gravi * (bobot_analit / bobot_sampel) * 100
     return kadar_analit
@@ -28,7 +22,6 @@ def perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel):
 def perhitungan_kadar_barium(faktor_gravi, bobot_analit, vol_sampel):
     kadar_analit = faktor_gravi * (bobot_analit / vol_sampel) * 100
     return kadar_analit 
-
 
 
 #STANDARISASI ASAM BASA
@@ -114,6 +107,25 @@ elif menu == "Gravimetri":
         st.write("Kadar Abu")
     with tab3:
         st.write("Kadar Sulfat")
+        fg = {
+        "Ar Sulfat / Mr Barium Sulfat": 96/233,
+        "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
+        "Ar Barium / Mr Barium Kromat": 137/253
+        }
+        selected_fg = st.selectbox(
+            "Pilih Faktor Gravimetri", list(fg.keys()))
+        faktor_gravi = fg[selected_fg]
+        st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
+        
+        bobot_analit = st.number_input("Masukkan bobot analit (g): ")
+        bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
+        st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
+        st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
+        
+        if st.button("Hitung Kadar", key = "T1"):
+            kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+            st.write("Kadar Besi = ", round(kadar_analit, 4))
+            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
     with tab4:
         st.write("Kadar Besi")
         fg = {
