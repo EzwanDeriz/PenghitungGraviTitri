@@ -7,13 +7,17 @@ st.write(
 with st.sidebar:
     st.selectbox("Choose a model", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
 
-tab1, tab2, tab3 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
 with tab1:
     st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
 with tab2:
     st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
 with tab3:
     st.checkbox("Show gridlines")
+with tab4:
+    st.write("Bansos")
+with tab5:
+    st.write("Bansosss")
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DALAM TEPUNG
