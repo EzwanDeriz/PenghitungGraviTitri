@@ -170,6 +170,7 @@ elif menu == "Titrimetri":
     if st.button("Hitung Normalitas", key = "G1"):
         normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
         st.write("Normalitas = ", round(normalitas, 4))
+        st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
 
 elif menu == "Bahaya Kimia":
     st.write("INI BAHAYA BAHAN KIMIA WOY")
@@ -182,5 +183,5 @@ elif menu == "Latihan Soal":
 
 
 
-    st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+    
 
