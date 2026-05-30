@@ -1,23 +1,12 @@
 import streamlit as st
 import math
+
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
 with st.sidebar:
-    st.selectbox("Choose a model", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
-
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
-with tab1:
-    st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
-with tab2:
-    st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
-with tab3:
-    st.checkbox("Show gridlines")
-with tab4:
-    st.write("Bansos")
-with tab5:
-    st.write("Bansosss")
+    st.selectbox("Pilih Menu", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DALAM TEPUNG
@@ -115,6 +104,22 @@ def standarisasi_edta(bobot_primer, fp, vol_titran, BM):
 def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     kadar_ppm = volume_titran * Molaritas * BM / volume_sampel
     return kadar_ppm 
+
+
+
+
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
+with tab1:
+    st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
+with tab2:
+    st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
+with tab3:
+    st.checkbox("Show gridlines")
+with tab4:
+    st.write("Bansos")
+with tab5:
+    st.write("Bansosss")
+
 
 
 fg = {
