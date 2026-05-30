@@ -104,7 +104,7 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
 
 
 menu = st.sidebar.selectbox(
-    label = "Pilih Menu",
+    label = "PILIH MENU",
     options = ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"])
         
 
