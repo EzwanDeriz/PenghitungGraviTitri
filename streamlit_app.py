@@ -96,6 +96,7 @@ menu = st.sidebar.selectbox(
         
 
 if menu == "Beranda":
+    st.background("color: purple")
     st.markdown("<h1 style='text-align: center; color: pink;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
     left, mid, right = st.columns(3)
     with mid:   
