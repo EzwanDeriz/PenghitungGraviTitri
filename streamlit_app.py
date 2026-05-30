@@ -7,6 +7,15 @@ st.write(
 with st.sidebar:
     st.selectbox("Choose a model", ["GPT-4", "Claude", "Gemini"])
 
+tab1, tab2, tab3 = st.tabs(["Chart", "Data", "Settings"])
+
+with tab1:
+    st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
+with tab2:
+    st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
+with tab3:
+    st.checkbox("Show gridlines")
+
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DALAM TEPUNG
 def perhitungan_kadar_air_tepung(bobot_analit, bobot_sampel):
