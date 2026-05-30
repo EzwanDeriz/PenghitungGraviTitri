@@ -107,7 +107,7 @@ with st.sidebar:
     st.selectbox("Pilih Menu", ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"])
         
 
-if selected == ["Beranda"]:
+if st.selectbox = ["Beranda"]:
     st.write("SELAMAT DATANG WOY")
 
 elif selected == "Gravimetri":
