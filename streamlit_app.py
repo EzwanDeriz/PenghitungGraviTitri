@@ -147,13 +147,13 @@ elif selected == "Gravimetri":
 
 elif selected == "Titrimetri":
     st.write("INI TITRIMETRI WOY")
-        be = {
-        "berat_ekivalen Asam Oksalat": 63,
-        "berat_ekivalen Boraks": 190,
-        "berat_ekivalen Kalium Dikromat": 49,
+    be = {
+    "berat_ekivalen Asam Oksalat": 63,
+    "berat_ekivalen Boraks": 190,
+    "berat_ekivalen Kalium Dikromat": 49,
     }
     selected_be = st.selectbox(
-        "Pilih Berat Ekivalen", list(be.keys()))
+    "Pilih Berat Ekivalen", list(be.keys()))
     berat_ekivalen = be[selected_be]
     st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
     
