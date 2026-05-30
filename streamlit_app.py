@@ -18,7 +18,7 @@ def perhitungan_kadar_abu_tepung(bobot_analit, bobot_sampel):
     return kadar_analit
 
 
-#PERHITUNGAN KADAR SULFAT DALAM GARAM GLAUBER
+#PERHITUNGAN KADAR SULFAT DALAM GARAM GLAUberat_ekivalenR
 def perhitungan_kadar_sulfat_glauber(faktor_gravi, bobot_analit, bobot_sampel):
     kadar_analit = faktor_gravi * (bobot_analit / bobot_sampel) * 100
     return kadar_analit
@@ -38,56 +38,56 @@ def perhitungan_kadar_barium(faktor_gravi, bobot_analit, vol_sampel):
 
 
 #STANDARISASI ASAM BASA
-def standarisasi_asam_basa(bobot_primer, fp, vol_titran, BE):
-    normalitas = (bobot_primer / (fp * vol_titran * BE))
+def standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen):
+    normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
     return normalitas
 
 
 #PERHITUNGAN KADAR ASAM ASETAT DALAM CUKA 
-def kadar_asam_asetat(volume_titran, Normalitas, BE, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * BE * fk * fp * 100 / volume_sampel
+def kadar_asam_asetat(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
 
 
 #PENETAPAN KADAR Na2CO3 DALAM WARDER
-def kadar_Na2CO3(b, a, Normaitas, BE, fk, fp, volume_sampel):
-    kadar_persen = 2 * (b-a) * Normalitas * BE * fk * fp * 100 / volume_sampel
+def kadar_Na2CO3(b, a, Normaitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = 2 * (b-a) * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen 
 
 
 #PENETAPAN KADAR NaOH DALAM WARDER 
-def kadar_NaOH(a, b, Normalitas, BE, fk, fp, volume_sampel):
-    kadar_persen = ((2*a)-b) * Normalitas* BE * fk * fp * 100 / volume_sampel
+def kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = ((2*a)-b) * Normalitas* berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
 
 
 #STANDARISASI LARUTAN KMnO4 
-def standarisasi_KMnO4(bobot_primer, fp, vol_titran, BE):
-    normalitas = bobot_primer / (fp * vol_titran * BE)
+def standarisasi_KMnO4(bobot_primer, fp, vol_titran, berat_ekivalen):
+    normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
     return normalitas
 
 
 #PENETAPAN KADAR BESI 
-def kadar_besi(volume_titran, Normalitas, BE, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * BE * fk * fp * 100 / volume_sampel
+def kadar_besi(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
 
 
 #STANDARISASI LARUTAN TIOSULFAT 
-def standarisasi_tio(bobot_primer, fp, vol_titran, BE):
-    normalitas = bobot_primer / (fp * vol_titran * BE)
+def standarisasi_tio(bobot_primer, fp, vol_titran, berat_ekivalen):
+    normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
     return normalitas 
 
 
 #PENETAPAN KADAR KLOR IODOMETRI 
-def kadar_klor(volume_titran, Normalitas, BE, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * BE * fk * fp * 100 / volume_sampel 
+def kadar_klor(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel 
     return kadar_persen 
 
 
 #PENETAPAN KADAR KLOR ARGENTOMETRI
-def kadar_klor(volume_titran, Normalitas, BE, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * BE * fk * fp * 100 / volume_sampel 
+def kadar_klor(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel 
     return kadar_persen 
 
 
@@ -128,16 +128,16 @@ bobot_primer = st.number_input("Masukkan bobot baku primer (mg)")
 fp =  st.number_input("Masukkan faktor pengali") 
 vol_titran =  st.number_input("Masukkan volume titran (mL)")
 be = {
-    "BE Asam Oksalat": 63,
-    "BE Boraks": 190,
-    "BE Kalium Dikromat": 49,
+    "berat_ekivalen Asam Oksalat": 63,
+    "berat_ekivalen Boraks": 190,
+    "berat_ekivalen Kalium Dikromat": 49,
 }
 selected_be = st.selectbox(
     "Pilih Berat Ekivalen", list(be.keys()))
-BE = be[selected_be]
-st.write("Berat Ekivalen = ", BE, "mg/mgrek")
+berat_ekivalen = be[selected_be]
+st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
 
 if st.button("Hitung Normalitas", key = "H1"):
-    normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, BE)
+    normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
     st.write("Normalitas = ", round(normalitas, 4))
     st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
