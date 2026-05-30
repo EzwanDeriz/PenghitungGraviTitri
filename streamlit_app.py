@@ -96,7 +96,24 @@ menu = st.sidebar.selectbox(
         
 
 if menu == "Beranda":
-    st.write("SELAMAT DATANG WOY")
+    st.markdown("<h1 style='text-align: center; color: blue;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
+    left, mid, right = st.columns(3)
+    with mid:
+        st.image("D:\kalkulator_ph_larutan\logoapp.gif")    
+    st.markdown('---')
+    st.markdown('<div style="text-align: center;">Kalkulator pH Larutan adalah alat online gratis yang dirancang untuk memudahkan pengguna dalam menghitung pH suatu larutan. Silakan pilih metode perhitungan yang sesuai, kemudian ikuti perintah yang ditampilkan di layar!</div>', unsafe_allow_html=True)
+    st.markdown('---')
+    st.markdown('<h2 style="color: blue; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
+    st.write('KELOMPOK 4 (1D - ANALISIS KIMIA)')
+    st.write('''
+1. Allysa Desvita Almasya R.   (2560566)
+2. Bagas Nanang Suryana        (2560595)
+3. Ezwan Pradhana Deriz        (2560621) 
+4. M. Fathurahman              (2360242) 
+5. Reva Dwi Nurhalika          (2360275)
+''')
+    st.markdown('---')
+    
 
 elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
