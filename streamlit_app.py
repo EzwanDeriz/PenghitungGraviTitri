@@ -145,7 +145,7 @@ elif menu == "Gravimetri":
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
         if st.button("Hitung Kadar", key = "T4"):
-            kadar_analit2 = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+            kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
             st.write("Kadar Besi = ", round(kadar_analit, 4))
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
