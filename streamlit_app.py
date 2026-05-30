@@ -100,16 +100,16 @@ if menu == "Beranda":
     left, mid, right = st.columns(3)
     with mid:   
         st.markdown('---')
-        st.markdown('<div style="text-align: center;">Kalkulator pH Larutan adalah alat online gratis yang dirancang untuk memudahkan pengguna dalam menghitung pH suatu larutan. Silakan pilih metode perhitungan yang sesuai, kemudian ikuti perintah yang ditampilkan di layar!</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center;">Kalkulator Kimia Analitik. Dibuat untuk membantu perhitungan dalam Kimia Analitik</div>', unsafe_allow_html=True)
         st.markdown('---')
         st.markdown('<h2 style="color: blue; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
-        st.write('KELOMPOK 4 (1D - ANALISIS KIMIA)')
+        st.write('KELOMPOK 4 (1B - ANALISIS KIMIA)')
         st.write('''
     1. Allysa Desvita Almasya R.   (2560566)
     2. Bagas Nanang Suryana        (2560595)
     3. Ezwan Pradhana Deriz        (2560621) 
-    4. M. Fathurahman              (2360242) 
-    5. Reva Dwi Nurhalika          (2360275)
+    4. M. Fathurahman              (2560242) 
+    5. Reva Dwi Nurhalika          (2560275)
     ''')
         st.markdown('---')
     
