@@ -18,14 +18,8 @@ def perhitungan_kadar_abu_tepung(bobot_analit, bobot_sampel):
     return kadar_analit
 
 
-#PERHITUNGAN KADAR SULFAT DALAM GARAM GLAUberat_ekivalenR
-def perhitungan_kadar_sulfat_glauber(faktor_gravi, bobot_analit, bobot_sampel):
-    kadar_analit = faktor_gravi * (bobot_analit / bobot_sampel) * 100
-    return kadar_analit
-
-
 #PERHITUNGAN KADAR BESI DALAM GARAM BESI
-def perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel):
+def perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel):
     kadar_analit = faktor_gravi * (bobot_analit / bobot_sampel) * 100
     return kadar_analit
 
@@ -138,7 +132,7 @@ elif menu == "Gravimetri":
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
         if st.button("Hitung Kadar", key = "T1"):
-            kadar_analit = perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel)
+            kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
             st.write("Kadar Besi = ", round(kadar_analit, 4))
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
