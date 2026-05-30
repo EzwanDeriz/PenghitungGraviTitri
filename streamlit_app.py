@@ -103,17 +103,10 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
-with st.sidebar:
-        menu = {
-            "Beranda",
-            "Gravimetri",
-            "Titrimetri", 
-            "Bahaya Bahan Kimia",
-            "Latihan Soal",
-            "Tentang Aplikasi"
-        }
-    selected_menu = st.selectbox(
-            "Pilih Menu", list(fg.keys()))
+st.sidebar.selectbox("Choose a model", ["GPT-4", "Claude", "Gemini"])
+st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
+
+st.write("Main content area")
         
 
 if selected == "Beranda":
