@@ -1,9 +1,63 @@
 import streamlit as st
 import math
 
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+# ============================================
+# CSS BACKGROUND PINK
+# ============================================
+st.markdown("""
+    <style>
+    /* Background Utama - Pink */
+    .stApp {
+        background-color: #FFE4E1;
+    }
+    
+    /* Background Sidebar - Pink Lebih Gelap */
+    [data-testid="stSidebar"] {
+        background-color: #FFD1DC;
+    }
+    
+    /* Warna Teks Utama */
+    p, div, span, label {
+        color: #8B4557 !important;
+    }
+    
+    /* Warna Heading */
+    h1, h2, h3, h4, h5, h6 {
+        color: #DB7093 !important;
+    }
+    
+    /* Button */
+    .stButton > button {
+        background-color: #DB7093;
+        color: white;
+    }
+    .stButton > button:hover {
+        background-color: #C76085;
+    }
+    
+    /* Input Fields */
+    .stTextInput > div > div > input {
+        background-color: #FFF0F5;
+        border: 1px solid #DB7093;
+    }
+    
+    /* Selectbox */
+    .stSelectbox > div > div > div {
+        background-color: #FFF0F5;
+    }
+    
+    /* Tabs */
+    .stTabs [data-baseweb="tab-list"] {
+        background-color: #FFD1DC;
+    }
+    </style>
+    """, 
+    unsafe_allow_html=True
 )
+
+# ============================================
+# FUNGSI PERHITUNGAN
+# ============================================
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DAN ABU
@@ -90,19 +144,23 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
+# ============================================
+# MENU NAVIGASI
+# ============================================
+
 menu = st.sidebar.selectbox(
     label = "PILIH MENU",
     options = ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"])
         
 
 if menu == "Beranda":
-    st.markdown("<h1 style='text-align: center; color: pink;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
     left, mid, right = st.columns(3)
     with mid:   
         st.markdown('---')
         st.markdown('<div style="text-align: center;">Kalkulator Kimia Analitik. Dibuat untuk membantu perhitungan dalam Kimia Analitik</div>', unsafe_allow_html=True)
         st.markdown('---')
-        st.markdown('<h2 style="color: blue; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="color: #DB7093; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
         st.write('KELOMPOK 4 (1B - ANALISIS KIMIA)')
         st.write('''
     1. Allysa Desvita Almasya R.   (2560566)
@@ -177,7 +235,7 @@ elif menu == "Titrimetri":
     "berat_ekivalen Kalium Dikromat": 49,
     }
     selected_be = st.selectbox(
-    "Pilih Berat Ekivalen", list(be.keys()))
+        "Pilih Berat Ekivalen", list(be.keys()))
     berat_ekivalen = be[selected_be]
     st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
     
@@ -199,7 +257,6 @@ elif menu == "Bahaya Kimia":
 
 elif menu == "Latihan Soal":
     st.write("INI LATSOL WOY")
-
 
 
 
