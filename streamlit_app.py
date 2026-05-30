@@ -103,10 +103,9 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
-st.sidebar.selectbox("Choose a model", ["GPT-4", "Claude", "Gemini"])
-st.sidebar.slider("Temperature", 0.0, 1.0, 0.7)
-
-st.write("Main content area")
+header = st.container()
+st.write("This runs first but appears second.")
+header.write("This runs second but appears first.")
         
 
 if selected == "Beranda":
