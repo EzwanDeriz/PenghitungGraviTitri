@@ -39,7 +39,7 @@ def perhitungan_kadar_barium(faktor_gravi, bobot_analit, vol_sampel):
 
 #STANDARISASI ASAM BASA
 def standarisasi_asam_basa(bobot_primer, fp, vol_titran, BE):
-    normalitas = bobot_primer / (fp * vol_titran * BE)
+    normalitas = (bobot_primer / (fp * vol_titran * BE))
     return normalitas
 
 
