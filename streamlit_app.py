@@ -103,14 +103,15 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
-with st.sidebar:
-    st.selectbox("Pilih Menu", ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"])
+menu = st.sidebar.selectbox(
+    label = "Pilih Menu",
+    options = ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"]
         
 
-if st.selectbox = ["Beranda"]:
+if menu == "Beranda":
     st.write("SELAMAT DATANG WOY")
 
-elif selected == "Gravimetri":
+elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
     with tab1:
@@ -146,7 +147,7 @@ elif selected == "Gravimetri":
         st.write("Bansosss")
         
 
-elif selected == "Titrimetri":
+elif menu == "Titrimetri":
     st.write("INI TITRIMETRI WOY")
     be = {
     "berat_ekivalen Asam Oksalat": 63,
@@ -170,10 +171,10 @@ elif selected == "Titrimetri":
         normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
         st.write("Normalitas = ", round(normalitas, 4))
 
-elif selected == "Bahaya Kimia":
+elif menu == "Bahaya Kimia":
     st.write("INI BAHAYA BAHAN KIMIA WOY")
 
-elif selected == "Latihan Soal":
+elif menu == "Latihan Soal":
     st.write("INI LATSOL WOY")
 
 
