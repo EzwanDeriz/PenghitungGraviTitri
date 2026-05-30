@@ -5,9 +5,6 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
-with st.sidebar:
-    st.selectbox("Pilih Menu", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
-
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DALAM TEPUNG
 def perhitungan_kadar_air_tepung(bobot_analit, bobot_sampel):
@@ -106,62 +103,82 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
+with st.sidebar:
+    st.selectbox("Pilih Menu", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
+
+if selected == "Beranda":
+    st.write("SELAMAT DATANG WOY")
+
+elif selected == "Gravimetri":
+    st.write("INI GRAVIMETRI WOY")
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
+    with tab1:
+        st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
+    with tab2:
+        st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
+    with tab3:
+        st.checkbox("Show gridlines")
+    with tab4:
+        st.write("Bansos")
+            fg = {
+        "Ar Sulfat / Mr Barium Sulfat": 96/233,
+        "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
+        "Ar Barium / Mr Barium Kromat": 137/253
+        }
+        selected_fg = st.selectbox(
+            "Pilih Faktor Gravimetri", list(fg.keys()))
+        faktor_gravi = fg[selected_fg]
+        st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
+        
+        bobot_analit = st.number_input("Masukkan bobot analit (g): ")
+        bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
+        st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
+        st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
+        
+        if st.button("Hitung Kadar", key = "T1"):
+            kadar_analit = perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel)
+            st.write("Kadar Besi = ", round(kadar_analit, 4))
+            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
+
+    
+    with tab5:
+        st.write("Bansosss")
+        
+
+elif selected == "Titrimetri":
+    st.write("INI TITRIMETRI WOY")
+        be = {
+        "berat_ekivalen Asam Oksalat": 63,
+        "berat_ekivalen Boraks": 190,
+        "berat_ekivalen Kalium Dikromat": 49,
+    }
+    selected_be = st.selectbox(
+        "Pilih Berat Ekivalen", list(be.keys()))
+    berat_ekivalen = be[selected_be]
+    st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+    
+    bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
+    fp =  st.number_input("Masukkan faktor pengali: ") 
+    vol_titran =  st.number_input("Masukkan volume titran (mL): ")
+    st.write("Bobot baku primer: ", round(bobot_primer, 4), "mg")
+    st.write("Faktor pengenceran: ", fp)
+    st.write("Volume titran: ", round(vol_titran, 2), "mL")
+    
+    
+    if st.button("Hitung Normalitas", key = "G1"):
+        normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
+        st.write("Normalitas = ", round(normalitas, 4))
+
+elif selected == "Bahaya Kimia":
+    st.write("INI BAHAYA BAHAN KIMIA WOY")
+
+elif selected == "Latihan Soal":
+    st.write("INI LATSOL WOY")
 
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
-with tab1:
-    st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
-with tab2:
-    st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
-with tab3:
-    st.checkbox("Show gridlines")
-with tab4:
-    st.write("Bansos")
-with tab5:
-    st.write("Bansosss")
 
 
 
-fg = {
-    "Ar Sulfat / Mr Barium Sulfat": 96/233,
-    "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
-    "Ar Barium / Mr Barium Kromat": 137/253
-}
-selected_fg = st.selectbox(
-    "Pilih Faktor Gravimetri", list(fg.keys()))
-faktor_gravi = fg[selected_fg]
-st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
 
-bobot_analit = st.number_input("Masukkan bobot analit (g): ")
-bobot_sampel = st.number_input("Masukkan bobot sampel (g): ")
-st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
-st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
-
-if st.button("Hitung Kadar", key = "T1"):
-    kadar_analit = perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel)
-    st.write("Kadar Besi = ", round(kadar_analit, 4))
-    st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
-
-be = {
-    "berat_ekivalen Asam Oksalat": 63,
-    "berat_ekivalen Boraks": 190,
-    "berat_ekivalen Kalium Dikromat": 49,
-}
-selected_be = st.selectbox(
-    "Pilih Berat Ekivalen", list(be.keys()))
-berat_ekivalen = be[selected_be]
-st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
-
-bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
-fp =  st.number_input("Masukkan faktor pengali: ") 
-vol_titran =  st.number_input("Masukkan volume titran (mL): ")
-st.write("Bobot baku primer: ", round(bobot_primer, 4), "mg")
-st.write("Faktor pengenceran: ", fp)
-st.write("Volume titran: ", round(vol_titran, 2), "mL")
-
-
-if st.button("Hitung Normalitas", key = "G1"):
-    normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
-    st.write("Normalitas = ", round(normalitas, 4))
     st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
 
