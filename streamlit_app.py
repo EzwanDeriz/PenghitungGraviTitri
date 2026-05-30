@@ -135,7 +135,7 @@ elif menu == "Gravimetri":
         "Ar Barium / Mr Barium Kromat": 137/253
         }
         selected_fg = st.selectbox(
-            "Pilih Faktor Gravimetri", key = ("S4") list(fg.keys()))
+            "Pilih Faktor Gravimetri", key = ("S4"), list(fg.keys()))
         faktor_gravi = fg[selected_fg]
         st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
         
