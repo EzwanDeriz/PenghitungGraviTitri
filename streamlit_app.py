@@ -137,7 +137,7 @@ selected_be = st.selectbox(
 berat_ekivalen = be[selected_be]
 st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
 
-if st.button("Hitung Normalitas", key = "T1"):
+if st.button("Hitung Normalitas", key = "G1"):
     normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
     st.write("Normalitas = ", round(normalitas, 4))
     st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
