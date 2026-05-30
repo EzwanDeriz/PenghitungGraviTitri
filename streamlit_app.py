@@ -120,7 +120,7 @@ elif selected == "Gravimetri":
         st.checkbox("Show gridlines")
     with tab4:
         st.write("Bansos")
-            fg = {
+         fg = {
         "Ar Sulfat / Mr Barium Sulfat": 96/233,
         "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
         "Ar Barium / Mr Barium Kromat": 137/253
