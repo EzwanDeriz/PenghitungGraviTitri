@@ -103,12 +103,11 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
     return kadar_ppm 
 
 
-header = st.container()
-st.write("This runs first but appears second.")
-header.write("This runs second but appears first.")
+with st.sidebar:
+    st.selectbox("Pilih Menu", ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"])
         
 
-if selected == "Beranda":
+if selected == ["Beranda"]:
     st.write("SELAMAT DATANG WOY")
 
 elif selected == "Gravimetri":
