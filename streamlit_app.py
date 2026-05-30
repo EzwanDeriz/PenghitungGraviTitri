@@ -141,4 +141,4 @@ be = {
 selected_be = st.selectbox(
     "Pilih Berat Ekivalen", list(be.keys()))
 BE = be[selected_be]
-st.write("Berat Ekivalen = ", BE)
+st.write("Berat Ekivalen = ", BE, "mg/mgrek")
