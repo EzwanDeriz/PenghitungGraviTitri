@@ -115,13 +115,13 @@ elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
     with tab1:
-        st.line_chart({"data": [1, 5, 2, 6, 2, 1]})
+        st.write("Kadar Air")
     with tab2:
-        st.dataframe({"col1": [1, 2, 3], "col2": [4, 5, 6]})
+        st.write("Kadar Abu")
     with tab3:
-        st.checkbox("Show gridlines")
+        st.write("Kadar Sulfat")
     with tab4:
-        st.write("Bansos")
+        st.write("Kadar Besi")
         fg = {
         "Ar Sulfat / Mr Barium Sulfat": 96/233,
         "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
@@ -141,10 +141,9 @@ elif menu == "Gravimetri":
             kadar_analit = perhitungan_kadar_besi(faktor_gravi, bobot_analit, bobot_sampel)
             st.write("Kadar Besi = ", round(kadar_analit, 4))
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
-
-    
+            
     with tab5:
-        st.write("Bansosss")
+        st.write("Kadar Ba")
         
 
 elif menu == "Titrimetri":
