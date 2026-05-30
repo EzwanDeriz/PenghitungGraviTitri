@@ -130,3 +130,15 @@ if st.button("Hitung Kadar", key = "T1"):
     st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
 
 
+bobot_primer = st.number_input("Masukkan bobot baku primer (mg)")
+fp =  st.number_input("Masukkan faktor pengali") 
+vol_titran =  st.number_input("Masukkan volume titran (mL)")
+be = {
+    "BE Asam Oksalat": 63,
+    "BE Boraks": 190,
+    "BE Kalium Dikromat": 49,
+}
+selected_be = st.selectbox(
+    "Pilih Berat Ekivalen", list(be.keys()))
+BE = be[selected_be]
+st.write("Berat Ekivalen = ", BE)
