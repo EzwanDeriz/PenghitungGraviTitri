@@ -37,16 +37,10 @@ def perhitungan_kadar_barium(faktor_gravi, bobot_analit, vol_sampel):
 
 
 
-#STANDARISASI NaOH
+#STANDARISASI ASAM BASA
 def standarisasi_asam_basa(bobot_primer, fp, vol_titran, BE):
     normalitas = bobot_primer / (fp * vol_titran * BE)
     return normalitas
-
-
-#STANDARISASI HCL 
-def standarisasi_asam_basa(bobot_primer, fp, vol_titran, BE):
-    normalitas = bobot_primer / (fp * vol_titran * BE)
-    return normalitas 
 
 
 #PERHITUNGAN KADAR ASAM ASETAT DALAM CUKA 
@@ -142,3 +136,8 @@ selected_be = st.selectbox(
     "Pilih Berat Ekivalen", list(be.keys()))
 BE = be[selected_be]
 st.write("Berat Ekivalen = ", BE, "mg/mgrek")
+
+if st.button("Hitung Normalitas", key = "T1"):
+    normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, BE)
+    st.write("Normalitas = ", round(normalitas, 4))
+    st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL)
