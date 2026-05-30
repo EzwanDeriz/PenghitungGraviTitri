@@ -104,7 +104,17 @@ def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
 
 
 with st.sidebar:
-    st.selectbox("Pilih Menu", ["Beranda", "Gravimteri", "Titrimetri", "Bahaya Kimia", "Latihan Soal"])
+        menu = {
+            "Beranda",
+            "Gravimetri",
+            "Titrimetri", 
+            "Bahaya Bahan Kimia",
+            "Latihan Soal",
+            "Tentang Aplikasi"
+        }
+    selected_menu = st.selectbox(
+        "Pilih Menu", list(fg.keys()))
+        
 
 if selected == "Beranda":
     st.write("SELAMAT DATANG WOY")
