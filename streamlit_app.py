@@ -232,21 +232,21 @@ elif menu == "Titrimetri":
     with tab6:
         st.write("Ini Standarisasi")
         be = {
-    "berat_ekivalen Asam Oksalat": 63,
-    "berat_ekivalen Boraks": 190,
-    "berat_ekivalen Kalium Dikromat": 49,
-    }
-    selected_be = st.selectbox(
-        "Pilih Berat Ekivalen", list(be.keys()))
-    berat_ekivalen = be[selected_be]
-    st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
-    
-    bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
-    fp =  st.number_input("Masukkan faktor pengali: ") 
-    vol_titran =  st.number_input("Masukkan volume titran (mL): ")
-    st.write("Bobot baku primer: ", round(bobot_primer, 4), "mg")
-    st.write("Faktor pengenceran: ", fp)
-    st.write("Volume titran: ", round(vol_titran, 2), "mL")
+        "berat_ekivalen Asam Oksalat": 63,
+        "berat_ekivalen Boraks": 190,
+        "berat_ekivalen Kalium Dikromat": 49,
+        }
+        selected_be = st.selectbox(
+            "Pilih Berat Ekivalen", list(be.keys()))
+        berat_ekivalen = be[selected_be]
+        st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+        
+        bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
+        fp =  st.number_input("Masukkan faktor pengali: ") 
+        vol_titran =  st.number_input("Masukkan volume titran (mL): ")
+        st.write("Bobot baku primer: ", round(bobot_primer, 4), "mg")
+        st.write("Faktor pengenceran: ", fp)
+        st.write("Volume titran: ", round(vol_titran, 2), "mL")
     with tab7:
         st.write("Ini Penetapan Kadar")
     with tab8:
