@@ -228,8 +228,10 @@ elif menu == "Gravimetri":
         
 
 elif menu == "Titrimetri":
-    st.write("INI TITRIMETRI WOY")
-    be = {
+    tab6, tab7, tab8, tab9 = st.tabs(["Standarisasi", "Penetapan Kadar", "Kompleksometri", "Custom"])
+    with tab6:
+        st.write("Ini Standarisasi")
+        be = {
     "berat_ekivalen Asam Oksalat": 63,
     "berat_ekivalen Boraks": 190,
     "berat_ekivalen Kalium Dikromat": 49,
@@ -245,6 +247,14 @@ elif menu == "Titrimetri":
     st.write("Bobot baku primer: ", round(bobot_primer, 4), "mg")
     st.write("Faktor pengenceran: ", fp)
     st.write("Volume titran: ", round(vol_titran, 2), "mL")
+    with tab7:
+        st.write("Ini Penetapan Kadar")
+    with tab8:
+        st.write("Ini Kompleksometri")
+    with tab9:
+        st.write("Ini Custom")
+    st.write("INI TITRIMETRI WOY")
+    
     
     
     if st.button("Hitung Normalitas", key = "T1"):
