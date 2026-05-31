@@ -247,6 +247,11 @@ elif menu == "Titrimetri":
         st.write("Bobot baku primer: ", round(bobot_primer, 4), "mg")
         st.write("Faktor pengenceran: ", fp)
         st.write("Volume titran: ", round(vol_titran, 2), "mL")
+        if st.button("Hitung Normalitas", key = "T1"):
+        normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
+        st.write("Normalitas = ", round(normalitas, 4))
+        st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+        
     with tab7:
         st.write("Ini Penetapan Kadar")
     with tab8:
@@ -257,10 +262,7 @@ elif menu == "Titrimetri":
     
     
     
-    if st.button("Hitung Normalitas", key = "T1"):
-        normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
-        st.write("Normalitas = ", round(normalitas, 4))
-        st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+    
 
 elif menu == "Bahaya Kimia":
     st.write("INI BAHAYA BAHAN KIMIA WOY")
