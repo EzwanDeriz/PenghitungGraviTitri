@@ -382,8 +382,9 @@ elif menu == "Titrimetri":
             st.write("Faktor pengenceran: ", fp)
             st.write("Faktor konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            
             if st.button("Hitung Kadar", key = "T10"):
-                kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+                kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen Sampel = ", round(normalitas, 2))
                 st.success(f"Kadar Persen Sampel adalah {round(normalitas, 2)} mgrek/mL")
     with tab8:
