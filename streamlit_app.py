@@ -405,7 +405,7 @@ elif menu == "Titrimetri":
                 }
              
                 selected_be = st.selectbox(
-                    "Pilih Berat Ekivalen", list(be.keys()), key = ("BE11"))
+                    "Pilih Berat Ekivalen", list(be.keys()), key = ("BEA"))
                 berat_ekivalen = be[selected_be]
                 st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             
@@ -414,18 +414,18 @@ elif menu == "Titrimetri":
                 min_value=0.0,
                 step=0.0001,
                 format="%.4f",
-                key="N11"
+                key="NA"
             )
-                fp = st.number_input("Masukkan faktor pengali: ", key = ("FP11")) 
+                fp = st.number_input("Masukkan faktor pengali: ", key = ("FPA")) 
                 fk = 0.001
-                a = st.number_input("Masukkan volume awal: ", key = ("A11")) 
-                b = st.number_input("Masukkan volume akhir: ", key = ("B11")) 
-                volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS11"))
+                a = st.number_input("Masukkan volume awal: ", key = ("AA")) 
+                b = st.number_input("Masukkan volume akhir: ", key = ("BA")) 
+                volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSA"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
                 st.write("Faktor pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
                 
-                if st.button("Hitung Kadar", key = "T11"):
+                if st.button("Hitung Kadar", key = "TA"):
                     kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                     st.write("Kadar Persen NaOH = ", round(kadar_persen, 2))
                     st.success(f"Kadar Persen NaOH adalah {round(kadar_persen, 2)} mgrek/mL")
@@ -443,7 +443,7 @@ elif menu == "Titrimetri":
                 "berat_ekivalen Natrium Hidroksida": 40,
                 }
                 selected_be = st.selectbox(
-                    "Pilih Berat Ekivalen", list(be.keys()), key = ("BE12"))
+                    "Pilih Berat Ekivalen", list(be.keys()), key = ("BEB"))
                 berat_ekivalen = be[selected_be]
                 st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             
@@ -454,16 +454,16 @@ elif menu == "Titrimetri":
                 format="%.4f",
                 key="N12"
             )
-                fp = st.number_input("Masukkan faktor pengali: ", key = ("FP12")) 
+                fp = st.number_input("Masukkan faktor pengali: ", key = ("FPB")) 
                 fk = 0.001
-                a = st.number_input("Masukkan volume awal: ", key = ("A12")) 
-                b = st.number_input("Masukkan volume akhir: ", key = ("B12")) 
-                volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
+                a = st.number_input("Masukkan volume awal: ", key = ("AB")) 
+                b = st.number_input("Masukkan volume akhir: ", key = ("BB")) 
+                volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
                 st.write("Faktor pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
                 
-                if st.button("Hitung Kadar", key = "T12"):
+                if st.button("Hitung Kadar", key = "TB"):
                     kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                     st.write("Kadar Persen Na2CO3 = ", round(kadar_persen, 2))
                     st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} mgrek/mL")
@@ -528,7 +528,7 @@ elif menu == "Titrimetri":
             min_value=0.0,
             step=0.0001,
             format="%.4f",
-            key="N12"
+            key="N13"
         )
             fp = st.number_input("Masukkan faktor pengali: ", key = ("FP13")) 
             fk = 0.001
