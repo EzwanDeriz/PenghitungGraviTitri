@@ -373,7 +373,7 @@ elif menu == "Titrimetri":
         st.write("Ini Kompleksometri")
     with tab9:
         st.write("Ini Custom")
-        st.write("INI TITRIMETRI WOY")
+    st.write("INI TITRIMETRI WOY")
     
     
     
