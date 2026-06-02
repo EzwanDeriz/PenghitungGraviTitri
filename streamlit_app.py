@@ -387,6 +387,42 @@ elif menu == "Titrimetri":
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen Sampel = ", round(kadar_persen, 2))
                 st.success(f"Kadar Persen Sampel adalah {round(kadar_persen, 2)} mgrek/mL")
+        with tab11:
+            be = {
+            "berat_ekivalen Asam Oksalat": 63,
+            "berat_ekivalen Boraks": 190,
+            "berat_ekivalen Kalium Dikromat": 49,
+            "berat_ekivalen Asam Asetat": 63,
+            "berat_ekivalen Natrium Karbonat": 40,
+            "berat_ekivalen Besi": 56,
+            "berat_ekivalen Kalium Dikromat": 49,
+            "berat_ekivalen Klorida": 37.5,
+            }
+            selected_be = st.selectbox(
+                "Pilih Berat Ekivalen", list(be.keys()), key = ("BE11"))
+            berat_ekivalen = be[selected_be]
+            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+        
+            Normalitas = st.number_input(
+            "Masukkan normalitas titran (mL): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="N10"
+        )
+            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP11")) 
+            fk = 0.001
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT11"))
+            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS11"))
+            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor Konversi: ", fk)
+            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            
+            if st.button("Hitung Kadar", key = "T11"):
+                kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
+                st.write("Kadar Persen Sampel = ", round(kadar_persen, 2))
+                st.success(f"Kadar Persen Sampel adalah {round(kadar_persen, 2)} mgrek/mL")
     with tab8:
         st.write("Ini Kompleksometri")
     with tab9:
