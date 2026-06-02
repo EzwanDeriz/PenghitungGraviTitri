@@ -2,16 +2,16 @@ import streamlit as st
 import math
 
 # ============================================
-# CSS BACKGROUND BIRU
+# CSS BACKGROUND PINK
 # ============================================
 st.markdown("""
     <style>
-    /* Background Utama - Biru */
+    /* Background Utama - Pink */
     .stApp {
         background-color: #FFE4E1;
     }
     
-    /* Background Sidebar - Biru Lebih Muda */
+    /* Background Sidebar - Pink Lebih Gelap */
     [data-testid="stSidebar"] {
         background-color: #FFD1DC;
     }
