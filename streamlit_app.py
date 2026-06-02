@@ -304,6 +304,37 @@ elif menu == "Gravimetri":
             
     with tab5:
         st.write("Kadar Ba")
+        fg = {
+        "Ar Sulfat / Mr Barium Sulfat": 96/233,
+        "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
+        "Ar Barium / Mr Barium Kromat": 137/253
+        }
+        selected_fg = st.selectbox(
+            "Pilih Faktor Gravimetri", list(fg.keys()), key = ("S5"))
+        faktor_gravi = fg[selected_fg]
+        st.write(f"Faktor Gravimetri = {faktor_gravi:.4f}")
+        
+        bobot_analit = st.number_input(
+            "Masukkan bobot analit (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BA4"
+        )
+        bobot_sampel = st.number_input(
+            "Masukkan bobot sampel (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BS4"
+        )
+        st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
+        st.write(f"Volume sampel: = {vol_sampel:.4f}", "mL")
+        
+        if st.button("Hitung Kadar", key = "T5"):
+            kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel):
+            st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
+            st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
         
 
 elif menu == "Titrimetri":
