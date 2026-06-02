@@ -593,6 +593,44 @@ elif menu == "Titrimetri":
         
     with tab9:
         st.write("Ini Custom")
+        tabE, tabF= st.tabs (["Standarisasi ", "Penetapan Kadar"])
+        with tabE:
+            berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEE"))
+            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
+            fp =  st.number_input("Masukkan faktor pengali: ") 
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ")
+            st.write("Bobot baku primer: ", bobot_primer, "mg")
+            st.write("Faktor pengenceran: ", fp)
+            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            if st.button("Hitung Normalitas", key = "NE"):
+                normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
+                st.write("Normalitas = ", round(normalitas, 4))
+                st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+
+        with tabF:
+            berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEFw"))
+            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            Normalitas = st.number_input(
+            "Masukkan normalitas titran (mL): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="NF"
+        )
+            fp = st.number_input("Masukkan faktor pengali: ", key = ("FPF")) 
+            fk = 0.001
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTF"))
+            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSF"))
+            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor Konversi: ", fk)
+            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            
+            if st.button("Hitung Kadar", key = "TF"):
+                kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
+                st.write("Kadar Persen = ", round(kadar_persen, 2))
+                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")
     st.write("INI TITRIMETRI WOY")
     
     
