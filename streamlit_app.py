@@ -319,14 +319,14 @@ elif menu == "Gravimetri":
             min_value=0.0,
             step=0.0001,
             format="%.4f",
-            key="BA4"
+            key="BA5"
         )
         bobot_sampel = st.number_input(
             "Masukkan bobot sampel (g): ",
             min_value=0.0,
             step=0.0001,
             format="%.4f",
-            key="BS4"
+            key="BS5"
         )
         st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
         st.write(f"Volume sampel: = {vol_sampel:.4f}", "mL")
