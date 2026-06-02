@@ -183,6 +183,34 @@ elif menu == "Gravimetri":
             min_value=0.0,
             step=0.0001,
             format="%.4f",
+            key="BA1"
+        )
+        
+        # Input bobot sampel dengan 4 angka belakang koma
+        bobot_sampel = st.number_input(
+            "Masukkan bobot sampel (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BS1"
+        )
+
+        st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
+        st.write(f"Bobot sampel: = {bobot_sampel:.4f}", "g")
+        
+        if st.button("Hitung Kadar", key="T1"):
+            kadar_analit = perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
+            st.write("Kadar Air = ", round(kadar_analit, 4))
+            st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
+            
+    with tab2:
+        st.write("Kadar Abu")
+        # Input bobot analit dengan 4 angka belakang koma
+        bobot_analit = st.number_input(
+            "Masukkan bobot analit (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
             key="BA2"
         )
         
@@ -200,11 +228,8 @@ elif menu == "Gravimetri":
         
         if st.button("Hitung Kadar", key="T2"):
             kadar_analit = perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
-            st.write("Kadar Air = ", round(kadar_analit, 4))
-            st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
-            
-    with tab2:
-        st.write("Kadar Abu")
+            st.write("Kadar Abu = ", round(kadar_analit, 4))
+            st.success(f"Kadar Abu adalah {kadar_analit:.2f}%")
     with tab3:
         st.write("Kadar Sulfat")
         fg = {
