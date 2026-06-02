@@ -551,7 +551,7 @@ elif menu == "Titrimetri":
             selected_bm = st.selectbox(
                 "Pilih Berat Molekul", list(bm.keys()), key = ("VTC"))
             berat_molekul = bm[selected_bm]
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            st.write("Berat Molekul = ", berat_molekul, "mg/mgrek")
                 
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ", key = ("BPC"))
             fp =  st.number_input("Masukkan faktor pengali: ", key = ("FPC")) 
