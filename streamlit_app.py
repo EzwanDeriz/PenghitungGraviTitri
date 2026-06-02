@@ -352,7 +352,7 @@ elif menu == "Titrimetri":
         st.write("Ini Penetapan Kadar")
         tab10, tab11, tab12, tab12 = st.tabs(["Kadar Asetat", "Kadar NaOH dan Na2CO3", "Kadar Besi", "Kadar Klor"])
         with tab10:
-             be = {
+            be = {
             "berat_ekivalen Asam Oksalat": 63,
             "berat_ekivalen Boraks": 190,
             "berat_ekivalen Kalium Dikromat": 49,
@@ -363,7 +363,7 @@ elif menu == "Titrimetri":
             "berat_ekivalen Klorida": 37.5,
             }
             selected_be = st.selectbox(
-                    "Pilih Berat Ekivalen", list(be.keys()))
+                "Pilih Berat Ekivalen", list(be.keys()))
             berat_ekivalen = be[selected_be]
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
