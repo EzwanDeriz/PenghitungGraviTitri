@@ -199,7 +199,7 @@ elif menu == "Gravimetri":
         st.write(f"Bobot sampel: = {bobot_sampel:.4f}", "g")
         
         if st.button("Hitung Kadar", key="T1"):
-            kadar_analit = perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
+            kadar_analit =  perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
             st.write("Kadar Air = ", round(kadar_analit, 4))
             st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
             
