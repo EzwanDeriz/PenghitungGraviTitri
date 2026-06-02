@@ -408,7 +408,7 @@ elif menu == "Titrimetri":
             min_value=0.0,
             step=0.0001,
             format="%.4f",
-            key="N10"
+            key="N11"
         )
             fp = st.number_input("Masukkan faktor pengali: ", key = ("FP11")) 
             fk = 0.001
