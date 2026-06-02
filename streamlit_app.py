@@ -181,25 +181,41 @@ elif menu == "Gravimetri":
         st.write("Kadar Abu")
     with tab3:
         st.write("Kadar Sulfat")
-        fg = {
-        "Ar Sulfat / Mr Barium Sulfat": 96/233,
-        "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
-        "Ar Barium / Mr Barium Kromat": 137/253
-        }
-        selected_fg = st.selectbox(
-            "Pilih Faktor Gravimetri", list(fg.keys()), key = ("S3"))
-        faktor_gravi = fg[selected_fg]
-        st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
-        
-        bobot_analit = st.number_input("Masukkan bobot analit (g): ", key = ("BA3"))
-        bobot_sampel = st.number_input("Masukkan bobot sampel (g): ", key = ("BS3"))
-        st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
-        st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
-        
-        if st.button("Hitung Kadar", key = "T3"):
-            kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
-            st.write("Kadar Besi = ", round(kadar_analit, 4))
-            st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
+fg = {
+    "Ar Sulfat / Mr Barium Sulfat": 96/233,
+    "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
+    "Ar Barium / Mr Barium Kromat": 137/253
+}
+selected_fg = st.selectbox(
+    "Pilih Faktor Gravimetri", list(fg.keys()), key="S3")
+faktor_gravi = fg[selected_fg]
+st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
+
+# Input bobot analit dengan 4 angka belakang koma
+bobot_analit = st.number_input(
+    "Masukkan bobot analit (g): ",
+    min_value=0.0,
+    step=0.0001,
+    format="%.4f",
+    key="BA3"
+)
+
+# Input bobot sampel dengan 4 angka belakang koma
+bobot_sampel = st.number_input(
+    "Masukkan bobot sampel (g): ",
+    min_value=0.0,
+    step=0.0001,
+    format="%.4f",
+    key="BS3"
+)
+
+st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
+st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
+
+if st.button("Hitung Kadar", key="T3"):
+    kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+    st.write("Kadar Besi = ", round(kadar_analit, 4))
+    st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab4:
         st.write("Kadar Besi")
