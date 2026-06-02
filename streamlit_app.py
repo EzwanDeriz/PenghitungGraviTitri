@@ -546,23 +546,23 @@ elif menu == "Titrimetri":
     with tab8:
         st.write("Ini Kompleksometri")
         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
-            with tabC:
-                bm = {"Berat Molekul Kalsium Karbonat": 100,}
-                selected_bm = st.selectbox(
-                    "Pilih Berat Molekul", list(bm.keys()), key = ("VTC"))
-                berat_molekul = bm[selected_bm]
-                st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+        with tabC:
+            bm = {"Berat Molekul Kalsium Karbonat": 100,}
+            selected_bm = st.selectbox(
+                "Pilih Berat Molekul", list(bm.keys()), key = ("VTC"))
+            berat_molekul = bm[selected_bm]
+            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
                 
-                bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
-                fp =  st.number_input("Masukkan faktor pengali: ") 
-                vol_titran =  st.number_input("Masukkan volume titran (mL): ")
-                st.write("Bobot baku primer: ", bobot_primer, "mg")
-                st.write("Faktor pengenceran: ", fp)
-                st.write("Volume titran: ", round(vol_titran, 2), "mL")
-                if st.button("Hitung Normalitas", key = "TC"):
-                    normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
-                    st.write("Normalitas = ", round(normalitas, 4))
-                    st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+            bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
+            fp =  st.number_input("Masukkan faktor pengali: ") 
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ")
+            st.write("Bobot baku primer: ", bobot_primer, "mg")
+            st.write("Faktor pengenceran: ", fp)
+            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            if st.button("Hitung Normalitas", key = "TC"):
+                normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
+                st.write("Normalitas = ", round(normalitas, 4))
+                st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
         
              
         
