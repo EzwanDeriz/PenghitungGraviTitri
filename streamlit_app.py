@@ -375,12 +375,11 @@ elif menu == "Titrimetri":
             key="N10"
         )
             fp = st.number_input("Masukkan faktor pengali: ", key = ("FP10")) 
-            fk = st.write("Faktor Konversi: ", 0.001)
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT10"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS10"))
             st.write("Normalitas titran: ", Normalitas, "mg")
             st.write("Faktor pengenceran: ", fp)
-            st.write("Faktor konversi: ", fk)
+            fk = st.write("Faktor Konversi: ", 0.001)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             
             if st.button("Hitung Kadar", key = "T10"):
