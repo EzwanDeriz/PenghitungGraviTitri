@@ -597,9 +597,9 @@ elif menu == "Titrimetri":
         with tabE:
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEE"))
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
-            bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
-            fp =  st.number_input("Masukkan faktor pengali: ") 
-            vol_titran =  st.number_input("Masukkan volume titran (mL): ")
+            bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ",key = ("BPE"))
+            fp =  st.number_input("Masukkan faktor pengali: ",key = ("FPE")) 
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ",key = ("VTE"))
             st.write("Bobot baku primer: ", bobot_primer, "mg")
             st.write("Faktor pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
@@ -609,7 +609,7 @@ elif menu == "Titrimetri":
                 st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
 
         with tabF:
-            berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEFw"))
+            berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEF"))
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             Normalitas = st.number_input(
             "Masukkan normalitas titran (mL): ",
