@@ -361,6 +361,7 @@ elif menu == "Titrimetri":
             "berat_ekivalen Besi": 56,
             "berat_ekivalen Kalium Dikromat": 49,
             "berat_ekivalen Klorida": 37.5,
+            "berat_ekivalen Natrium Hidroksida": 40,
             }
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE10"))
@@ -397,6 +398,7 @@ elif menu == "Titrimetri":
             "berat_ekivalen Besi": 56,
             "berat_ekivalen Kalium Dikromat": 49,
             "berat_ekivalen Klorida": 37.5,
+            "berat_ekivalen Natrium Hidroksida": 40,
             }
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE11"))
