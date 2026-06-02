@@ -243,7 +243,7 @@ elif menu == "Gravimetri":
             format="%.4f",
             key="BS4"
         )
-        st.write(f"Bobot analit:" = {bobot_analit:.4f} "g") 
+        st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
         if st.button("Hitung Kadar", key = "T4"):
