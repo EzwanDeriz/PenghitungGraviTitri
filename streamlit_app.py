@@ -417,9 +417,9 @@ elif menu == "Titrimetri":
             a = st.number_input("Masukkan volume awal: ", key = ("A11")) 
             b = st.number_input("Masukkan volume akhir: ", key = ("B11")) 
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS11"))
+            st.write("Normalitas titran: ", Normalitas, "mg")
             st.write("Faktor pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
             
             if st.button("Hitung Kadar", key = "T11"):
                 kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
