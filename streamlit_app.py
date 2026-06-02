@@ -553,7 +553,7 @@ elif menu == "Titrimetri":
             berat_molekul = bm[selected_bm]
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
                 
-            bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
+            bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ", key = ("BPC"))
             fp =  st.number_input("Masukkan faktor pengali: ") 
             vol_titran =  st.number_input("Masukkan volume titran (mL): ")
             st.write("Bobot baku primer: ", bobot_primer, "mg")
