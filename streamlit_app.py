@@ -567,7 +567,7 @@ elif menu == "Titrimetri":
         with tabD:
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
             selected_bm = st.selectbox(
-                "Pilih Berat Molekul", list(be.keys()), key = ("BMD"))
+                "Pilih Berat Molekul", list(bm.keys()), key = ("BMD"))
             berat_molekul = bm[selected_bm]
             st.write("Berat Molekul = ", berat_molekul, "mg/mmol")
         
