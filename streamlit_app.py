@@ -320,7 +320,7 @@ elif menu == "Gravimetri":
         tabQ, tabR =  st.tabs(["Kadar B/B", "Kadar B/v"])
         with tabQ:
             faktor_gravimetri = st.number_input("Masukkan faktor gravimetri: ",key = ("FGX"))
-            st.write(f"Faktor Gravimetri = {faktor_gravi:.4f}")
+            st.write(f"Faktor Gravimetri = {faktor_gravimetri:.4f}")
             bobot_analit = st.number_input(
                 "Masukkan bobot analit (g): ",
                 min_value=0.0,
