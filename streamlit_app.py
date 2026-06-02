@@ -229,8 +229,20 @@ elif menu == "Gravimetri":
         faktor_gravi = fg[selected_fg]
         st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
         
-        bobot_analit = st.number_input("Masukkan bobot analit (g): ", key = ("BA4"))
-        bobot_sampel = st.number_input("Masukkan bobot sampel (g): ", key = ("BS4"))
+        bobot_analit = st.number_input(
+            "Masukkan bobot analit (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BA4"
+        )
+        bobot_sampel = st.number_input(
+            "Masukkan bobot sampel (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BS4"
+        )
         st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
         st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
         
