@@ -345,6 +345,11 @@ elif menu == "Titrimetri":
         "berat_ekivalen Asam Oksalat": 63,
         "berat_ekivalen Boraks": 190,
         "berat_ekivalen Kalium Dikromat": 49,
+        "berat_ekivalen Asam Asetat": 63,
+        "berat_ekivalen Natrium Karbonat": 40,
+        "berat_ekivalen Besi": 56,
+        "berat_ekivalen Kalium Dikromat": 49,
+        "berat_ekivalen Klorida": 37.5,
         }
         selected_be = st.selectbox(
             "Pilih Berat Ekivalen", list(be.keys()))
