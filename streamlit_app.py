@@ -340,13 +340,13 @@ elif menu == "Gravimetri":
             st.write(f"Bobot sampel: = {bobot_sampel:.4f}", "g")
             
             if st.button("Hitung Kadar", key = "TX"):
-                kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+                kadar_analit = perhitungan_kadar_bperb(faktor_gravimetri, bobot_analit, bobot_sampel)
                 st.write(f"Kadar Besi = {kadar_analit:.2f}", "%")
                 st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
                 
         with tabR:
             faktor_gravimetri = st.number_input("Masukkan faktor gravimetri: ",key = ("FGR"))
-            st.write(f"Faktor Gravimetri = {faktor_gravi:.4f}")
+            st.write(f"Faktor Gravimetri = {faktor_gravimetri:.4f}")
             bobot_analit = st.number_input(
                 "Masukkan bobot analit (g): ",
                 min_value=0.0,
@@ -365,7 +365,7 @@ elif menu == "Gravimetri":
             st.write(f"Volume sampel: = {vol_sampel:.2f}", "mL")
              
             if st.button("Hitung Kadar", key = "TR"):
-                kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
+                kadar_analit = perhitungan_kadar_bperv(faktor_gravimetri, bobot_analit, vol_sampel)
                 st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
                 st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
             
