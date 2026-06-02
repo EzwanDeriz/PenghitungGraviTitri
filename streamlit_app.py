@@ -363,7 +363,7 @@ elif menu == "Titrimetri":
             "berat_ekivalen Klorida": 37.5,
             }
             selected_be = st.selectbox(
-                "Pilih Berat Ekivalen", list(be.keys()))
+                    "Pilih Berat Ekivalen", list(be.keys()))
             berat_ekivalen = be[selected_be]
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
