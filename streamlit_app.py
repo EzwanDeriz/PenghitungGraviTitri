@@ -545,7 +545,7 @@ elif menu == "Titrimetri":
                 st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")    
     with tab8:
         st.write("Ini Kompleksometri")
-         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
+        tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
             with tabC:
                 bm = {"Berat Molekul Kalsium Karbonat": 100,}
                 selected_bm = st.selectbox(
