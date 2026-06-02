@@ -240,7 +240,7 @@ elif menu == "Gravimetri":
         
         if st.button("Hitung Kadar", key="T3"):
             kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
-            st.write(f"Kadar Besi = {kadar_analit:.2f})
+            st.write(f"Kadar Besi = {kadar_analit:.2f}")
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab4:
