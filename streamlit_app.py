@@ -385,7 +385,7 @@ elif menu == "Titrimetri":
             
             if st.button("Hitung Kadar", key = "T10"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen Sampel = ", round(normalitas, 2))
+                st.write("Kadar Persen Sampel = ", round(kadar_persen, 2))
                 st.success(f"Kadar Persen Sampel adalah {round(kadar_persen, 2)} mgrek/mL")
     with tab8:
         st.write("Ini Kompleksometri")
