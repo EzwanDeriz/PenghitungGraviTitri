@@ -560,7 +560,7 @@ elif menu == "Titrimetri":
             st.write("Faktor pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             if st.button("Hitung Normalitas", key = "TC"):
-                normalitas = standarisasi_edta(bobot_primer, fp, vol_titran, BM)
+                molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, BM)
                 st.write("Molaritas = ", round(normalitas, 4))
                 st.success(f"Molaritas adalah {round(normalitas, 4)} mol/L")
         
