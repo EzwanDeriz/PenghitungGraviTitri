@@ -155,7 +155,7 @@ if menu == "Beranda":
 
 elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
+    tab1, tab2, tab3, tab4, tab5, tabX = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba", "Custom"])
     with tab1:
         st.write("Kadar Air")
         # Input bobot analit dengan 4 angka belakang koma
@@ -316,6 +316,35 @@ elif menu == "Gravimetri":
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
             st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
             st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
+    with tabX:
+        tabQ, tabR =  st.tabs(["Kadar B/B", "Kadar B/v"])
+        with tabQ:
+            faktor_gravimetri = st.number_input("Masukkan faktor gravimetri: ",key = ("FGX"))
+            st.write(f"Faktor Gravimetri = {faktor_gravi:.4f}")
+            bobot_analit = st.number_input(
+                "Masukkan bobot analit (g): ",
+                min_value=0.0,
+                step=0.0001,
+                format="%.4f",
+                key="BAX"
+            )
+            bobot_sampel = st.number_input(
+                "Masukkan bobot sampel (g): ",
+                min_value=0.0,
+                step=0.0001,
+                format="%.4f",
+                key="BSX"
+            )
+            st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
+            st.write(f"Bobot sampel: = {bobot_sampel:.4f}", "g")
+            
+            if st.button("Hitung Kadar", key = "TX"):
+                kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
+                st.write(f"Kadar Besi = {kadar_analit:.2f}", "%")
+                st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
+            
+        
+        
         
 
 elif menu == "Titrimetri":
