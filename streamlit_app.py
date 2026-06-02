@@ -332,7 +332,7 @@ elif menu == "Gravimetri":
         st.write(f"Volume sampel: = {vol_sampel:.4f}", "mL")
         
         if st.button("Hitung Kadar", key = "T5"):
-            kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel):
+            kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
             st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
             st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
         
