@@ -559,10 +559,10 @@ elif menu == "Titrimetri":
             st.write("Bobot baku primer: ", bobot_primer, "mg")
             st.write("Faktor pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
-            if st.button("Hitung Normalitas", key = "TC"):
+            if st.button("Hitung Molaritas", key = "TC"):
                 molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul)
                 st.write("Molaritas = ", round(molaritas, 4))
-                st.success(f"Molaritas adalah {round(molaritas, 4)} mol/L")
+                st.success(f"Molaritas adalah {round(molaritas, 4)} mmol/mL")
         
         with tabD:
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
@@ -579,8 +579,8 @@ elif menu == "Titrimetri":
             key="MD"
         )
             fp = st.number_input("Masukkan faktor pengali: ", key = ("FPD")) 
-            vol_titran =  st.number_input("Masukkan volume titran (L): ", key = ("VTD"))
-            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSD"))
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTD"))
+            volume_sampel = st.number_input("Masukkan volume titrat (L): ", key = ("VSD"))
             st.write("Molaritas titran: ", Molaritas, "mg/mmol")
             st.write("Faktor pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "L")
