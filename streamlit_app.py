@@ -208,9 +208,9 @@ elif menu == "Gravimetri":
             format="%.4f",
             key="BS3"
         )
-        
-        st.write("Bobot analit: ", round(bobot_analit, 4), "g") 
-        st.write("Bobot sampel: ", round(bobot_sampel, 4), "g")
+
+        st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
+        st.write(f"Bobot sampel: = {bobot_sampel:.4f}", "g")
         
         if st.button("Hitung Kadar", key="T3"):
             kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
