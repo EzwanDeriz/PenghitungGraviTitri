@@ -333,7 +333,7 @@ elif menu == "Titrimetri":
         "berat_ekivalen Klorida": 37.5,
         }
         selected_be = st.selectbox(
-            "Pilih Berat Ekivalen", list(be.keys()))
+            "Pilih Berat Ekivalen", list(be.keys(BE6)))
         berat_ekivalen = be[selected_be]
         st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
@@ -363,7 +363,7 @@ elif menu == "Titrimetri":
             "berat_ekivalen Klorida": 37.5,
             }
             selected_be = st.selectbox(
-                "Pilih Berat Ekivalen", list(be.keys()))
+                "Pilih Berat Ekivalen", list(be.keys(BE7)))
             berat_ekivalen = be[selected_be]
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
@@ -374,10 +374,10 @@ elif menu == "Titrimetri":
             format="%.4f",
             key="N10"
         )
-            fp = st.number_input("Masukkan faktor pengali: ") 
-            fk = st.number_input("Masukkan faktor konversi: ")
-            vol_titran =  st.number_input("Masukkan volume titran (mL): ")
-            volume_sampel = st.number_input("Masukkan volume titrat (mL): ")
+            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP10")) 
+            fk = st.number_input("Masukkan faktor konversi: ", key = ("FK10"))
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT10"))
+            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS10"))
             st.write("Normalitas titran: ", Normalitas, "mg")
             st.write("Faktor pengenceran: ", fp)
             st.write("Faktor konversi: ", fk)
