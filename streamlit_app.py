@@ -389,83 +389,84 @@ elif menu == "Titrimetri":
                 st.write("Kadar Persen Sampel = ", round(kadar_persen, 2))
                 st.success(f"Kadar Persen Sampel adalah {round(kadar_persen, 2)} mgrek/mL")
         with tab11:
-            be = {
-            "berat_ekivalen Asam Oksalat": 63,
-            "berat_ekivalen Boraks": 190,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Asam Asetat": 63,
-            "berat_ekivalen Natrium Karbonat": 40,
-            "berat_ekivalen Besi": 56,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Klorida": 37.5,
-            "berat_ekivalen Natrium Hidroksida": 40,
-            }
-            selected_be = st.selectbox(
-                "Pilih Berat Ekivalen", list(be.keys()), key = ("BE11"))
-            berat_ekivalen = be[selected_be]
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
-        
-            Normalitas = st.number_input(
-            "Masukkan normalitas titran (mL): ",
-            min_value=0.0,
-            step=0.0001,
-            format="%.4f",
-            key="N11"
-        )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP11")) 
-            fk = 0.001
-            a = st.number_input("Masukkan volume awal: ", key = ("A11")) 
-            b = st.number_input("Masukkan volume akhir: ", key = ("B11")) 
-            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS11"))
-            st.write("Normalitas titran: ", Normalitas, "mg")
-            st.write("Faktor pengenceran: ", fp)
-            st.write("Faktor Konversi: ", fk)
+            st.write("Kadar NaOH dan Na2CO3")
+            tabA, tabB = st.tabs (["Kadar NaOH", "Kadar Na2CO3"])
+            with tabA:
+                be = {
+                "berat_ekivalen Asam Oksalat": 63,
+                "berat_ekivalen Boraks": 190,
+                "berat_ekivalen Kalium Dikromat": 49,
+                "berat_ekivalen Asam Asetat": 63,
+                "berat_ekivalen Natrium Karbonat": 40,
+                "berat_ekivalen Besi": 56,
+                "berat_ekivalen Kalium Dikromat": 49,
+                "berat_ekivalen Klorida": 37.5,
+                "berat_ekivalen Natrium Hidroksida": 40,
+                }
+             
+                selected_be = st.selectbox(
+                    "Pilih Berat Ekivalen", list(be.keys()), key = ("BE11"))
+                berat_ekivalen = be[selected_be]
+                st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             
-            if st.button("Hitung Kadar", key = "T11"):
-                kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen NaOH = ", round(kadar_persen, 2))
-                st.write("Kadar Persen Na2CO3 = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen NaOH adalah {round(kadar_persen, 2)} mgrek/mL")
-                st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} mgrek/mL")
+                Normalitas = st.number_input(
+                "Masukkan normalitas titran (mL): ",
+                min_value=0.0,
+                step=0.0001,
+                format="%.4f",
+                key="N11"
+            )
+                fp = st.number_input("Masukkan faktor pengali: ", key = ("FP11")) 
+                fk = 0.001
+                a = st.number_input("Masukkan volume awal: ", key = ("A11")) 
+                b = st.number_input("Masukkan volume akhir: ", key = ("B11")) 
+                volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS11"))
+                st.write("Normalitas titran: ", Normalitas, "mg")
+                st.write("Faktor pengenceran: ", fp)
+                st.write("Faktor Konversi: ", fk)
                 
-        with tab12:
-            be = {
-            "berat_ekivalen Asam Oksalat": 63,
-            "berat_ekivalen Boraks": 190,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Asam Asetat": 63,
-            "berat_ekivalen Natrium Karbonat": 40,
-            "berat_ekivalen Besi": 56,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Klorida": 37.5,
-            "berat_ekivalen Natrium Hidroksida": 40,
-            }
-            selected_be = st.selectbox(
-                "Pilih Berat Ekivalen", list(be.keys()), key = ("BE12"))
-            berat_ekivalen = be[selected_be]
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
-        
-            Normalitas = st.number_input(
-            "Masukkan normalitas titran (mL): ",
-            min_value=0.0,
-            step=0.0001,
-            format="%.4f",
-            key="N12"
-        )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP12")) 
-            fk = 0.001
-            a = st.number_input("Masukkan volume awal: ", key = ("A12")) 
-            b = st.number_input("Masukkan volume akhir: ", key = ("B12")) 
-            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
-            st.write("Normalitas titran: ", Normalitas, "mg")
-            st.write("Faktor pengenceran: ", fp)
-            st.write("Faktor Konversi: ", fk)
+                if st.button("Hitung Kadar", key = "T11"):
+                    kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
+                    st.write("Kadar Persen NaOH = ", round(kadar_persen, 2))
+                    st.success(f"Kadar Persen NaOH adalah {round(kadar_persen, 2)} mgrek/mL")
+                
+            with tabB:
+                be = {
+                "berat_ekivalen Asam Oksalat": 63,
+                "berat_ekivalen Boraks": 190,
+                "berat_ekivalen Kalium Dikromat": 49,
+                "berat_ekivalen Asam Asetat": 63,
+                "berat_ekivalen Natrium Karbonat": 40,
+                "berat_ekivalen Besi": 56,
+                "berat_ekivalen Kalium Dikromat": 49,
+                "berat_ekivalen Klorida": 37.5,
+                "berat_ekivalen Natrium Hidroksida": 40,
+                }
+                selected_be = st.selectbox(
+                    "Pilih Berat Ekivalen", list(be.keys()), key = ("BE12"))
+                berat_ekivalen = be[selected_be]
+                st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             
-            if st.button("Hitung Kadar", key = "T12"):
-                kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen Sampel = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen Sampel adalah {round(kadar_persen, 2)} mgrek/mL")
+                Normalitas = st.number_input(
+                "Masukkan normalitas titran (mL): ",
+                min_value=0.0,
+                step=0.0001,
+                format="%.4f",
+                key="N12"
+            )
+                fp = st.number_input("Masukkan faktor pengali: ", key = ("FP12")) 
+                fk = 0.001
+                a = st.number_input("Masukkan volume awal: ", key = ("A12")) 
+                b = st.number_input("Masukkan volume akhir: ", key = ("B12")) 
+                volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
+                st.write("Normalitas titran: ", Normalitas, "mg")
+                st.write("Faktor pengenceran: ", fp)
+                st.write("Faktor Konversi: ", fk)
+                
+                if st.button("Hitung Kadar", key = "T12"):
+                    kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
+                    st.write("Kadar Persen Na2CO3 = ", round(kadar_persen, 2))
+                    st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} mgrek/mL")
             
     with tab8:
         st.write("Ini Kompleksometri")
