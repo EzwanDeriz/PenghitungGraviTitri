@@ -84,9 +84,9 @@ def standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen):
     return normalitas
 
 
-#PERHITUNGAN KADAR ASAM ASETAT DALAM CUKA 
-def kadar_asam_asetat(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
+#PERHITUNGAN KADAR PERSEN 
+def kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+    kadar_persen = vol_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
 
 
@@ -108,29 +108,10 @@ def standarisasi_KMnO4(bobot_primer, fp, vol_titran, berat_ekivalen):
     return normalitas
 
 
-#PENETAPAN KADAR BESI 
-def kadar_besi(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
-    return kadar_persen
-
-
 #STANDARISASI LARUTAN TIOSULFAT 
 def standarisasi_tio(bobot_primer, fp, vol_titran, berat_ekivalen):
     normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
     return normalitas 
-
-
-#PENETAPAN KADAR KLOR IODOMETRI 
-def kadar_klor(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel 
-    return kadar_persen 
-
-
-#PENETAPAN KADAR KLOR ARGENTOMETRI
-def kadar_klor(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
-    kadar_persen = volume_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel 
-    return kadar_persen 
-
 
 #STANDARISASI LARUTAN EDTA
 def standarisasi_edta(bobot_primer, fp, vol_titran, BM):
@@ -369,6 +350,42 @@ elif menu == "Titrimetri":
         
     with tab7:
         st.write("Ini Penetapan Kadar")
+        tab10, tab11, tab12, tab12 = st.tabs(["Kadar Asetat", "Kadar NaOH dan Na2CO3", "Kadar Besi", "Kadar Klor"])
+        with tab10:
+             be = {
+            "berat_ekivalen Asam Oksalat": 63,
+            "berat_ekivalen Boraks": 190,
+            "berat_ekivalen Kalium Dikromat": 49,
+            "berat_ekivalen Asam Asetat": 63,
+            "berat_ekivalen Natrium Karbonat": 40,
+            "berat_ekivalen Besi": 56,
+            "berat_ekivalen Kalium Dikromat": 49,
+            "berat_ekivalen Klorida": 37.5,
+            }
+            selected_be = st.selectbox(
+                "Pilih Berat Ekivalen", list(be.keys()))
+            berat_ekivalen = be[selected_be]
+            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+        
+            Normalitas = st.number_input(
+            "Masukkan normalitas titran (mL): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="N10"
+        )
+            fp = st.number_input("Masukkan faktor pengali: ") 
+            fk = st.number_input("Masukkan faktor konversi: ")
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ")
+            volume_sampel = st.number_input("Masukkan volume titrat (mL): ")
+            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor konversi: ", fk)
+            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            if st.button("Hitung Kadar", key = "T10"):
+                kadar_persen = kadar_persen(volume_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
+                st.write("Kadar Persen Sampel = ", round(normalitas, 2))
+                st.success(f"Kadar Persen Sampel adalah {round(normalitas, 2)} mgrek/mL")
     with tab8:
         st.write("Ini Kompleksometri")
     with tab9:
