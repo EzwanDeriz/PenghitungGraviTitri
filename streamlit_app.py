@@ -321,15 +321,15 @@ elif menu == "Gravimetri":
             format="%.4f",
             key="BA5"
         )
-        bobot_sampel = st.number_input(
-            "Masukkan bobot sampel (g): ",
+        vol_sampel = st.number_input(
+            "Masukkan volume sampel (mL): ",
             min_value=0.0,
             step=0.0001,
-            format="%.4f",
-            key="BS5"
+            format="%.2f",
+            key="VS1"
         )
         st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
-        st.write(f"Volume sampel: = {Volume_sampel:.2f}", "mL")
+        st.write(f"Volume sampel: = {vol_sampel:.2f}", "mL")
         
         if st.button("Hitung Kadar", key = "T5"):
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
