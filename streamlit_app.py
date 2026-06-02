@@ -551,7 +551,7 @@ elif menu == "Titrimetri":
             selected_bm = st.selectbox(
                 "Pilih Berat Molekul", list(bm.keys()), key = ("VTC"))
             berat_molekul = bm[selected_bm]
-            st.write("Berat Molekul = ", berat_molekul, "mg/mgrek")
+            st.write("Berat Molekul = ", berat_molekul, "mg/mmol")
                 
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ", key = ("BPC"))
             fp =  st.number_input("Masukkan faktor pengali: ", key = ("FPC")) 
@@ -564,8 +564,31 @@ elif menu == "Titrimetri":
                 st.write("Molaritas = ", round(molaritas, 4))
                 st.success(f"Molaritas adalah {round(molaritas, 4)} mol/L")
         
-             
+         with tabD:
+            bm = {"Berat Molekul Kalsium Karbonat": 100,}
+            selected_bm = st.selectbox(
+                "Pilih Berat Molekul", list(be.keys()), key = ("BMD"))
+            berat_molekul = bm[selected_bm]
+            st.write("Berat Molekul = ", berat_molekul, "mg/mmol")
         
+            Molaritas = st.number_input(
+            "Masukkan molaritas titran (mg/mmol): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="MD"
+        )
+            fp = st.number_input("Masukkan faktor pengali: ", key = ("FPD")) 
+            vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTD"))
+            volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSD"))
+            st.write("Molaritas titran: ", Molaritas, "mg/mmol")
+            st.write("Faktor pengenceran: ", fp)
+            st.write("Volume titran: ", round(vol_titran, 2), "L")
+            
+            if st.button("Hitung Kadar", key = "TD"):
+                kadar_kesadahan = kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel)
+                st.write("Kadar Kesadahan = ", round(kadar_kesadahan, 2))
+                st.success(f"Kadar Kesadahan adalah {round(kadar_kesadahan, 2)} mg/L")
         
     with tab9:
         st.write("Ini Custom")
