@@ -375,7 +375,7 @@ elif menu == "Titrimetri":
             key="N10"
         )
             fp = st.number_input("Masukkan faktor pengali: ", key = ("FP10")) 
-            fk = st.number_input("Masukkan faktor konversi: ", key = ("FK10"))
+            fk = st.write(0.001)
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT10"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS10"))
             st.write("Normalitas titran: ", Normalitas, "mg")
