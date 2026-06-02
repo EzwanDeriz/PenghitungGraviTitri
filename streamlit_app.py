@@ -323,14 +323,14 @@ elif menu == "Titrimetri":
     with tab6:
         st.write("Ini Standarisasi")
         be = {
-        "berat_ekivalen Asam Oksalat": 63,
-        "berat_ekivalen Boraks": 190,
-        "berat_ekivalen Kalium Dikromat": 49,
-        "berat_ekivalen Asam Asetat": 63,
-        "berat_ekivalen Natrium Karbonat": 40,
-        "berat_ekivalen Besi": 56,
-        "berat_ekivalen Kalium Dikromat": 49,
-        "berat_ekivalen Klorida": 37.5,
+        "Berat ekivalen Asam Oksalat": 63,
+        "Berat ekivalen Boraks": 190,
+        "Berat ekivalen Kalium Dikromat": 49,
+        "Berat ekivalen Asam Asetat": 63,
+        "Berat ekivalen Natrium Karbonat": 40,
+        "Berat ekivalen Besi": 56,
+        "Berat ekivalen Kalium Dikromat": 49,
+        "Berat ekivalen Klorida": 37.5,
         }
         selected_be = st.selectbox(
             "Pilih Berat Ekivalen", list(be.keys()), key = ("VT6"))
@@ -353,15 +353,15 @@ elif menu == "Titrimetri":
         tab10, tab11, tab12, tab13 = st.tabs(["Kadar Asetat", "Kadar NaOH dan Na2CO3", "Kadar Besi", "Kadar Klor"])
         with tab10:
             be = {
-            "berat_ekivalen Asam Oksalat": 63,
-            "berat_ekivalen Boraks": 190,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Asam Asetat": 63,
-            "berat_ekivalen Natrium Karbonat": 40,
-            "berat_ekivalen Besi": 56,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Klorida": 37.5,
-            "berat_ekivalen Natrium Hidroksida": 40,
+            "Berat ekivalen Asam Oksalat": 63,
+            "Berat ekivalen Boraks": 190,
+            "Berat ekivalen Kalium Dikromat": 49,
+            "Berat ekivalen Asam Asetat": 63,
+            "Berat ekivalen Natrium Karbonat": 40,
+            "Berat ekivalen Besi": 56,
+            "Berat ekivalen Kalium Dikromat": 49,
+            "Berat ekivalen Klorida": 37.5,
+            "Berat ekivalen Natrium Hidroksida": 40,
             }
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE10"))
@@ -393,15 +393,15 @@ elif menu == "Titrimetri":
             tabA, tabB = st.tabs (["Kadar NaOH", "Kadar Na2CO3"])
             with tabA:
                 be = {
-                "berat_ekivalen Asam Oksalat": 63,
-                "berat_ekivalen Boraks": 190,
-                "berat_ekivalen Kalium Dikromat": 49,
-                "berat_ekivalen Asam Asetat": 63,
-                "berat_ekivalen Natrium Karbonat": 40,
-                "berat_ekivalen Besi": 56,
-                "berat_ekivalen Kalium Dikromat": 49,
-                "berat_ekivalen Klorida": 37.5,
-                "berat_ekivalen Natrium Hidroksida": 40,
+                "Berat ekivalen Asam Oksalat": 63,
+                "Berat ekivalen Boraks": 190,
+                "Berat ekivalen Kalium Dikromat": 49,
+                "Berat ekivalen Asam Asetat": 63,
+                "Berat ekivalen Natrium Karbonat": 40,
+                "Berat ekivalen Besi": 56,
+                "Berat ekivalen Kalium Dikromat": 49,
+                "Berat ekivalen Klorida": 37.5,
+                "Berat ekivalen Natrium Hidroksida": 40,
                 }
              
                 selected_be = st.selectbox(
@@ -432,15 +432,15 @@ elif menu == "Titrimetri":
                 
             with tabB:
                 be = {
-                "berat_ekivalen Asam Oksalat": 63,
-                "berat_ekivalen Boraks": 190,
-                "berat_ekivalen Kalium Dikromat": 49,
-                "berat_ekivalen Asam Asetat": 63,
-                "berat_ekivalen Natrium Karbonat": 40,
-                "berat_ekivalen Besi": 56,
-                "berat_ekivalen Kalium Dikromat": 49,
-                "berat_ekivalen Klorida": 37.5,
-                "berat_ekivalen Natrium Hidroksida": 40,
+                "Berat ekivalen Asam Oksalat": 63,
+                "Berat ekivalen Boraks": 190,
+                "Berat ekivalen Kalium Dikromat": 49,
+                "Berat ekivalen Asam Asetat": 63,
+                "Berat ekivalen Natrium Karbonat": 40,
+                "Berat ekivalen Besi": 56,
+                "Berat ekivalen Kalium Dikromat": 49,
+                "Berat ekivalen Klorida": 37.5,
+                "Berat ekivalen Natrium Hidroksida": 40,
                 }
                 selected_be = st.selectbox(
                     "Pilih Berat Ekivalen", list(be.keys()), key = ("BEB"))
@@ -470,15 +470,15 @@ elif menu == "Titrimetri":
 
         with tab12:
             be = {
-            "berat_ekivalen Asam Oksalat": 63,
-            "berat_ekivalen Boraks": 190,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Asam Asetat": 63,
-            "berat_ekivalen Natrium Karbonat": 40,
-            "berat_ekivalen Besi": 56,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Klorida": 37.5,
-            "berat_ekivalen Natrium Hidroksida": 40,
+            "Berat ekivalen Asam Oksalat": 63,
+            "Berat ekivalen Boraks": 190,
+            "Berat ekivalen Kalium Dikromat": 49,
+            "Berat ekivalen Asam Asetat": 63,
+            "Berat ekivalen Natrium Karbonat": 40,
+            "Berat ekivalen Besi": 56,
+            "Berat ekivalen Kalium Dikromat": 49,
+            "Berat ekivalen Klorida": 37.5,
+            "Berat ekivalen Natrium Hidroksida": 40,
             }
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE12"))
@@ -508,15 +508,15 @@ elif menu == "Titrimetri":
                 
         with tab13:
             be = {
-            "berat_ekivalen Asam Oksalat": 63,
-            "berat_ekivalen Boraks": 190,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Asam Asetat": 63,
-            "berat_ekivalen Natrium Karbonat": 40,
-            "berat_ekivalen Besi": 56,
-            "berat_ekivalen Kalium Dikromat": 49,
-            "berat_ekivalen Klorida": 37.5,
-            "berat_ekivalen Natrium Hidroksida": 40,
+            "Berat ekivalen Asam Oksalat": 63,
+            "Berat ekivalen Boraks": 190,
+            "Berat ekivalen Kalium Dikromat": 49,
+            "Berat ekivalen Asam Asetat": 63,
+            "Berat ekivalen Natrium Karbonat": 40,
+            "Berat ekivalen Besi": 56,
+            "Berat ekivalen Kalium Dikromat": 49,
+            "Berat ekivalen Klorida": 37.5,
+            "Berat ekivalen Natrium Hidroksida": 40,
             }
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE13"))
