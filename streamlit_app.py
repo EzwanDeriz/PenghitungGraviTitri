@@ -351,7 +351,13 @@ elif menu == "Gravimetri":
                 st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
                 
         with tabR:
-            faktor_gravimetri = st.number_input("Masukkan faktor gravimetri: ",key = ("FGR"))
+            faktor_gravimetri = st.number_input(
+                "Masukkan faktor gravimetri: ",
+                min_value=0.0,
+                step=0.0001,
+                format="%.4f",
+                key="FGR"
+            )
             st.write(f"Faktor Gravimetri = {faktor_gravimetri:.4f}")
             bobot_analit = st.number_input(
                 "Masukkan bobot analit (g): ",
