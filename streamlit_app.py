@@ -114,14 +114,14 @@ def standarisasi_tio(bobot_primer, fp, vol_titran, berat_ekivalen):
     return normalitas 
 
 #STANDARISASI LARUTAN EDTA
-def standarisasi_edta(bobot_primer, fp, vol_titran, BM):
-    molaritas = bobot_primer / (fp * vol_titran * BM)
+def standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul):
+    molaritas = bobot_primer / (fp * vol_titran * berat_molekul)
     return molaritas 
 
 
 #PENETAPAN KESADAHAN JUMLAH DALAM SAMPEL AIR KOMPLEKSOMETRI EDTA 
-def kadar_kesadahan(volume_titran, Molaritas, BM, volume_sampel):
-    kadar_ppm = volume_titran * Molaritas * BM / volume_sampel
+def kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel):
+    kadar_ppm = volume_titran * Molaritas * berat_molekul / volume_sampel
     return kadar_ppm 
 
 
@@ -560,7 +560,7 @@ elif menu == "Titrimetri":
             st.write("Faktor pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             if st.button("Hitung Normalitas", key = "TC"):
-                molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, BM)
+                molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul)
                 st.write("Molaritas = ", round(molaritas, 4))
                 st.success(f"Molaritas adalah {round(molaritas, 4)} mol/L")
         
