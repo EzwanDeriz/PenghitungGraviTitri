@@ -329,7 +329,7 @@ elif menu == "Gravimetri":
             key="BS5"
         )
         st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
-        st.write(f"Volume sampel: = {vol_sampel:.4f}", "mL")
+        st.write(f"Volume sampel: = {vol_sampel:.2f}", "mL")
         
         if st.button("Hitung Kadar", key = "T5"):
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
