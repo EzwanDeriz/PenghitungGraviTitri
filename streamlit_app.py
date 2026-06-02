@@ -325,7 +325,7 @@ elif menu == "Gravimetri":
             "Masukkan volume sampel (mL): ",
             min_value=0.0,
             step=0.0001,
-            format="%.4f",
+            format="%.2f",
             key="VS1"
         )
         st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
