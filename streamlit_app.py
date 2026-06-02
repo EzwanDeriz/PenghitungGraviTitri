@@ -189,7 +189,7 @@ elif menu == "Gravimetri":
         selected_fg = st.selectbox(
             "Pilih Faktor Gravimetri", list(fg.keys()), key="S3")
         faktor_gravi = fg[selected_fg]
-        st.write("Faktor Gravimetri = ", round(faktor_gravi, 4))
+        st.write(f"Faktor Gravimetri = {faktor_gravi:.4f}")
         
         # Input bobot analit dengan 4 angka belakang koma
         bobot_analit = st.number_input(
