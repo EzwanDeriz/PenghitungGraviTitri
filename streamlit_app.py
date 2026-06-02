@@ -177,6 +177,32 @@ elif menu == "Gravimetri":
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba"])
     with tab1:
         st.write("Kadar Air")
+        # Input bobot analit dengan 4 angka belakang koma
+        bobot_analit = st.number_input(
+            "Masukkan bobot analit (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BA2"
+        )
+        
+        # Input bobot sampel dengan 4 angka belakang koma
+        bobot_sampel = st.number_input(
+            "Masukkan bobot sampel (g): ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="BS2"
+        )
+
+        st.write(f"Bobot analit: = {bobot_analit:.4f}", "g") 
+        st.write(f"Bobot sampel: = {bobot_sampel:.4f}", "g")
+        
+        if st.button("Hitung Kadar", key="T2"):
+            kadar_analit = perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
+            st.write("Kadar Air = ", round(kadar_analit, 4))
+            st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
+            
     with tab2:
         st.write("Kadar Abu")
     with tab3:
