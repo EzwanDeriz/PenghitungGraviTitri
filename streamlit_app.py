@@ -583,8 +583,9 @@ elif menu == "Titrimetri":
             volume_sampel = st.number_input("Masukkan volume titrat (L): ", key = ("VSD"))
             st.write("Molaritas titran: ", Molaritas, "mg/mmol")
             st.write("Faktor pengenceran: ", fp)
-            st.write("Volume titran: ", round(volume_titran, 2), "L")
-            
+            st.write("Volume titran: ", round(volume_titran, 2), "mL")
+            st.write("Volume titrat: ", round(volume_sampel, 2), "L")
+                     
             if st.button("Hitung Kadar", key = "TD"):
                 kadar_kesadahan = kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel)
                 st.write("Kadar Kesadahan = ", round(kadar_kesadahan, 2))
