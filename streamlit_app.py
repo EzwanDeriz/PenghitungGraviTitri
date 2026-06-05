@@ -802,7 +802,7 @@ elif menu == "Titrimetri":
     
     
 
-elif menu == "Bahaya Kimia":
+elif menu == "Bahaya Bahan Kimia":
     st.write("INI BAHAYA BAHAN KIMIA WOY")
 
 elif menu == "Latihan Soal":
