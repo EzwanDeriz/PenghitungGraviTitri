@@ -7,105 +7,113 @@ from streamlit_option_menu import option_menu
 # ============================================
 st.markdown("""
     <style>
-    /* Background Utama - Putih Lembut */
+    /* Background Utama - Polar Night Light */
     .stApp {
-        background-color: #F8FAFC;
+        background-color: #ECEFF4;
     }
     
-    /* Background Sidebar - Abu-abu Muda Lebih Gelap */
+    /* Background Sidebar - Deep Arctic */
     [data-testid="stSidebar"] {
-        background-color: #E2E8F0;
+        background-color: #2E3440;
     }
     
     /* Warna Teks Utama - Slate Blue Tua */
     p, div, span, label {
-        color: #1E293B !important;
+        color: #2E3440 !important;
     }
     
     /* Warna Heading - Slate Blue Tua */
     h1, h2, h3, h4, h5, h6 {
-        color: #1E293B !important;
+        color: #2E3440 !important;
     }
     
-    /* Button - Indigo */
+    /* Button - Frost Blue (Primary/Accent) */
     .stButton > button {
-        background-color: #6366F1;
+        background-color: #5E81AC;
         color: white;
     }
     .stButton > button:hover {
-        background-color: #4F46E5;
+        background-color: #4C6A91;
     }
     
-    /* Input Fields */
+    /* Input Fields - Storm Gray */
     .stTextInput > div > div > input {
-        background-color: #FFFFFF;
-        border: 1px solid #6366F1;
-        color: #1E293B;
+        background-color: #D8DEE9;
+        border: 1px solid #5E81AC;
+        color: #2E3440;
     }
     
-    /* Selectbox */
+    /* Selectbox - Storm Gray */
     .stSelectbox > div > div > div {
-        background-color: #FFFFFF;
-        color: #1E293B;
+        background-color: #D8DEE9;
+        color: #2E3440;
     }
     
-    /* Tabs */
+    /* Tabs - Storm Gray Background */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #CBD5E1;
+        background-color: #D8DEE9;
     }
     
     /* Radio Buttons & Checkboxes */
     .stRadio > div > label {
-        color: #1E293B !important;
+        color: #2E3440 !important;
     }
     
     /* Slider */
     .stSlider [data-baseweb="slider"] {
-        color: #6366F1;
+        color: #5E81AC;
     }
     
     /* Dividers / Garis Batas */
     hr {
-        border-color: #CBD5E1 !important;
+        border-color: #D8DEE9 !important;
     }
     
     /* Metrics */
     [data-testid="stMetricValue"] {
-        color: #6366F1 !important;
+        color: #5E81AC !important;
     }
     
     /* Expander */
     .streamlit-expanderHeader {
-        color: #1E293B !important;
-        background-color: #F1F5F9;
+        color: #2E3440 !important;
+        background-color: #D8DEE9;
     }
     
     /* Tables */
     .stDataFrame {
-        border: 1px solid #CBD5E1;
+        border: 1px solid #D8DEE9;
     }
     
     /* Success/Error/Info Messages */
     .stSuccess {
-        background-color: #ECFDF5;
-        color: #065F46;
+        background-color: #A3BE8C;
+        color: #2E3440;
     }
     .stError {
-        background-color: #FEF2F2;
-        color: #991B1B;
+        background-color: #BF616A;
+        color: #ECEFF4;
     }
     .stWarning {
-        background-color: #FFFBEB;
-        color: #92400E;
+        background-color: #EBCB8B;
+        color: #2E3440;
     }
     .stInfo {
-        background-color: #EFF6FF;
-        color: #1E40AF;
+        background-color: #5E81AC;
+        color: #ECEFF4;
     }
     
     /* Markdown Link */
     a {
-        color: #6366F1;
+        color: #5E81AC;
+    }
+    
+    /* Sidebar Text Color */
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] div,
+    [data-testid="stSidebar"] span,
+    [data-testid="stSidebar"] label {
+        color: #D8DEE9 !important;
     }
     </style>
     """, 
