@@ -1,9 +1,6 @@
 import streamlit as st
 import math
 from streamlit_option_menu import option_menu
-# ============================================
-# CSS BACKGROUND PINK
-# ============================================
 
 # ============================================
 # FUNGSI PERHITUNGAN
@@ -185,9 +182,21 @@ def kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel):
 # MENU NAVIGASI
 # ============================================
 
-menu = st.sidebar.selectbox(
-    label = "PILIH MENU",
-    options = ["Beranda", "Gravimetri", "Titrimetri", "Bahaya Bahan Kimia", "Latihan Soal", "Tentang Aplikasi"])
+with st.sidebar:
+    menu = option_menu(
+        menu_title = "Menu",
+        options = ["Beranda", 
+            "Gravimetri", 
+            "Titrimetri",
+            "Bahaya Bahan Kimia",
+            "Latihan Soal",
+            "Tentang Aplikasi"],
+        icons = ["house-door", "calculator", "calculator", "calculator", "calculator", "exclamation-circle"],
+        styles = {
+        "icon": {"font-size": "15px"}, 
+        "nav-link": {"font-size": "15px", "text-align": "left", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "blue"}}
+    )
         
 
 if menu == "Beranda":
