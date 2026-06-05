@@ -7,82 +7,89 @@ from streamlit_option_menu import option_menu
 # ============================================
 st.markdown("""
     <style>
-    /* Background Utama - Pale Ash */
+    /* Background Utama - Warm Beige */
     .stApp {
-        background-color: #F1F5F9;
+        background-color: #EFECE2;
     }
     
-    /* Background Sidebar - Midnight Denim */
+    /* Background Sidebar - Olive Green Gray */
     [data-testid="stSidebar"] {
-        background-color: #1E293B;
+        background-color: #8A9A86;
     }
     
-    /* Warna Teks Utama - Midnight Denim */
+    /* Warna Teks Utama - Matte Black */
     p, div, span, label {
-        color: #1E293B !important;
+        color: #374151 !important;
     }
     
-    /* Warna Heading - Midnight Denim */
+    /* Warna Heading - Matte Black */
     h1, h2, h3, h4, h5, h6 {
-        color: #1E293B !important;
+        color: #374151 !important;
     }
     
-    /* Button - Faded Indigo (Primary/Accent) */
+    /* Button - Terracotta Red (Tombol Aksi) */
     .stButton > button {
-        background-color: #6366F1;
+        background-color: #C2593F;
         color: white;
     }
     .stButton > button:hover {
-        background-color: #4F46E5;
+        background-color: #A84832;
     }
     
-    /* Input Fields - Light Slate */
+    /* Input Fields - Classic Gray (Tombol Angka) */
     .stTextInput > div > div > input {
-        background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        color: #1E293B;
+        background-color: #D1D5DB;
+        border: 1px solid #8A9A86;
+        color: #374151;
     }
     
-    /* Selectbox - Light Slate */
+    /* Selectbox - Classic Gray */
     .stSelectbox > div > div > div {
-        background-color: #FFFFFF;
-        color: #1E293B;
+        background-color: #D1D5DB;
+        color: #374151;
     }
     
-    /* Tabs - Light Slate Background */
+    /* Number Input - Classic Gray */
+    .stNumberInput > div > div > div > input {
+        background-color: #D1D5DB;
+        border: 1px solid #8A9A86;
+        color: #374151;
+    }
+    
+    /* Tabs - Olive Green Gray Background */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #E2E8F0;
+        background-color: #D1D5DB;
     }
     
-    /* Radio Buttons & Checkboxes */
+    /* Radio Buttons & Checkboxes - Matte Black */
     .stRadio > div > label {
-        color: #1E293B !important;
+        color: #374151 !important;
     }
     
-    /* Slider */
+    /* Slider - Terracotta Red */
     .stSlider [data-baseweb="slider"] {
-        color: #6366F1;
+        color: #C2593F;
     }
     
-    /* Dividers / Garis Batas - Light Slate */
+    /* Dividers / Garis Batas - Classic Gray */
     hr {
-        border-color: #E2E8F0 !important;
+        border-color: #D1D5DB !important;
     }
     
-    /* Metrics - Faded Indigo */
+    /* Metrics - Terracotta Red */
     [data-testid="stMetricValue"] {
-        color: #6366F1 !important;
+        color: #C2593F !important;
     }
     
-    /* Expander */
+    /* Expander - Classic Gray */
     .streamlit-expanderHeader {
-        color: #1E293B !important;
-        background-color: #E2E8F0;
+        color: #374151 !important;
+        background-color: #D1D5DB;
     }
     
-    /* Tables - Light Slate Border */
+    /* Tables - Classic Gray Border */
     .stDataFrame {
-        border: 1px solid #E2E8F0;
+        border: 1px solid #D1D5DB;
     }
     
     /* Success/Error/Info Messages */
@@ -103,28 +110,35 @@ st.markdown("""
         color: #3730A3;
     }
     
-    /* Markdown Link - Faded Indigo */
+    /* Markdown Link - Terracotta Red */
     a {
-        color: #6366F1;
+        color: #C2593F;
     }
     
-    /* Sidebar Text Color */
+    /* Sidebar Text Color - Warm Beige */
     [data-testid="stSidebar"] p,
     [data-testid="stSidebar"] div,
     [data-testid="stSidebar"] span,
     [data-testid="stSidebar"] label {
-        color: #E2E8F0 !important;
-    }
-    
-    /* Number Input - Light Slate Background */
-    .stNumberInput > div > div > div > input {
-        background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
+        color: #EFECE2 !important;
     }
     
     /* Container styling */
     div[data-testid="stVerticalBlock"] {
-        background-color: #F1F5F9;
+        background-color: #EFECE2;
+    }
+    
+    /* Header di Sidebar */
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3 {
+        color: #EFECE2 !important;
+    }
+    
+    /* Selection highlight */
+    ::selection {
+        background-color: #C2593F;
+        color: white;
     }
     </style>
     """, 
