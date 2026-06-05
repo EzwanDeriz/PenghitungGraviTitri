@@ -7,105 +7,105 @@ from streamlit_option_menu import option_menu
 # ============================================
 st.markdown("""
     <style>
-    /* Background Utama - Polar Night Light */
+    /* Background Utama - Pale Ash */
     .stApp {
-        background-color: #ECEFF4;
+        background-color: #F1F5F9;
     }
     
-    /* Background Sidebar - Deep Arctic */
+    /* Background Sidebar - Midnight Denim */
     [data-testid="stSidebar"] {
-        background-color: #2E3440;
+        background-color: #1E293B;
     }
     
-    /* Warna Teks Utama - Slate Blue Tua */
+    /* Warna Teks Utama - Midnight Denim */
     p, div, span, label {
-        color: #2E3440 !important;
+        color: #1E293B !important;
     }
     
-    /* Warna Heading - Slate Blue Tua */
+    /* Warna Heading - Midnight Denim */
     h1, h2, h3, h4, h5, h6 {
-        color: #2E3440 !important;
+        color: #1E293B !important;
     }
     
-    /* Button - Frost Blue (Primary/Accent) */
+    /* Button - Faded Indigo (Primary/Accent) */
     .stButton > button {
-        background-color: #5E81AC;
+        background-color: #6366F1;
         color: white;
     }
     .stButton > button:hover {
-        background-color: #4C6A91;
+        background-color: #4F46E5;
     }
     
-    /* Input Fields - Storm Gray */
+    /* Input Fields - Light Slate */
     .stTextInput > div > div > input {
-        background-color: #D8DEE9;
-        border: 1px solid #5E81AC;
-        color: #2E3440;
+        background-color: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        color: #1E293B;
     }
     
-    /* Selectbox - Storm Gray */
+    /* Selectbox - Light Slate */
     .stSelectbox > div > div > div {
-        background-color: #D8DEE9;
-        color: #2E3440;
+        background-color: #FFFFFF;
+        color: #1E293B;
     }
     
-    /* Tabs - Storm Gray Background */
+    /* Tabs - Light Slate Background */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #D8DEE9;
+        background-color: #E2E8F0;
     }
     
     /* Radio Buttons & Checkboxes */
     .stRadio > div > label {
-        color: #2E3440 !important;
+        color: #1E293B !important;
     }
     
     /* Slider */
     .stSlider [data-baseweb="slider"] {
-        color: #5E81AC;
+        color: #6366F1;
     }
     
-    /* Dividers / Garis Batas */
+    /* Dividers / Garis Batas - Light Slate */
     hr {
-        border-color: #D8DEE9 !important;
+        border-color: #E2E8F0 !important;
     }
     
-    /* Metrics */
+    /* Metrics - Faded Indigo */
     [data-testid="stMetricValue"] {
-        color: #5E81AC !important;
+        color: #6366F1 !important;
     }
     
     /* Expander */
     .streamlit-expanderHeader {
-        color: #2E3440 !important;
-        background-color: #D8DEE9;
+        color: #1E293B !important;
+        background-color: #E2E8F0;
     }
     
-    /* Tables */
+    /* Tables - Light Slate Border */
     .stDataFrame {
-        border: 1px solid #D8DEE9;
+        border: 1px solid #E2E8F0;
     }
     
     /* Success/Error/Info Messages */
     .stSuccess {
-        background-color: #A3BE8C;
-        color: #2E3440;
+        background-color: #DCFEEC;
+        color: #065F46;
     }
     .stError {
-        background-color: #BF616A;
-        color: #ECEFF4;
+        background-color: #FEE2E2;
+        color: #991B1B;
     }
     .stWarning {
-        background-color: #EBCB8B;
-        color: #2E3440;
+        background-color: #FEF3C7;
+        color: #92400E;
     }
     .stInfo {
-        background-color: #5E81AC;
-        color: #ECEFF4;
+        background-color: #E0E7FF;
+        color: #3730A3;
     }
     
-    /* Markdown Link */
+    /* Markdown Link - Faded Indigo */
     a {
-        color: #5E81AC;
+        color: #6366F1;
     }
     
     /* Sidebar Text Color */
@@ -113,7 +113,18 @@ st.markdown("""
     [data-testid="stSidebar"] div,
     [data-testid="stSidebar"] span,
     [data-testid="stSidebar"] label {
-        color: #D8DEE9 !important;
+        color: #E2E8F0 !important;
+    }
+    
+    /* Number Input - Light Slate Background */
+    .stNumberInput > div > div > div > input {
+        background-color: #FFFFFF;
+        border: 1px solid #E2E8F0;
+    }
+    
+    /* Container styling */
+    div[data-testid="stVerticalBlock"] {
+        background-color: #F1F5F9;
     }
     </style>
     """, 
