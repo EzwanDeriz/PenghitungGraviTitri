@@ -775,6 +775,9 @@ elif menu == "Bahaya Kimia":
 elif menu == "Latihan Soal":
     st.write("INI LATSOL WOY")
 
+elif menu == "Tentang Aplikasi":
+    st.write("Ini Informasi Mengenai Aplikasi")
+
 
 
 
