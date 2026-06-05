@@ -4,60 +4,116 @@ import math
 # ============================================
 # CSS BACKGROUND PINK
 # ============================================
+
+# ============================================
+# FUNGSI PERHITUNGAN
+# ============================================
 st.markdown("""
     <style>
-    /* Background Utama - Pink */
+    /* Background Utama - Putih Lembut */
     .stApp {
-        background-color: #FFE4E1;
+        background-color: #F8FAFC;
     }
     
-    /* Background Sidebar - Pink Lebih Gelap */
+    /* Background Sidebar - Abu-abu Muda Lebih Gelap */
     [data-testid="stSidebar"] {
-        background-color: #FFD1DC;
+        background-color: #E2E8F0;
     }
     
-    /* Warna Teks Utama */
+    /* Warna Teks Utama - Slate Blue Tua */
     p, div, span, label {
-        color: #8B4557 !important;
+        color: #1E293B !important;
     }
     
-    /* Warna Heading */
+    /* Warna Heading - Slate Blue Tua */
     h1, h2, h3, h4, h5, h6 {
-        color: #DB7093 !important;
+        color: #1E293B !important;
     }
     
-    /* Button */
+    /* Button - Indigo */
     .stButton > button {
-        background-color: #DB7093;
+        background-color: #6366F1;
         color: white;
     }
     .stButton > button:hover {
-        background-color: #C76085;
+        background-color: #4F46E5;
     }
     
     /* Input Fields */
     .stTextInput > div > div > input {
-        background-color: #FFF0F5;
-        border: 1px solid #DB7093;
+        background-color: #FFFFFF;
+        border: 1px solid #6366F1;
+        color: #1E293B;
     }
     
     /* Selectbox */
     .stSelectbox > div > div > div {
-        background-color: #FFF0F5;
+        background-color: #FFFFFF;
+        color: #1E293B;
     }
     
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #FFD1DC;
+        background-color: #CBD5E1;
+    }
+    
+    /* Radio Buttons & Checkboxes */
+    .stRadio > div > label {
+        color: #1E293B !important;
+    }
+    
+    /* Slider */
+    .stSlider [data-baseweb="slider"] {
+        color: #6366F1;
+    }
+    
+    /* Dividers / Garis Batas */
+    hr {
+        border-color: #CBD5E1 !important;
+    }
+    
+    /* Metrics */
+    [data-testid="stMetricValue"] {
+        color: #6366F1 !important;
+    }
+    
+    /* Expander */
+    .streamlit-expanderHeader {
+        color: #1E293B !important;
+        background-color: #F1F5F9;
+    }
+    
+    /* Tables */
+    .stDataFrame {
+        border: 1px solid #CBD5E1;
+    }
+    
+    /* Success/Error/Info Messages */
+    .stSuccess {
+        background-color: #ECFDF5;
+        color: #065F46;
+    }
+    .stError {
+        background-color: #FEF2F2;
+        color: #991B1B;
+    }
+    .stWarning {
+        background-color: #FFFBEB;
+        color: #92400E;
+    }
+    .stInfo {
+        background-color: #EFF6FF;
+        color: #1E40AF;
+    }
+    
+    /* Markdown Link */
+    a {
+        color: #6366F1;
     }
     </style>
     """, 
     unsafe_allow_html=True
 )
-
-# ============================================
-# FUNGSI PERHITUNGAN
-# ============================================
 
 #WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
 #PERHITUNGAN KADAR AIR DAN ABU
