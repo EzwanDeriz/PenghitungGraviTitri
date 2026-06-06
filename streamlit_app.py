@@ -228,7 +228,7 @@ with st.sidebar:
             "Titrimetri",
             "Bahaya Bahan Kimia",
             "Latihan Soal"],
-        icons = ["house-door", "calculator", "calculator", "book", "calculator"],
+        icons = ["house-door", "calculator", "calculator", "book", "pencil"],
         styles = {
         "icon": {"font-size": "15px"}, 
         "nav-link": {"font-size": "15px", "text-align": "left", "--hover-color": "#eee"},
