@@ -326,7 +326,9 @@ if menu == "Beranda":
         2. Masukkandata bobot baku primer (mg).
         3. *Masukkan* data faktor pengali atau faktor pengenceran.
         4. *Masukkan* data volume titran (mL).
-        5. *Klik* tombol *Hitung Normalitas* dan catat hasilnya.    
+        5. *Klik* tombol *Hitung Normalitas* dan catat hasilnya.
+        """)
+    st.markdown("""
         *Jika memilih Sub-Menu Penetapan Kadar (Custom):*
         1. *Masukkan* nilai berat ekuivalen (mg/mgrek) secara manual.
         2. *Masukkan* data normalitas titran (N).
