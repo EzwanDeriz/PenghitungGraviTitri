@@ -582,7 +582,6 @@ elif menu == "Titrimetri":
     st.markdown("---")
     tab6, tab7, tab8, tab9 = st.tabs(["Standarisasi", "Penetapan Kadar", "Kompleksometri", "Custom"])
     with tab6:
-        st.write("Ini Standarisasi")
         be = {
         "Berat ekivalen Asam Oksalat": 63,
         "Berat ekivalen Boraks": 190,
@@ -596,21 +595,20 @@ elif menu == "Titrimetri":
         selected_be = st.selectbox(
             "Pilih Berat Ekivalen", list(be.keys()), key = ("VT6"))
         berat_ekivalen = be[selected_be]
-        st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+        st.write(f"Berat Ekivalen = {berat_ekivalen:.0f}mg/mgrek")
         
         bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
         fp =  st.number_input("Masukkan faktor pengali/pengenceran: ") 
         vol_titran =  st.number_input("Masukkan volume titran (mL): ")
-        st.write("Bobot baku primer: ", bobot_primer, "mg")
-        st.write("Faktor pengali/pengenceran: ", fp)
-        st.write("Volume titran: ", round(vol_titran, 2), "mL")
+        st.write(f"Bobot baku primer: {bobot_primer:.2f}mg")
+        st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+        st.write(f"Volume titran: {vol_titran:.2f}mL")
         if st.button("Hitung Normalitas", key = "T1"):
             normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
             st.write(f"Normalitas = {normalitas:.4f}mgrek/mL")
             st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
         
     with tab7:
-        st.write("Ini Penetapan Kadar")
         tab10, tab11, tab12, tab13 = st.tabs(["Kadar Asetat", "Kadar NaOH dan Na2CO3", "Kadar Besi", "Kadar Klor"])
         with tab10:
             be = {
@@ -627,7 +625,7 @@ elif menu == "Titrimetri":
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE10"))
             berat_ekivalen = be[selected_be]
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            st.write(f"Berat Ekivalen = {berat_ekivalen:.0f}mg/mgrek")
         
             Normalitas = st.number_input(
             "Masukkan normalitas titran (N): ",
@@ -640,9 +638,9 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT10"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS10"))
-            st.write("Normalitas titran: ", Normalitas, "N")
-            st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Faktor Konversi: ", fk)
+            st.write(f"Normalitas titran: {Normalitas:.4f}N")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+            st.write(f"Faktor Konversi: {fk:.2f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             st.write(f"Volume titrat: {volume_sampel:.2f}mL")
             
@@ -669,7 +667,7 @@ elif menu == "Titrimetri":
                 selected_be = st.selectbox(
                     "Pilih Berat Ekivalen", list(be.keys()), key = ("BEA"))
                 berat_ekivalen = be[selected_be]
-                st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+                st.write(f"Berat Ekivalen = {berat_ekivalen:.0f}mg/mgrek")
             
                 Normalitas = st.number_input(
                 "Masukkan normalitas titran (N): ",
@@ -683,12 +681,12 @@ elif menu == "Titrimetri":
                 a = st.number_input("Masukkan volume awal: (mL) ", key = ("AA")) 
                 b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BA")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSA"))
-                st.write("Normalitas titran: ", Normalitas, "mg")
-                st.write("Volume Awal: ", a, "mL")
-                st.write("Volume Akhir: ", b, "mL")
-                st.write("Faktor pengali/pengenceran: ", fp)
-                st.write("Faktor Konversi: ", fk)
-                st.write("Volume titrat: ", volume_sampel, "ml")
+                st.write(f"Normalitas titran: {Normalitas:.4f}mg")
+                st.write(f"Volume Awal: {a:.2f}mL")
+                st.write(f"Volume Akhir: {b:.2f}mL")
+                st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+                st.write(f"Faktor Konversi: {fk:.2f}")
+                st.write(f"Volume titrat: {volume_sampel:.2f}ml")
                 
                 if st.button("Hitung Kadar", key = "TA"):
                     kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
@@ -710,7 +708,7 @@ elif menu == "Titrimetri":
                 selected_be = st.selectbox(
                     "Pilih Berat Ekivalen", list(be.keys()), key = ("BEB"))
                 berat_ekivalen = be[selected_be]
-                st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+                st.write(f"Berat Ekivalen = {berat_ekivalen:.0f}mg/mgrek")
             
                 Normalitas = st.number_input(
                 "Masukkan normalitas titran (N): ",
@@ -724,12 +722,12 @@ elif menu == "Titrimetri":
                 a = st.number_input("Masukkan volume awal: (mL) ", key = ("AB")) 
                 b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BB")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
-                st.write("Normalitas titran: ", Normalitas, "N")
-                st.write("Volume Awal: ", a, "mL")
-                st.write("Volume Akhir: ", b, "mL") 
-                st.write("Faktor pengali/pengenceran: ", fp)
-                st.write("Faktor Konversi: ", fk)
-                st.write("Volume titrat: ", volume_sampel, "mL")
+                st.write(f"Normalitas titran: {Normalitas:,2f}N")
+                st.write(f"Volume Awal: {a:.2f}mL")
+                st.write(f"Volume Akhir: {b:.2f}mL") 
+                st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+                st.write(f"Faktor Konversi: {fk:.2f}")
+                st.write(f"Volume titrat: {volume_sampel:.2f}mL")
                 
                 if st.button("Hitung Kadar", key = "TB"):
                     kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
@@ -751,7 +749,7 @@ elif menu == "Titrimetri":
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE12"))
             berat_ekivalen = be[selected_be]
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            st.write(f"Berat Ekivalen = {berat_ekivalen:.0f}mg/mgrek")
         
             Normalitas = st.number_input(
             "Masukkan normalitas titran (N): ",
@@ -764,10 +762,10 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT12"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
-            st.write("Normalitas titran: ", Normalitas, "N")
-            st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Faktor Konversi: ", fk)
-            st.write("Volume titran: ", volume_sampel, "mL")
+            st.write(f"Normalitas titran: {Normalitas:.2f}N")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+            st.write(f"Faktor Konversi: {fk:.2f}")
+            st.write(f"Volume titran: {volume_sampel:.2f}mL")
             
             if st.button("Hitung Kadar", key = "T12"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
@@ -789,7 +787,7 @@ elif menu == "Titrimetri":
             selected_be = st.selectbox(
                 "Pilih Berat Ekivalen", list(be.keys()), key = ("BE13"))
             berat_ekivalen = be[selected_be]
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            st.write(f"Berat Ekivalen = {berat_ekivalen:.0F}mg/mgrek")
         
             Normalitas = st.number_input(
             "Masukkan normalitas titran (N): ",
@@ -802,9 +800,9 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT13"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS13"))
-            st.write("Normalitas titran: ", Normalitas, "N")
-            st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Faktor Konversi: ", fk)
+            st.write(f"Normalitas titran: {Normalitas:.4f}N")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+            st.write(f"Faktor Konversi: {fk:.2f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             
             if st.button("Hitung Kadar", key = "T13"):
@@ -812,20 +810,19 @@ elif menu == "Titrimetri":
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")    
     with tab8:
-        st.write("Ini Kompleksometri")
         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
         with tabC:
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
             selected_bm = st.selectbox(
                 "Pilih Berat Molekul", list(bm.keys()), key = ("BMC"))
             berat_molekul = bm[selected_bm]
-            st.write("Berat Molekul = ", berat_molekul, "mg/mmol")
+            st.write(f"Berat Molekul = {berat_molekul:.0f}mg/mmol")
                 
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ", key = ("BPC"))
             fp =  st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPC")) 
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("MC"))
-            st.write("Bobot baku primer: ", bobot_primer, "mg")
-            st.write("Faktor pengali/pengenceran: ", fp)
+            st.write(f"Bobot baku primer: {bobot_primer:.2f}mg")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             if st.button("Hitung Molaritas", key = "TC"):
                 molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul)
@@ -837,7 +834,7 @@ elif menu == "Titrimetri":
             selected_bm = st.selectbox(
                 "Pilih Berat Molekul", list(bm.keys()), key = ("BMD"))
             berat_molekul = bm[selected_bm]
-            st.write("Berat Molekul = ", berat_molekul, "mg/mmol")
+            st.write(f"Berat Molekul = {berat_molekul:.0f}mg/mmol")
         
             Molaritas = st.number_input(
             "Masukkan molaritas titran (mg/mmol): ",
@@ -849,8 +846,8 @@ elif menu == "Titrimetri":
             fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPD")) 
             volume_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTD"))
             volume_sampel = st.number_input("Masukkan volume titrat (L): ", key = ("VSD"))
-            st.write("Molaritas titran: ", Molaritas, "mg/mmol")
-            st.write("Faktor pengali/pengenceran: ", fp)
+            st.write(f"Molaritas titran: {Molaritas.0f}mg/mmol")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
             st.write(f"Volume titran: {volume_titran:.2f}mL")
             st.write(f"Volume titrat: {volume_sampel:.2f}L")
                      
@@ -868,8 +865,8 @@ elif menu == "Titrimetri":
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ",key = ("BPE"))
             fp =  st.number_input("Masukkan faktor pengali/pengenceran: ",key = ("FPE")) 
             vol_titran =  st.number_input("Masukkan volume titran (mL): ",key = ("VTE"))
-            st.write("Bobot baku primer: ", bobot_primer, "mg")
-            st.write("Faktor pengali/pengenceran: ", fp)
+            st.write(f"Bobot baku primer: {bobot_primer:.2f}mg")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             if st.button("Hitung Normalitas", key = "NE"):
                 normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
@@ -878,7 +875,7 @@ elif menu == "Titrimetri":
 
         with tabF:
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEF"))
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            st.write(f"Berat Ekivalen = {berat_ekivalen:.4f}mg/mgrek")
             Normalitas = st.number_input(
             "Masukkan normalitas titran (N): ",
             min_value=0.0,
@@ -890,9 +887,9 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTF"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSF"))
-            st.write("Normalitas titran: ", Normalitas, "N")
-            st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Faktor Konversi: ", fk)
+            st.write(f"Normalitas titran: {Normalitas:.4f}N")
+            st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
+            st.write(f"Faktor Konversi: {fk:.2f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             
             if st.button("Hitung Kadar", key = "TF"):
