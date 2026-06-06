@@ -2,99 +2,114 @@ import streamlit as st
 import math
 from streamlit_option_menu import option_menu
 
-def tampilkan_efek_samping():
-    st.markdown("""
-    <style>
-        /* Efek Air di Sebelah Kiri */
-        .side-effect-left {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 120px;
-            height: 100vh;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        /* Efek Api di Sebelah Kanan */
-        .side-effect-right {
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 120px;
-            height: 100vh;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        /* Animasi Air */
-        .water-drop {
-            position: absolute;
-            color: #3498db;
-            font-size: 24px;
-            animation: fall 2s linear infinite;
-            opacity: 0.8;
-        }
-        
-        /* Animasi Api */
-        .fire-drop {
-            position: absolute;
-            font-size: 28px;
-            animation: burn 1.5s linear infinite;
-            opacity: 0.9;
-        }
-        
-        @keyframes fall {
-            0% { transform: translateY(-50px); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(100vh); opacity: 0; }
-        }
-        
-        @keyframes burn {
-            0% { transform: translateY(-50px) scale(1); opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 0.8; transform: translateY(50vh) scale(0.8); }
-            100% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-        }
-        
-        /* Posisi drops */
-        .d1 { left: 15%; animation-delay: 0s; }
-        .d2 { left: 35%; animation-delay: 0.4s; }
-        .d3 { left: 55%; animation-delay: 0.8s; }
-        .d4 { left: 75%; animation-delay: 1.2s; }
-        .d5 { left: 95%; animation-delay: 1.6s; }
-        
-        /* Main content adjustment */
-        [data-testid="stApp"] {
-            margin-left: 120px;
-            margin-right: 120px;
-        }
-    </style>
+st.markdown("""
+<style>
+    /* Container uap penuh di bawah halaman */
+    .steam-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        z-index: 1;
+        pointer-events: none;
+        overflow: hidden;
+    }
     
-    <!-- EFFECT LEFT: Water/Rain -->
-    <div class="side-effect-left">
-        <div class="water-drop d1">💧</div>
-        <div class="water-drop d2">💧</div>
-        <div class="water-drop d3">💧</div>
-        <div class="water-drop d4">💧</div>
-        <div class="water-drop d5">💧</div>
-    </div>
+    /* Setiap partikel uap */
+    .steam-particle {
+        position: absolute;
+        bottom: -50px;
+        font-size: 20px;
+        opacity: 0;
+        animation: rise 4s ease-in infinite;
+    }
     
-    <!-- EFFECT RIGHT: Fire -->
-    <div class="side-effect-right">
-        <div class="fire-drop d1">🔥</div>
-        <div class="fire-drop d2">🔥</div>
-        <div class="fire-drop d3">🔥</div>
-        <div class="fire-drop d4">🔥</div>
-        <div class="fire-drop d5">🔥</div>
-    </div>
-    """, unsafe_allow_html=True)
+    /* Variasi ukuran */
+    .steam-small { font-size: 16px; }
+    .steam-medium { font-size: 24px; }
+    .steam-large { font-size: 32px; }
+    
+    /* Posisi horizontal & delay */
+    .p1 { left: 5%; animation-delay: 0s; }
+    .p2 { left: 10%; animation-delay: 0.5s; }
+    .p3 { left: 15%; animation-delay: 1s; }
+    .p4 { left: 20%; animation-delay: 1.5s; }
+    .p5 { left: 25%; animation-delay: 2s; }
+    .p6 { left: 30%; animation-delay: 2.5s; }
+    .p7 { left: 35%; animation-delay: 3s; }
+    .p8 { left: 40%; animation-delay: 0.3s; }
+    .p9 { left: 45%; animation-delay: 0.8s; }
+    .p10 { left: 50%; animation-delay: 1.3s; }
+    .p11 { left: 55%; animation-delay: 1.8s; }
+    .p12 { left: 60%; animation-delay: 2.3s; }
+    .p13 { left: 65%; animation-delay: 2.8s; }
+    .p14 { left: 70%; animation-delay: 0.2s; }
+    .p15 { left: 75%; animation-delay: 0.7s; }
+    .p16 { left: 80%; animation-delay: 1.2s; }
+    .p17 { left: 85%; animation-delay: 1.7s; }
+    .p18 { left: 90%; animation-delay: 2.2s; }
+    .p19 { left: 95%; animation-delay: 2.7s; }
+    
+    /* Animasi naik */
+    @keyframes rise {
+        0% {
+            bottom: -50px;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        20% {
+            opacity: 0.7;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+        100% {
+            bottom: 100%;
+            opacity: 0;
+            transform: scale(1.5);
+        }
+    }
+    
+    /* Main content agar tidak tertutup */
+    .block-container {
+        position: relative;
+        z-index: 2;
+    }
+</style>
 
-# Panggil fungsi di awal app
-tampilkan_efek_samping()
+<!-- Container Uap -->
+<div class="steam-container">
+    <!-- Baris 1 - Uap kecil -->
+    <div class="steam-particle steam-small p1">🌫️</div>
+    <div class="steam-particle steam-small p2">🌫️</div>
+    <div class="steam-particle steam-small p3">🌫️</div>
+    <div class="steam-particle steam-small p4">🌫️</div>
+    <div class="steam-particle steam-small p5">🌫️</div>
+    
+    <!-- Baris 2 - Uap sedang -->
+    <div class="steam-particle steam-medium p6">☁️</div>
+    <div class="steam-particle steam-medium p7">☁️</div>
+    <div class="steam-particle steam-medium p8">☁️</div>
+    <div class="steam-particle steam-medium p9">☁️</div>
+    <div class="steam-particle steam-medium p10">☁️</div>
+    
+    <!-- Baris 3 - Uap besar -->
+    <div class="steam-particle steam-large p11">💨</div>
+    <div class="steam-particle steam-large p12">💨</div>
+    <div class="steam-particle steam-large p13">💨</div>
+    <div class="steam-particle steam-large p14">💨</div>
+    <div class="steam-particle steam-large p15">💨</div>
+    
+    <!-- Baris 4 - Uap campur -->
+    <div class="steam-particle steam-small p16">🌫️</div>
+    <div class="steam-particle steam-medium p17">☁️</div>
+    <div class="steam-particle steam-large p18">💨</div>
+    <div class="steam-particle steam-small p19">🌫️</div>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("""
     <style>
