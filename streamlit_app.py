@@ -879,12 +879,12 @@ elif menu == "Bahaya Bahan Kimia":
             text-align: center;
             font-size: 2rem;
             font-weight: bold;
-            color: #2c3e50;
+            color: #8A9A86;
             margin-bottom: 10px;
         }
         .hazard-card {
-            background-color: #fff8f0;
-            border-left: 5px solid #e67e22;
+            background-color: #EFECE2;
+            border-left: 5px solid #8A9A86;
             border-radius: 8px;
             padding: 16px 20px;
             margin-bottom: 16px;
@@ -897,7 +897,7 @@ elif menu == "Bahaya Bahan Kimia":
         }
         .badge {
             display: inline-block;
-            background-color: #fdebd0;
+            background-color: #EFECE2;
             color: #8A9A86;
             border-radius: 12px;
             padding: 3px 12px;
