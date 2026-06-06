@@ -256,7 +256,7 @@ if menu == "Beranda":
     ''')
         st.markdown('---')
 
-    st.video("video_gif/Gravi")
+    st.video("video_gif/Gravi.mp4")
 
 elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
