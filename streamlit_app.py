@@ -1028,7 +1028,7 @@ elif menu == "Latihan Soal":
             "question": "Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut: <br> - Bobot cawan porselen kosong (W0) = 21,4530 g. <br> - Bobot cawan + sampel sebelum dipanaskan (W1) = 24,4530 g. <br>- ⁠Bobot cawan + abu setelah pemijaran hingga bobot tetap (W2) = 21,4680 g. <br> Berapakah persentase kadar abu dalam sampel tepung terigu tersebut?",
             "options": ["0,45%", "0,50%", "0,61%", "1,50%"],
             "answer": 1,
-            "explanation": "."
+            "explanation": st.write("gambar_gambar/latsol 1.jpg.jpeg")
         },
         {
             "question": "Sebanyak 25 mL sampel larutan garam barium diendapkan secara homogeneous-precipitation menggunakan kalium kromat (K2CrO4) dan urea. Setelah melalui proses penyaringan, pencucian, dan pengeringan dalam oven pada suhu 110°C, diperoleh endapan barium kromat (BaCrO4) dengan bobot tetap sebesar 0,5066 g. Berapakah kadar Barium dalam sampel tersebut?",
