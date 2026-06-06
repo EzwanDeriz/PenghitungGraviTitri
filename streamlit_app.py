@@ -579,6 +579,7 @@ elif menu == "Titrimetri":
     kir, teng, kan = st.columns(3)
     with teng:
         st.image("video_gif/Titrimetri.gif")
+    st.markdown("---")
     tab6, tab7, tab8, tab9 = st.tabs(["Standarisasi", "Penetapan Kadar", "Kompleksometri", "Custom"])
     with tab6:
         st.write("Ini Standarisasi")
