@@ -276,6 +276,65 @@ if menu == "Beranda":
         5. *Klik* tombol *Hitung Kadar* untuk melihat hasil analisis.
         6. *Catat* hasil perhitungan yang muncul pada layar.
         """)
+    
+    st.markdown('---')
+    st.markdown('<h3 style="color: #DB7093; ">Prosedur Penggunaan Kalkulator Titrimetri</h3>', unsafe_allow_html=True)
+    st.markdown("""
+        Prosedur Penggunaan Kalkulator Titrimetri
+        1. Akses Menu Titrimetri
+            *Buka halaman web lab*.
+            *Klik* tanda panah di pojok kiri atas pada tampilan awal untuk membuka menu samping.
+            *Pilih dan klik* menu *Titrimetri*.
+         2. Prosedur Berdasarkan Pilihan Opsi Analisis
+            Silakan ikuti instruksi di bawah ini sesuai dengan jenis menu titrimetri yang akan Anda gunakan:
+        """)
+    st.markdown("""
+        *Opsi A: Menu Standardisasi*
+        1. *Pilih* jenis larutan standar atau zat penstandardisasi pada kolom pilihan (data Berat Ekuivalen/BE akan muncul secara otomatis).
+        2. *Masukkan* data bobot baku primer dalam satuan miligram (mg).
+        3. *Masukkan* data faktor pengali atau faktor pengenceran sesuai dengan kebutuhan analisis.
+        4. *Masukkan* data volume titran dalam satuan mililiter (mL).
+        5. *Klik tombol Hitung Normalitas* untuk memproses data.
+        6. *Catat* hasil perhitungan normalitas yang keluar pada layar.
+        """)
+    st.markdown("""
+        *Opsi B: Menu Penetapan Kadar (Kadar Asetat, Kadar NaOH & Na_2CO_3, Kadar Besi, atau Kadar Klor)*
+        *(Langkah-langkah di bawah ini berlaku sama untuk keempat jenis kadar tersebut)*
+        1. *Pilih* jenis larutan kadar atau zat kadar pada kolom pilihan (data Berat Ekuivalen/BE akan muncul secara otomatis).
+        2. *Masukkan* data Normalitas titran (N) yang telah diketahui.
+        3. *Masukkan* data faktor pengali atau faktor pengenceran sesuai kebutuhan.
+        4. *Masukkan* data volume titran (mL) hasil titrasi *Simplo*.
+        5. *Masukkan* data volume titran (mL) hasil titrasi *Duplo*.
+        6. *Klik* tombol *Hitung Kadar* untuk memproses data.
+        7. *Catat* hasil kadar akhir yang ditampilkan pada layar.
+        """)
+    st.markdown("""
+        *Opsi C: Menu Kompleksometri (Standardisasi EDTA atau Penetapan Kesadahan)*
+        *(Langkah-langkah di bawah ini berlaku sama untuk kedua menu kompleksometri)*
+        1. *Pilih* berat molekul kalsium karbonat (CaCO_3) pada kolom pilihan (data berat molekul akan muncul secara otomatis).
+        2. *Masukkan* data bobot baku primer dalam satuan miligram (mg).
+        3. *Masukkan* data faktor pengali atau faktor pengenceran sesuai kebutuhan.
+        4. *Masukkan* data volume titran dalam satuan mililiter (mL).
+        5. *Klik* tombol *Hitung Normalitas* untuk memproses data.
+        6. *Catat* hasil perhitungan yang keluar pada layar.
+        """)
+    st.markdown("""
+        *Opsi D: Menu Custom*
+        Pilih salah satu dari 2 sub-menu *Custom* yang tersedia, lalu ikuti langkahnya:
+        *Jika memilih Sub-Menu Standardisasi (Custom):*
+        1. Masukkan nilai berat ekuivalen (mg/mgrek) secara manual pada kolom yang tersedia.
+        2. Masukkandata bobot baku primer (mg).
+        3. *Masukkan* data faktor pengali atau faktor pengenceran.
+        4. *Masukkan* data volume titran (mL).
+        5. *Klik* tombol *Hitung Normalitas* dan catat hasilnya.    
+        *Jika memilih Sub-Menu Penetapan Kadar (Custom):*
+        1. *Masukkan* nilai berat ekuivalen (mg/mgrek) secara manual.
+        2. *Masukkan* data normalitas titran (N).
+        3. *Masukkan* data faktor pengali atau faktor pengenceran.
+        4. *Masukkan* data volume titran (mL) *Simplo*.
+        5. *Masukkan* data volume titran (mL) *Duplo*.
+        6. *Klik tombol Hitung Kadar* dan catat hasilnya.
+        """)
 
 elif menu == "Gravimetri":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR ANALISIS GRAVIMETRI</h1>", unsafe_allow_html=True)
