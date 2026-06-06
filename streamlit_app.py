@@ -46,7 +46,7 @@ st.markdown("""
     /* Selectbox - Classic Gray */
     .stSelectbox > div > div > div {
         background-color: #D1D5DB;
-        color: #374151;
+        color: #ffffff;
     }
     
     /* Number Input - Classic Gray */
@@ -145,58 +145,6 @@ st.markdown("""
     unsafe_allow_html=True
 )
 
-
-# Data hazard
-hazards = {
-    "Korosif": {
-        "emoji": "🧪",
-        "color": "#e74c3c",
-        "desc": "Menyebabkan kerusakan serius pada kulit dan/atau mata. Dapat merusak logam.",
-        "examples": ["Asam Sulfat (H₂SO₄)", "Natrium Hidroksida (NaOH)", "Amonium Nitrat", "Hidrogen Klorida (HCl)"]
-    },
-    "Mudah Meledak": {
-        "emoji": "💥",
-        "color": "#c0392b",
-        "desc": "Sangat tidak stabil secara termal, dapat meledak atau bereaksi secara eksplosif.",
-        "examples": ["TNT (Trinitrotoluena)", "Nitroglycerin", "Peroksida Hidrogen (konsentrat)", "Azida Natrium"]
-    },
-    "Mudah Terbakar": {
-        "emoji": "🔥",
-        "color": "#e67e22",
-        "desc": "Mudah terbakar di udara pada suhu normal. Menyala saat terkena percikan api.",
-        "examples": ["Etanol", "Bensin", "Aseton", "Toluene"]
-    },
-    "Beracun": {
-        "emoji": "☠️",
-        "color": "#8e44ad",
-        "desc": "Fatal jika tertelan, terhirup atau bersentuhan dengan kulit. Sangat beracun.",
-        "examples": ["Sianida (CN⁻)", "Stricnin", "Ricin", "Tembaga Sulfat"]
-    },
-    "Berbahaya Kesehatan": {
-        "emoji": "⚠️",
-        "color": "#d35400",
-        "desc": "Mungkin menyebabkan kanker, mutasi genetik, atau kerusakan reproduksi.",
-        "examples": ["Benzena", "Formaldehida", "Asbes", "Timbal"]
-    },
-    "Berbahaya Lingkungan": {
-        "emoji": "🌊",
-        "color": "#1abc9c",
-        "desc": "Sangat beracun bagi kehidupan air. Berbahaya bagi lingkungan.",
-        "examples": ["Merkuri", "PCB (Poliklorinasi Bifenil)", "DDT", "Organofosfat"]
-    },
-    "Oksidator": {
-        "emoji": "🧯",
-        "color": "#f39c12",
-        "desc": "Mungkin menyebabkan atau memperkuat kebakaran. Melepaskan oksigen.",
-        "examples": ["Kalium Permanganat (KMnO₄)", "Natrium Nitrat (NaNO₃)", "Hidrogen Peroksida", "Amonium Perklorat"]
-    },
-    "Gas Tekan": {
-        "emoji": "💨",
-        "color": "#2980b9",
-        "desc": "Gas di bawah tekanan. Dapat meledak jika dipanaskan.",
-        "examples": ["Oksigen (O₂)", "Nitrogen (N₂)", "Karbon Dioksida (CO₂)", "Hidrogen (H₂)"]
-    }
-}
 
 
 
