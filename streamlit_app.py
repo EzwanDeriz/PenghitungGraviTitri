@@ -1025,7 +1025,8 @@ elif menu == "Latihan Soal":
     # Data soal
     questions = [
         {
-            "question": "Simbol GHS apa yang menunjukkan bahan mudah terbakar?",
+            "question": "Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut: - Bobot cawan porselen kosong (W0) = 21,4530 g. - Bobot cawan + sampel sebelum dipanaskan (W1) = 24,4530 g. - ⁠Bobot cawan + abu setelah pemijaran hingga bobot tetap (W2) = 21,4680 g. 
+Berapakah persentase kadar abu dalam sampel tepung terigu tersebut?",
             "options": ["🔥 Mudah Terbakar", "☠️ Beracun", "💥 Mudah Meledak", "🧪 Korosif"],
             "answer": 0,
             "explanation": "Simbol api (🔥) dengan label 'Mudah Terbakar' menunjukkan bahan yang dapat terbakar dengan mudah di udara pada suhu normal."
