@@ -178,8 +178,8 @@ def kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
 
 #PENETAPAN KADAR Na2CO3 DALAM WARDER
 def kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
-    kadar_persen2 = (b-a) * 2 * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
-    return kadar_persen2
+    kadar_persen = (b-a) * 2 * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
+    return kadar_persen
 
 
 #PENETAPAN KADAR NaOH DALAM WARDER 
@@ -636,9 +636,9 @@ elif menu == "Titrimetri":
                 st.write("Volume titrat: ", volume_sampel, "mL")
                 
                 if st.button("Hitung Kadar", key = "TB"):
-                    kadar_persen2 = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                    st.write("Kadar Persen Na2CO3 = ", round(kadar_persen2, 2))
-                    st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen2, 2)} %")
+                    kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
+                    st.write("Kadar Persen Na2CO3 = ", round(kadar_persen, 2))
+                    st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} %")
 
         with tab12:
             be = {
