@@ -813,7 +813,7 @@ elif menu == "Bahaya Bahan Kimia":
 
 elif menu == "Latihan Soal":
     st.write("LATIHAN SOAL")
-    st.write("1. Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut:  
+    st.write("Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut:  
  Bobot cawan porselen kosong (W0) = 21,4530 g, Bobot cawan + sampel sebelum dipanaskan (W1) = 24,4530 g, Bobot cawan + abu setelah pemijaran hingga bobot tetap (W2) = 21,4680 g. Berapakah persentase kadar abu dalam sampel tepung terigu tersebut?")
 
 elif menu == "Tentang Aplikasi":
