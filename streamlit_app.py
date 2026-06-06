@@ -998,7 +998,6 @@ elif menu == "Bahaya Bahan Kimia":
         st.caption("Simbol Hazard Kimia GHS")
         st.markdown("---")
     
-        st.markdown('<div class="hazard-card">', unsafe_allow_html=True)
     
         st.markdown('<div class="section-label">1️⃣ PENJELASAN BAHAYA</div>', unsafe_allow_html=True)
         st.write(data["desc"])
