@@ -240,7 +240,7 @@ if menu == "Beranda":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR KIMIA ANALITIK</h1>", unsafe_allow_html=True)
     st.markdown("---")
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>OLEH KELOMPOK 4</h1>", unsafe_allow_html=True)
-    ki, te, kn = set.columns(3)
+    ki, te, kn = st.columns(3)
     with te:
         st.image("video_gif/merangkul.gif")
     left, mid, right = st.columns(3)
