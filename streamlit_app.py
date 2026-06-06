@@ -258,7 +258,7 @@ if menu == "Beranda":
 
 
 elif menu == "Gravimetri":
-    st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR GRAVIMETRI</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR ANALISIS GRAVIMETRI</h1>", unsafe_allow_html=True)
     kiri, tengah, kanan = st.columns(3)
     with tengah:
         st.image("video_gif/Gravimetri.gif")
@@ -493,6 +493,10 @@ elif menu == "Gravimetri":
         
 
 elif menu == "Titrimetri":
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR ANALISIS TITRIMETRI</h1>", unsafe_allow_html=True)
+    kir, teng, kan = st.column(3)
+    with teng:
+        st.image("video_gif/Titrimetri.gif")
     tab6, tab7, tab8, tab9 = st.tabs(["Standarisasi", "Penetapan Kadar", "Kompleksometri", "Custom"])
     with tab6:
         st.write("Ini Standarisasi")
