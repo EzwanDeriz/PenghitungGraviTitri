@@ -1036,31 +1036,31 @@ elif menu == "Latihan Soal":
             "question": "Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut: <br> - Bobot cawan porselen kosong (W0) = 21,4530 g. <br> - Bobot cawan + sampel sebelum dipanaskan (W1) = 24,4530 g. <br>- ⁠Bobot cawan + abu setelah pemijaran hingga bobot tetap (W2) = 21,4680 g. <br> Berapakah persentase kadar abu dalam sampel tepung terigu tersebut?",
             "options": ["0,45%", "0,50%", "0,61%", "1,50%"],
             "answer": 1,
-            "explanation": "."
+            "explanation": "% Kadar Abu = (W abu / W sampel) x 100% = (0,0150 g / 3,0000 g) x 100% = 0,50%"
         },
         {
             "question": "Sebanyak 25 mL sampel larutan garam barium diendapkan secara homogeneous-precipitation menggunakan kalium kromat (K2CrO4) dan urea. Setelah melalui proses penyaringan, pencucian, dan pengeringan dalam oven pada suhu 110°C, diperoleh endapan barium kromat (BaCrO4) dengan bobot tetap sebesar 0,5066 g. Berapakah kadar Barium dalam sampel tersebut?",
             "options": ["0,27% (b/v)", "1,10% (b/v)", "2,03% (b/v)", "5,50% (b/v)"],
             "answer": 1,
-            "explanation": "."
+            "explanation": "% Kadar Ba = BA Ba / BM BaCrO4 x bobot endapan yang diperoleh g / volume sampel mL x 100% = 137 (g/mol) / 253 (g/mol) x 0,2746 g / 25 mL x 100%"
         },
         {
             "question": "Seorang analis akan menstadarisasi larutan KMnO4 0,1N menggunakan asam Oksalat (C2H2O4. 2H2O) sebanyak 0,315 g asam Oksalat dihidrat ditimbang, yang dilarutkan dalam air. Kemudian di pipet 25 mL ke erlenmeyer dan di tambah asam sulfat encer, dipanaskan hingga 70°C. Larutan tersebut kemudian dititrasi dengan KMn04 hingga tercapai titik akhir. berwarna merah muda yang stabil, sebanyak 25,10 mL. Hitunglah Normalitas KMnO4?",
             "options": ["0,0498 N", "0,0150 N", " 0,0973 N", "0,1004N"],
             "answer": 0,
-            "explanation": "Simbol tengkorak dan tulang (☠️) menunjukkan bahan beracun yang fatal jika tertelan, terhirup, atau bersentuhan dengan kulit."
+            "explanation": "Normalitas KMnO4 = Massa Oksalat (g) / (BE x Volume KMnO4 (L)) = 0,07875 / (63 x 0,02510 L) ≈ 0,0498 N"
         },
         {
             "question": "Dalam sebuah analisis campuran NaOH dan Na2CO3 menggunakan metode Warder, sebanyak 25 mL sampel dititrasi dengan larutan standar HCl 0,1000 N. Pada titrasi tahap pertama dengan indikator fenolftalein (pp), warna merah muda tepat hilang setelah menghabiskan 15,00 mL asam (dianggap sebagai a). Ke dalam larutan yang sama kemudian ditambahkan indikator sindur metil (SM), dan titrasi dilanjutkan tanpa mengenolkan buret hingga warna berubah menjadi merah jingga yang konstan pada volume total buret 25,00 mL (dianggap sebagai b). Berapakah kadar NaOH dan Na2CO3 berturut-turut dalam satuan %(b/v)?",
             "options": ["0,07% b/v NaOH dan 0,42% b/v Na2CO3", "0,04% b/v NaOH dan 0,53% b/v Na2CO3", "0,08% b/v NaOH dan 0,42% b/v Na2CO3", "0,02% b/v NaOH dan 0,21% b/v Na2CO3"],
             "answer": 2,
-            "explanation": "."
+            "explanation": "Kadar NaOH % (b/v) = (5,00 mL x 0,1000 N x 40) / (25 mL x 1000) x 100% = 0,08% <br> Kadar Na2CO3 % (b/v) = (20,00 mL x 0,1000 N x 53) / (25 mL x 1000) x 100% = 0,424% ≈ 0,42%"
         },
         {
             "question": "Sebanyak 25,00 mL sampel larutan garam besi(II) dipipet ke dalam Erlenmeyer, lalu ditambahkan asam sulfat 4N secukupnya. Larutan tersebut kemudian dititrasi dengan larutan standar KMnO4 0,0980N dalam kondisi dingin hingga muncul warna merah muda seulas yang persisten. Jika volume KMnO4 yang habis terbaca pada buret adalah 18,50 mL, berapakah kadar besi (Fe) dalam sampel tersebut dalam satuan %(b/v)?",
             "options": ["0,0810% b/v", "0,2025% b/v", "0,8100% b/v", "0,4050% b/v"],
             "answer": 3,
-            "explanation": "."
+            "explanation": "% Fe = (V KMnO4 x N KMnO4 x BE Fe) / Volume sampel (mL)  x 0,001(g/mg) x 100% (b/v)"
         }
     ]
     
