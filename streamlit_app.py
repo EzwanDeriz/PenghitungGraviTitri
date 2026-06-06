@@ -898,7 +898,7 @@ elif menu == "Bahaya Bahan Kimia":
         .badge {
             display: inline-block;
             background-color: #fdebd0;
-            color: #a04000;
+            color: #8A9A86;
             border-radius: 12px;
             padding: 3px 12px;
             margin: 3px;
@@ -1011,7 +1011,7 @@ elif menu == "Bahaya Bahan Kimia":
         st.markdown("---")
         if st.button("⬅️ Kembali ke Daftar Simbol", use_container_width=True):
             go_to("hazard_menu")
-            st.rerun() #8A9A86
+            st.rerun() 
          
 elif menu == "Latihan Soal":
     st.write("LATIHAN SOAL")
