@@ -238,14 +238,14 @@ with st.sidebar:
         
 
 if menu == "Beranda":
-    st.markdown("<h1 style='text-align: center; color: #DB7093;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR KIMIA ANALITIK</h1>", unsafe_allow_html=True)
     left, mid, right = st.columns(3)
     
     with mid:   
         st.markdown('---')
-        st.markdown('<div style="text-align: center;">Kalkulator Kimia Analitik. Dibuat untuk membantu perhitungan dalam Kimia Analitik</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align: center;">Kalkulator Kimia Analitik. Dibuat untuk membantu perhitungan Analisis Gravimetri dan Analisis Titrimetri</div>', unsafe_allow_html=True)
         st.markdown('---')
-        st.markdown('<h2 style="color: #DB7093; ">DIBUAT OLEH:</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="color: #DB7093; ">Cara Penggunaan Kalkulator:</h2>', unsafe_allow_html=True)
         st.write('KELOMPOK 4 (1B - ANALISIS KIMIA)')
         st.write('''
     1. Allysa Desvita Almasya R.   (2560566)
