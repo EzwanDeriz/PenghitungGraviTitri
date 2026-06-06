@@ -812,9 +812,8 @@ elif menu == "Titrimetri":
     
     
     
-
 elif menu == "Bahaya Bahan Kimia":
-    st.set_page_config(
+        st.set_page_config(
         page_title="Aplikasi Simbol Hazard Kimia",
         page_icon="🧪",
         layout="centered"
@@ -962,8 +961,226 @@ elif menu == "Bahaya Bahan Kimia":
             st.rerun() 
          
 elif menu == "Latihan Soal":
-    st.write("LATIHAN SOAL")
-    st.write("Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut:")
+    import streamlit as st
+
+st.set_page_config(
+    page_title="Latihan Simbol Hazard",
+    page_icon="✏️",
+    layout="centered"
+)
+
+# CSS Styling
+st.markdown("""
+<style>
+    .main-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #8A9A86;
+        margin-bottom: 10px;
+    }
+    .question-card {
+        background-color: #EFECE2;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .explanation {
+        background-color: #d4edda;
+        border-left: 5px solid #28a745;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+    }
+    .result-correct {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    .result-wrong {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    .score-card {
+        background-color: #EFECE2;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    div.stButton > button {
+        background-color: #8A9A86;
+        color: white;
+    }
+    div.stButton > button:hover {
+        background-color: #6d7a66;
+        color: white;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Data soal
+questions = [
+    {
+        "question": "Simbol GHS apa yang menunjukkan bahan mudah terbakar?",
+        "options": ["🔥 Mudah Terbakar", "☠️ Beracun", "💥 Mudah Meledak", "🧪 Korosif"],
+        "answer": 0,
+        "explanation": "Simbol api (🔥) dengan label 'Mudah Terbakar' menunjukkan bahan yang dapat terbakar dengan mudah di udara pada suhu normal."
+    },
+    {
+        "question": "Bahan berikut yang termasuk simbol Korosif adalah...",
+        "options": ["Asam Sulfat (H₂SO₄)", "Bensin", "Sianida", "TNT"],
+        "answer": 0,
+        "explanation": "Asam Sulfat (H₂SO₄) merupakan bahan korosif yang dapat menyebabkan kerusakan serius pada kulit dan mata."
+    },
+    {
+        "question": "Simbol ☠️ (Beracun) digunakan untuk bahan yang...",
+        "options": ["Mudah terbakar", "Fatal jika tertelan/terhirup", "Mudah meledak", "Menyebabkan korosi"],
+        "answer": 1,
+        "explanation": "Simbol tengkorak dan tulang (☠️) menunjukkan bahan beracun yang fatal jika tertelan, terhirup, atau bersentuhan dengan kulit."
+    },
+    {
+        "question": "Simbol GHS untuk 'Berbahaya Lingkungan' adalah...",
+        "options": ["🌊 Lingkungan", "⚠️ Bahaya Kesehatan", "🔥 Mudah Terbakar", "💨 Gas Tekan"],
+        "answer": 0,
+        "explanation": "Simbol lingkungan (🌊) menunjukkan bahan sangat beracun bagi kehidupan air dan berbahaya bagi ekosistem."
+    },
+    {
+        "question": "Bahan berikut yang termasuk Gas Tekan adalah...",
+        "options": ["Oksigen (O₂)", "Etanol", "Natrium Hidroksida", "Benzena"],
+        "answer": 0,
+        "explanation": "Oksigen (O₂) adalah gas tekan yang disimpan dalam tabung bertekanan tinggi dan dapat meledak jika dipanaskan."
+    }
+]
+
+# Session State
+if "current_question" not in st.session_state:
+    st.session_state.current_question = 0
+if "score" not in st.session_state:
+    st.session_state.score = 0
+if "answered" not in st.session_state:
+    st.session_state.answered = False
+if "selected_answer" not in st.session_state:
+    st.session_state.selected_answer = None
+if "quiz_finished" not in st.session_state:
+    st.session_state.quiz_finished = False
+
+def reset_quiz():
+    st.session_state.current_question = 0
+    st.session_state.score = 0
+    st.session_state.answered = False
+    st.session_state.selected_answer = None
+    st.session_state.quiz_finished = False
+
+def check_answer(selected_idx):
+    st.session_state.selected_answer = selected_idx
+    st.session_state.answered = True
+    
+    if selected_idx == questions[st.session_state.current_question]["answer"]:
+        st.session_state.score += 1
+
+def next_question():
+    if st.session_state.current_question < len(questions) - 1:
+        st.session_state.current_question += 1
+        st.session_state.answered = False
+        st.session_state.selected_answer = None
+    else:
+        st.session_state.quiz_finished = True
+
+# ───────────────────────────────
+# TAMPILAN UTAMA
+# ───────────────────────────────
+
+st.markdown('<div class="main-title">✏️ LATIHAN SOAL SIMBOL HAZARD</div>', unsafe_allow_html=True)
+
+if st.session_state.quiz_finished:
+    # Halaman Hasil Akhir
+    st.markdown("---")
+    
+    score_percentage = (st.session_state.score / len(questions)) * 100
+    
+    st.markdown(f"""
+    <div class="score-card">
+        <h2 style="color: #8A9A86;">Hasil Latihan</h2>
+        <h1 style="font-size: 3rem; color: #8A9A86;">{st.session_state.score} / {len(questions)}</h1>
+        <p style="font-size: 1.2rem;">Skor: {score_percentage:.0f}%</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    if score_percentage >= 80:
+        st.success("🎉 luar biasa! Anda memahami dengan baik materi simbol hazard!")
+    elif score_percentage >= 50:
+        st.warning("📚 Cukup baik, tapi ada beberapa yang perlu dipelajari lagi!")
+    else:
+        st.error("💪 Semangat! Anda perlu belajar lebih lagi!")
+    
+    st.markdown("---")
+    
+    if st.button("🔄 Ulangi Latihan", use_container_width=True):
+        reset_quiz()
+        st.rerun()
+
+else:
+    # Tampilan Soal
+    current_idx = st.session_state.current_question
+    q = questions[current_idx]
+    
+    st.markdown(f"**Soal {current_idx + 1} dari {len(questions)}**", unsafe_allow_html=True)
+    st.progress((current_idx + 1) / len(questions))
+    
+    # Card Pertanyaan
+    st.markdown(f"""
+    <div class="question-card">
+        <h3 style="color: #333; margin-bottom: 15px;">{q["question"]}</h3>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Opsi Jawaban
+    for i, option in enumerate(q["options"]):
+        if st.button(option, key=f"option_{current_idx}_{i}", use_container_width=True):
+            check_answer(i)
+            st.rerun()
+    
+    # Penjelasan (setelah menjawab)
+    if st.session_state.answered:
+        selected_idx = st.session_state.selected_answer
+        correct_idx = q["answer"]
+        
+        if selected_idx == correct_idx:
+            st.markdown(f"""
+            <div class="result-correct">
+                ✅ <strong>Benar!</strong> Jawaban Anda benar.
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown(f"""
+            <div class="result-wrong">
+                ❌ <strong>Salah!</strong> Jawaban yang benar adalah: {q["options"][correct_idx]}
+            </div>
+            """, unsafe_allow_html=True)
+        
+        # Penjelasan Jawaban
+        st.markdown(f"""
+        <div class="explanation">
+            <strong>📝 Penjelasan:</strong><br>
+            {q["explanation"]}
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        
+        if st.button("➡️ Soal Berikutnya", use_container_width=True):
+            next_question()
+            st.rerun()
+
+st.markdown("---")
+st.caption("Aplikasi edukasi simbol bahaya bahan kimia | Standar GHS")
+
 
 elif menu == "Tentang Aplikasi":
     st.write("Ini Informasi Mengenai Aplikasi")
