@@ -2,112 +2,81 @@ import streamlit as st
 import math
 from streamlit_option_menu import option_menu
 
+import streamlit as st
+
 st.markdown("""
 <style>
-    /* Container uap penuh di bawah halaman */
-    .steam-container {
+    /* Container penuh */
+    .mix-effects {
         position: fixed;
-        bottom: 0;
+        top: 0;
         left: 0;
         width: 100%;
-        height: 150px;
-        z-index: 1;
+        height: 100vh;
+        z-index: 0;
         pointer-events: none;
-        overflow: hidden;
     }
     
-    /* Setiap partikel uap */
-    .steam-particle {
+    /* Partikel mixed */
+    .mix-drop {
         position: absolute;
-        bottom: -50px;
-        font-size: 20px;
-        opacity: 0;
-        animation: rise 4s ease-in infinite;
+        top: -40px;
+        animation: mixFall 2s linear infinite;
     }
     
-    /* Variasi ukuran */
-    .steam-small { font-size: 16px; }
-    .steam-medium { font-size: 24px; }
-    .steam-large { font-size: 32px; }
+    /* Posisi & delay acak */
+    .m1 { left: 3%; font-size: 18px; animation-delay: 0s; }
+    .m2 { left: 8%; font-size: 24px; animation-delay: 0.3s; }
+    .m3 { left: 13%; font-size: 16px; animation-delay: 0.6s; }
+    .m4 { left: 18%; font-size: 22px; animation-delay: 0.9s; }
+    .m5 { left: 23%; font-size: 20px; animation-delay: 1.2s; }
+    .m6 { left: 28%; font-size: 26px; animation-delay: 1.5s; }
+    .m7 { left: 33%; font-size: 18px; animation-delay: 1.8s; }
+    .m8 { left: 38%; font-size: 24px; animation-delay: 2.1s; }
+    .m9 { left: 43%; font-size: 16px; animation-delay: 0.2s; }
+    .m10 { left: 48%; font-size: 22px; animation-delay: 0.5s; }
+    .m11 { left: 53%; font-size: 20px; animation-delay: 0.8s; }
+    .m12 { left: 58%; font-size: 26px; animation-delay: 1.1s; }
+    .m13 { left: 63%; font-size: 18px; animation-delay: 1.4s; }
+    .m14 { left: 68%; font-size: 24px; animation-delay: 1.7s; }
+    .m15 { left: 73%; font-size: 16px; animation-delay: 2s; }
+    .m16 { left: 78%; font-size: 22px; animation-delay: 0.4s; }
+    .m17 { left: 83%; font-size: 20px; animation-delay: 0.7s; }
+    .m18 { left: 88%; font-size: 26px; animation-delay: 1s; }
+    .m19 { left: 93%; font-size: 18px; animation-delay: 1.3s; }
+    .m20 { left: 98%; font-size: 24px; animation-delay: 1.6s; }
     
-    /* Posisi horizontal & delay */
-    .p1 { left: 5%; animation-delay: 0s; }
-    .p2 { left: 10%; animation-delay: 0.5s; }
-    .p3 { left: 15%; animation-delay: 1s; }
-    .p4 { left: 20%; animation-delay: 1.5s; }
-    .p5 { left: 25%; animation-delay: 2s; }
-    .p6 { left: 30%; animation-delay: 2.5s; }
-    .p7 { left: 35%; animation-delay: 3s; }
-    .p8 { left: 40%; animation-delay: 0.3s; }
-    .p9 { left: 45%; animation-delay: 0.8s; }
-    .p10 { left: 50%; animation-delay: 1.3s; }
-    .p11 { left: 55%; animation-delay: 1.8s; }
-    .p12 { left: 60%; animation-delay: 2.3s; }
-    .p13 { left: 65%; animation-delay: 2.8s; }
-    .p14 { left: 70%; animation-delay: 0.2s; }
-    .p15 { left: 75%; animation-delay: 0.7s; }
-    .p16 { left: 80%; animation-delay: 1.2s; }
-    .p17 { left: 85%; animation-delay: 1.7s; }
-    .p18 { left: 90%; animation-delay: 2.2s; }
-    .p19 { left: 95%; animation-delay: 2.7s; }
-    
-    /* Animasi naik */
-    @keyframes rise {
-        0% {
-            bottom: -50px;
-            opacity: 0;
-            transform: scale(0.5);
-        }
-        20% {
-            opacity: 0.7;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.5;
-            transform: scale(1.2);
-        }
-        100% {
-            bottom: 100%;
-            opacity: 0;
-            transform: scale(1.5);
-        }
-    }
-    
-    /* Main content agar tidak tertutup */
-    .block-container {
-        position: relative;
-        z-index: 2;
+    @keyframes mixFall {
+        0% { top: -40px; opacity: 0; transform: scale(0.5); }
+        15% { opacity: 1; transform: scale(1); }
+        100% { top: 100vh; opacity: 0; transform: scale(1.2); }
     }
 </style>
 
-<!-- Container Uap -->
-<div class="steam-container">
-    <!-- Baris 1 - Uap kecil -->
-    <div class="steam-particle steam-small p1">🌫️</div>
-    <div class="steam-particle steam-small p2">🌫️</div>
-    <div class="steam-particle steam-small p3">🌫️</div>
-    <div class="steam-particle steam-small p4">🌫️</div>
-    <div class="steam-particle steam-small p5">🌫️</div>
+<div class="mix-effects">
+    <!-- Air -->
+    <div class="mix-drop m1">💧</div>
+    <div class="mix-drop m3">💧</div>
+    <div class="mix-drop m5">💧</div>
+    <div class="mix-drop m7">💧</div>
+    <div class="mix-drop m9">💧</div>
+    <div class="mix-drop m11">💧</div>
+    <div class="mix-drop m13">💧</div>
+    <div class="mix-drop m15">💧</div>
+    <div class="mix-drop m17">💧</div>
+    <div class="mix-drop m19">💧</div>
     
-    <!-- Baris 2 - Uap sedang -->
-    <div class="steam-particle steam-medium p6">☁️</div>
-    <div class="steam-particle steam-medium p7">☁️</div>
-    <div class="steam-particle steam-medium p8">☁️</div>
-    <div class="steam-particle steam-medium p9">☁️</div>
-    <div class="steam-particle steam-medium p10">☁️</div>
-    
-    <!-- Baris 3 - Uap besar -->
-    <div class="steam-particle steam-large p11">💨</div>
-    <div class="steam-particle steam-large p12">💨</div>
-    <div class="steam-particle steam-large p13">💨</div>
-    <div class="steam-particle steam-large p14">💨</div>
-    <div class="steam-particle steam-large p15">💨</div>
-    
-    <!-- Baris 4 - Uap campur -->
-    <div class="steam-particle steam-small p16">🌫️</div>
-    <div class="steam-particle steam-medium p17">☁️</div>
-    <div class="steam-particle steam-large p18">💨</div>
-    <div class="steam-particle steam-small p19">🌫️</div>
+    <!-- Api -->
+    <div class="mix-drop m2">🔥</div>
+    <div class="mix-drop m4">🔥</div>
+    <div class="mix-drop m6">🔥</div>
+    <div class="mix-drop m8">🔥</div>
+    <div class="mix-drop m10">🔥</div>
+    <div class="mix-drop m12">🔥</div>
+    <div class="mix-drop m14">🔥</div>
+    <div class="mix-drop m16">🔥</div>
+    <div class="mix-drop m18">🔥</div>
+    <div class="mix-drop m20">🔥</div>
 </div>
 """, unsafe_allow_html=True)
 
