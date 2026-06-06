@@ -1,7 +1,6 @@
 import streamlit as st
 import math
 from streamlit_option_menu import option_menu
-from pathlib import path
 
 # ============================================
 # FUNGSI PERHITUNGAN
