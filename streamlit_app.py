@@ -503,10 +503,10 @@ elif menu == "Titrimetri":
         st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
         bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ")
-        fp =  st.number_input("Masukkan faktor pengali: ") 
+        fp =  st.number_input("Masukkan faktor pengali/pengenceran: ") 
         vol_titran =  st.number_input("Masukkan volume titran (mL): ")
         st.write("Bobot baku primer: ", bobot_primer, "mg")
-        st.write("Faktor pengenceran: ", fp)
+        st.write("Faktor pengali/pengenceran: ", fp)
         st.write("Volume titran: ", round(vol_titran, 2), "mL")
         if st.button("Hitung Normalitas", key = "T1"):
             normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
@@ -540,12 +540,12 @@ elif menu == "Titrimetri":
             format="%.4f",
             key="N10"
         )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP10")) 
+            fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FP10")) 
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT10"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS10"))
             st.write("Normalitas titran: ", Normalitas, "mg")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             
@@ -581,13 +581,13 @@ elif menu == "Titrimetri":
                 format="%.4f",
                 key="NA"
             )
-                fp = st.number_input("Masukkan faktor pengali: ", key = ("FPA")) 
+                fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPA")) 
                 fk = 0.001
                 a = st.number_input("Masukkan volume awal: ", key = ("AA")) 
                 b = st.number_input("Masukkan volume akhir: ", key = ("BA")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSA"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
-                st.write("Faktor pengenceran: ", fp)
+                st.write("Faktor pengali/pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
                 
                 if st.button("Hitung Kadar", key = "TA"):
@@ -619,13 +619,13 @@ elif menu == "Titrimetri":
                 format="%.4f",
                 key="NB"
             )
-                fp = st.number_input("Masukkan faktor pengali: ", key = ("FPB")) 
+                fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPB")) 
                 fk = 0.001
                 a = st.number_input("Masukkan volume awal: ", key = ("AB")) 
                 b = st.number_input("Masukkan volume akhir: ", key = ("BB")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
-                st.write("Faktor pengenceran: ", fp)
+                st.write("Faktor pengali/pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
                 
                 if st.button("Hitung Kadar", key = "TB"):
@@ -657,12 +657,12 @@ elif menu == "Titrimetri":
             format="%.4f",
             key="N12"
         )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP12")) 
+            fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FP12")) 
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT12"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
             st.write("Normalitas titran: ", Normalitas, "mg")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             
@@ -695,12 +695,12 @@ elif menu == "Titrimetri":
             format="%.4f",
             key="N13"
         )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FP13")) 
+            fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FP13")) 
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT13"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS13"))
             st.write("Normalitas titran: ", Normalitas, "mg")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             
@@ -719,10 +719,10 @@ elif menu == "Titrimetri":
             st.write("Berat Molekul = ", berat_molekul, "mg/mmol")
                 
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ", key = ("BPC"))
-            fp =  st.number_input("Masukkan faktor pengali: ", key = ("FPC")) 
+            fp =  st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPC")) 
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("MC"))
             st.write("Bobot baku primer: ", bobot_primer, "mg")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             if st.button("Hitung Molaritas", key = "TC"):
                 molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul)
@@ -743,11 +743,11 @@ elif menu == "Titrimetri":
             format="%.4f",
             key="MD"
         )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FPD")) 
+            fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPD")) 
             volume_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTD"))
             volume_sampel = st.number_input("Masukkan volume titrat (L): ", key = ("VSD"))
             st.write("Molaritas titran: ", Molaritas, "mg/mmol")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Volume titran: ", round(volume_titran, 2), "mL")
             st.write("Volume titrat: ", round(volume_sampel, 2), "L")
                      
@@ -763,10 +763,10 @@ elif menu == "Titrimetri":
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEE"))
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ",key = ("BPE"))
-            fp =  st.number_input("Masukkan faktor pengali: ",key = ("FPE")) 
+            fp =  st.number_input("Masukkan faktor pengali/pengenceran: ",key = ("FPE")) 
             vol_titran =  st.number_input("Masukkan volume titran (mL): ",key = ("VTE"))
             st.write("Bobot baku primer: ", bobot_primer, "mg")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             if st.button("Hitung Normalitas", key = "NE"):
                 normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
@@ -783,12 +783,12 @@ elif menu == "Titrimetri":
             format="%.4f",
             key="NF"
         )
-            fp = st.number_input("Masukkan faktor pengali: ", key = ("FPF")) 
+            fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPF")) 
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTF"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSF"))
             st.write("Normalitas titran: ", Normalitas, "mg")
-            st.write("Faktor pengenceran: ", fp)
+            st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
             
