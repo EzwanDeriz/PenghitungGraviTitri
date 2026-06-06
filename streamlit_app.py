@@ -2,9 +2,100 @@ import streamlit as st
 import math
 from streamlit_option_menu import option_menu
 
-# ============================================
-# FUNGSI PERHITUNGAN
-# ============================================
+def tampilkan_efek_samping():
+    st.markdown("""
+    <style>
+        /* Efek Air di Sebelah Kiri */
+        .side-effect-left {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 120px;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        /* Efek Api di Sebelah Kanan */
+        .side-effect-right {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 120px;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        /* Animasi Air */
+        .water-drop {
+            position: absolute;
+            color: #3498db;
+            font-size: 24px;
+            animation: fall 2s linear infinite;
+            opacity: 0.8;
+        }
+        
+        /* Animasi Api */
+        .fire-drop {
+            position: absolute;
+            font-size: 28px;
+            animation: burn 1.5s linear infinite;
+            opacity: 0.9;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-50px); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        @keyframes burn {
+            0% { transform: translateY(-50px) scale(1); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 0.8; transform: translateY(50vh) scale(0.8); }
+            100% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+        }
+        
+        /* Posisi drops */
+        .d1 { left: 15%; animation-delay: 0s; }
+        .d2 { left: 35%; animation-delay: 0.4s; }
+        .d3 { left: 55%; animation-delay: 0.8s; }
+        .d4 { left: 75%; animation-delay: 1.2s; }
+        .d5 { left: 95%; animation-delay: 1.6s; }
+        
+        /* Main content adjustment */
+        [data-testid="stApp"] {
+            margin-left: 120px;
+            margin-right: 120px;
+        }
+    </style>
+    
+    <!-- EFFECT LEFT: Water/Rain -->
+    <div class="side-effect-left">
+        <div class="water-drop d1">💧</div>
+        <div class="water-drop d2">💧</div>
+        <div class="water-drop d3">💧</div>
+        <div class="water-drop d4">💧</div>
+        <div class="water-drop d5">💧</div>
+    </div>
+    
+    <!-- EFFECT RIGHT: Fire -->
+    <div class="side-effect-right">
+        <div class="fire-drop d1">🔥</div>
+        <div class="fire-drop d2">🔥</div>
+        <div class="fire-drop d3">🔥</div>
+        <div class="fire-drop d4">🔥</div>
+        <div class="fire-drop d5">🔥</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Panggil fungsi di awal app
+tampilkan_efek_samping()
+
 st.markdown("""
     <style>
     /* Background Utama - Warm Beige */
