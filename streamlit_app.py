@@ -617,7 +617,7 @@ elif menu == "Titrimetri":
                 st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             
                 Normalitas = st.number_input(
-                "Masukkan normalitas titran (mL): ",
+                "Masukkan normalitas titran (N): ",
                 min_value=0.0,
                 step=0.0001,
                 format="%.4f",
@@ -625,20 +625,20 @@ elif menu == "Titrimetri":
             )
                 fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPB")) 
                 fk = 0.001
-                a = st.number_input("Masukkan volume awal: ", key = ("AB")) 
-                b = st.number_input("Masukkan volume akhir: ", key = ("BB")) 
+                a = st.number_input("Masukkan volume awal: (mL) ", key = ("AB")) 
+                b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BB")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
-                st.write("Volume Awal: ", a)
-                st.write("Volume Akhir: ", b)
+                st.write("Volume Awal: ", a, "mL")
+                st.write("Volume Akhir: ", b, "mL") 
                 st.write("Faktor pengali/pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
-                st.write("Volume titrat: ", volume_sampel)
+                st.write("Volume titrat: ", volume_sampel, "mL")
                 
                 if st.button("Hitung Kadar", key = "TB"):
                     kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                     st.write("Kadar Persen Na2CO3 = ", round(kadar_persen, 2))
-                    st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} mgrek/mL")
+                    st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} %")
 
         with tab12:
             be = {
@@ -658,7 +658,7 @@ elif menu == "Titrimetri":
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
             Normalitas = st.number_input(
-            "Masukkan normalitas titran (mL): ",
+            "Masukkan normalitas titran (N): ",
             min_value=0.0,
             step=0.0001,
             format="%.4f",
@@ -668,7 +668,7 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT12"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
-            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
@@ -676,7 +676,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Kadar", key = "T12"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")
+                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
                 
         with tab13:
             be = {
@@ -696,7 +696,7 @@ elif menu == "Titrimetri":
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
             Normalitas = st.number_input(
-            "Masukkan normalitas titran (mL): ",
+            "Masukkan normalitas titran (N): ",
             min_value=0.0,
             step=0.0001,
             format="%.4f",
@@ -706,7 +706,7 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT13"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS13"))
-            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
@@ -714,7 +714,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Kadar", key = "T13"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")    
+                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")    
     with tab8:
         st.write("Ini Kompleksometri")
         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
@@ -784,7 +784,7 @@ elif menu == "Titrimetri":
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEF"))
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             Normalitas = st.number_input(
-            "Masukkan normalitas titran (mL): ",
+            "Masukkan normalitas titran (N): ",
             min_value=0.0,
             step=0.0001,
             format="%.4f",
@@ -794,7 +794,7 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTF"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSF"))
-            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
@@ -802,7 +802,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Kadar", key = "TF"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")
+                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
     
     
     
