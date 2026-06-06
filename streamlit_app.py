@@ -1,7 +1,6 @@
 import streamlit as st
 import math
 from streamlit_option_menu import option_menu
-from pathlib import Path
 
 # ============================================
 # FUNGSI PERHITUNGAN
@@ -240,7 +239,10 @@ with st.sidebar:
 if menu == "Beranda":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR KIMIA ANALITIK</h1>", unsafe_allow_html=True)
     st.markdown("---")
-    st.image("video_gif/merangkul.gif")
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>OLEH KELOMPOK 4</h1>", unsafe_allow_html=True)
+    ki, te, kn = set.columns(3)
+    with te:
+        st.image("video_gif/merangkul.gif")
     left, mid, right = st.columns(3)
     with mid:   
         st.markdown('---')
