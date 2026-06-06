@@ -1,7 +1,20 @@
 import streamlit as st
 import math
 from streamlit_option_menu import option_menu
+from pathlib import Path
 
+
+bg_path = Path(__file__).parent / "video_gif" / "merangkul.gif"
+bg_url = bg_path.as_url()
+st.markdown(f"""
+<style>
+    .stApp{
+        background-image: url("{bg_url}");
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+""", unsafe_allow_html=True)
 # ============================================
 # FUNGSI PERHITUNGAN
 # ============================================
