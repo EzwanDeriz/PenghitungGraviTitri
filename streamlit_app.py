@@ -45,7 +45,7 @@ st.markdown("""
     
     /* Selectbox - Classic Gray */
     .stSelectbox > div > div > div {
-        background-color: #D1D5DB;
+        background-color: #ebf2fc;
         color: #ffffff;
     }
     
