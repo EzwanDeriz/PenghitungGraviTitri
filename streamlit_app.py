@@ -491,7 +491,7 @@ elif menu == "Titrimetri":
         "Berat ekivalen Asam Oksalat": 63,
         "Berat ekivalen Boraks": 190,
         "Berat ekivalen Kalium Dikromat": 49,
-        "Berat ekivalen Asam Asetat": 63,
+        "Berat ekivalen Asam Asetat": 60,
         "Berat ekivalen Natrium Karbonat": 40,
         "Berat ekivalen Besi": 56,
         "Berat ekivalen Kalium Dikromat": 49,
@@ -521,7 +521,7 @@ elif menu == "Titrimetri":
             "Berat ekivalen Asam Oksalat": 63,
             "Berat ekivalen Boraks": 190,
             "Berat ekivalen Kalium Dikromat": 49,
-            "Berat ekivalen Asam Asetat": 63,
+            "Berat ekivalen Asam Asetat": 60,
             "Berat ekivalen Natrium Karbonat": 40,
             "Berat ekivalen Besi": 56,
             "Berat ekivalen Kalium Dikromat": 49,
@@ -534,7 +534,7 @@ elif menu == "Titrimetri":
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
         
             Normalitas = st.number_input(
-            "Masukkan normalitas titran (mL): ",
+            "Masukkan normalitas titran (N): ",
             min_value=0.0,
             step=0.0001,
             format="%.4f",
@@ -544,14 +544,15 @@ elif menu == "Titrimetri":
             fk = 0.001
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VT10"))
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS10"))
-            st.write("Normalitas titran: ", Normalitas, "mg")
+            st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
             st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            st.write("Volume titrat: ", round(volume_sampel, 2), "mL")
             
             if st.button("Hitung Kadar", key = "T10"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen = ", round(kadar_persen, 2))
+                st.write("Kadar Persen = ", round(kadar_persen, 2), "%")
                 st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
         with tab11:
             st.write("Kadar NaOH dan Na2CO3")
@@ -561,7 +562,7 @@ elif menu == "Titrimetri":
                 "Berat ekivalen Asam Oksalat": 63,
                 "Berat ekivalen Boraks": 190,
                 "Berat ekivalen Kalium Dikromat": 49,
-                "Berat ekivalen Asam Asetat": 63,
+                "Berat ekivalen Asam Asetat": 60,
                 "Berat ekivalen Natrium Karbonat": 40,
                 "Berat ekivalen Besi": 56,
                 "Berat ekivalen Kalium Dikromat": 49,
@@ -575,7 +576,7 @@ elif menu == "Titrimetri":
                 st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             
                 Normalitas = st.number_input(
-                "Masukkan normalitas titran (mL): ",
+                "Masukkan normalitas titran (N): ",
                 min_value=0.0,
                 step=0.0001,
                 format="%.4f",
@@ -583,27 +584,27 @@ elif menu == "Titrimetri":
             )
                 fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPA")) 
                 fk = 0.001
-                a = st.number_input("Masukkan volume awal: ", key = ("AA")) 
-                b = st.number_input("Masukkan volume akhir: ", key = ("BA")) 
+                a = st.number_input("Masukkan volume awal: (mL) ", key = ("AA")) 
+                b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BA")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSA"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
-                st.write("Volume Awal: ", a)
-                st.write("Volume Akhir: ", b)
+                st.write("Volume Awal: ", a, "mL")
+                st.write("Volume Akhir: ", b, "mL")
                 st.write("Faktor pengali/pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
-                st.write("Volume titrat: ", volume_sampel)
+                st.write("Volume titrat: ", volume_sampel, "ml")
                 
                 if st.button("Hitung Kadar", key = "TA"):
                     kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                     st.write("Kadar Persen NaOH = ", round(kadar_persen, 2))
-                    st.success(f"Kadar Persen NaOH adalah {round(kadar_persen, 2)} mgrek/mL")
+                    st.success(f"Kadar Persen NaOH adalah {round(kadar_persen, 2)} %")
                 
             with tabB:
                 be = {
                 "Berat ekivalen Asam Oksalat": 63,
                 "Berat ekivalen Boraks": 190,
                 "Berat ekivalen Kalium Dikromat": 49,
-                "Berat ekivalen Asam Asetat": 63,
+                "Berat ekivalen Asam Asetat": 60,
                 "Berat ekivalen Natrium Karbonat": 40,
                 "Berat ekivalen Besi": 56,
                 "Berat ekivalen Kalium Dikromat": 49,
@@ -644,7 +645,7 @@ elif menu == "Titrimetri":
             "Berat ekivalen Asam Oksalat": 63,
             "Berat ekivalen Boraks": 190,
             "Berat ekivalen Kalium Dikromat": 49,
-            "Berat ekivalen Asam Asetat": 63,
+            "Berat ekivalen Asam Asetat": 60,
             "Berat ekivalen Natrium Karbonat": 40,
             "Berat ekivalen Besi": 56,
             "Berat ekivalen Kalium Dikromat": 49,
@@ -682,7 +683,7 @@ elif menu == "Titrimetri":
             "Berat ekivalen Asam Oksalat": 63,
             "Berat ekivalen Boraks": 190,
             "Berat ekivalen Kalium Dikromat": 49,
-            "Berat ekivalen Asam Asetat": 63,
+            "Berat ekivalen Asam Asetat": 60,
             "Berat ekivalen Natrium Karbonat": 40,
             "Berat ekivalen Besi": 56,
             "Berat ekivalen Kalium Dikromat": 49,
