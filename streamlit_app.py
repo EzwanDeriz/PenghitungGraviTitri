@@ -256,7 +256,6 @@ if menu == "Beranda":
     ''')
         st.markdown('---')
 
-    st.video("video_gif/Gravi.mp4")
 
 elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
@@ -964,7 +963,7 @@ elif menu == "Bahaya Bahan Kimia":
          
 elif menu == "Latihan Soal":
     st.set_page_config(
-        page_title="Latihan Simbol Hazard",
+        page_title="Latihan Soal Analisis Gravimetri dan Analisis Titrimetri",
         page_icon="✏️",
         layout="centered"
     )
