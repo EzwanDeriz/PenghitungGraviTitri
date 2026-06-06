@@ -1095,7 +1095,7 @@ elif menu == "Latihan Soal":
     # TAMPILAN UTAMA
     # ───────────────────────────────
     
-    st.markdown('<div class="main-title">✏️ LATIHAN SOAL SIMBOL HAZARD</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-title">✏️ LATIHAN SOAL ANALISIS GRAVIMETRI DAN TITRIMETRI</div>', unsafe_allow_html=True)
     
     if st.session_state.quiz_finished:
         # Halaman Hasil Akhir
