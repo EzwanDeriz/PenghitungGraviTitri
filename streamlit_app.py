@@ -343,6 +343,7 @@ elif menu == "Gravimetri":
     kiri, tengah, kanan = st.columns(3)
     with tengah:
         st.image("video_gif/Gravimetri.gif")
+    st.markdown("---")
     tab1, tab2, tab3, tab4, tab5, tabX = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba", "Custom"])
     with tab1:
         st.write("Kadar Air")
