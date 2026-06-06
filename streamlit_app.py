@@ -1,6 +1,7 @@
 import streamlit as st
 import math
 from streamlit_option_menu import option_menu
+from pathlib import path
 
 # ============================================
 # FUNGSI PERHITUNGAN
@@ -255,7 +256,8 @@ if menu == "Beranda":
     5. Reva Dwi Nurhalika          (2560750)
     ''')
         st.markdown('---')
-    
+
+st.video("video_gif/Gravi")
 
 elif menu == "Gravimetri":
     st.write("INI GRAVIMETRI WOY")
