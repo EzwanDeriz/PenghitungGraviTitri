@@ -809,8 +809,7 @@ elif menu == "Titrimetri":
     
 
 elif menu == "Bahaya Bahan Kimia":
-    st.write("INI BAHAYA BAHAN KIMIA WOY")
-
+     tab14, tab15, tab16, tab17, tab18, tab19, tab20, tab21 = st.tabs(["Korosif", "Mudah Terbakar", "Berbahaya Kesehatan", "Oksidator", "Mudah meledak", "Beracun", "Berbahaya Lingkungan", "Gas Tekan"])
 elif menu == "Latihan Soal":
     st.write("LATIHAN SOAL")
     st.write("Sebuah sampel tepung terigu ditimbang untuk dianalisis kadar abunya menggunakan cawan porselen. Berdasarkan penimbangan diperoleh data sebagai berikut:")
