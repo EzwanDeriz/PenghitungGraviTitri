@@ -251,19 +251,19 @@ if menu == "Beranda":
         1. Akses Menu Gravimetri
           *Buka* halaman *web lab*. *Klik* tanda panah di pojok kiri atas pada tampilan awal.
           *Pilih dan klik* menu *Gravimetri*.
-        2. Prosedur Berdasarkan Pilihan Opsi Analisis Silakan ikuti instruksi di bawah ini sesuai dengan jenis analisis yang Anda butuhkan:
-        *Opsi A: Perhitungan Kadar Air / Kadar Abu*
+        2. Prosedur Berdasarkan Pilihan Opsi Analisis Silakan ikuti instruksi di bawah ini sesuai dengan jenis analisis yang Anda butuhkan:""")
+    st.markdown(""" *Opsi A: Perhitungan Kadar Air / Kadar Abu*
          1. *Masukkan* data bobot analit (gram) yang telah diketahui ke dalam kolom yang tersedia.
          2. *Masukkan* data bobot sampel (gram) yang telah diketahui.
          3. *Klik* tombol *Hitung Kadar* untuk memproses data.
-         4. *Catat* hasil perhitungan yang muncul pada layar.
-         *Opsi B: Perhitungan Kadar Sulfat / Kadar Besi / Kadar Ba*
+         4. *Catat* hasil perhitungan yang muncul pada layar. """)
+    st.markdown("""*Opsi B: Perhitungan Kadar Sulfat / Kadar Besi / Kadar Ba*
          1. *Pilih* opsi faktor gravimetri yang sesuai dengan kebutuhan analisis Anda.
          2. *Masukkan* data bobot analit (gram) yang telah diketahui.
          3. *Masukkan* data bobot sampel (gram) yang telah diketahui.
          4. *Klik* tombol *Hitung Kadar* untuk memproses data.
-         5. *Catat* hasil perhitungan yang muncul pada layar.
-         *Opsi C: Menu Custom (Kadar b/b atau Kadar b/v)**
+         5. *Catat* hasil perhitungan yang muncul pada layar.""")
+    st.markdown("""*Opsi C: Menu Custom (Kadar b/b atau Kadar b/v)**
          1. *Pilih* salah satu menu yang diinginkan: *Kadar b/b* atau *Kadar b/v*
          2. *Masukkan* nilai faktor gravimetri secara manual pada kolom yang disediakan.
          3. *Input* data bobot analit (gram).
