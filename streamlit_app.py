@@ -587,8 +587,11 @@ elif menu == "Titrimetri":
                 b = st.number_input("Masukkan volume akhir: ", key = ("BA")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSA"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
+                st.write("Volume Awal: ", a)
+                st.write("Volume Akhir: ", b)
                 st.write("Faktor pengali/pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
+                st.write("Volume titrat: ", volume_sampel)
                 
                 if st.button("Hitung Kadar", key = "TA"):
                     kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
@@ -625,8 +628,11 @@ elif menu == "Titrimetri":
                 b = st.number_input("Masukkan volume akhir: ", key = ("BB")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
                 st.write("Normalitas titran: ", Normalitas, "mg")
+                st.write("Volume Awal: ", a)
+                st.write("Volume Akhir: ", b)
                 st.write("Faktor pengali/pengenceran: ", fp)
                 st.write("Faktor Konversi: ", fk)
+                st.write("Volume titrat: ", volume_sampel)
                 
                 if st.button("Hitung Kadar", key = "TB"):
                     kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
@@ -796,7 +802,6 @@ elif menu == "Titrimetri":
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen = ", round(kadar_persen, 2))
                 st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")
-    st.write("INI TITRIMETRI WOY")
     
     
     
