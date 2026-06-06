@@ -846,7 +846,7 @@ elif menu == "Titrimetri":
             fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPD")) 
             volume_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("VTD"))
             volume_sampel = st.number_input("Masukkan volume titrat (L): ", key = ("VSD"))
-            st.write(f"Molaritas titran: {Molaritas.0f}mg/mmol")
+            st.write(f"Molaritas titran: {Molaritas:.0f}mg/mmol")
             st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
             st.write(f"Volume titran: {volume_titran:.2f}mL")
             st.write(f"Volume titrat: {volume_sampel:.2f}L")
