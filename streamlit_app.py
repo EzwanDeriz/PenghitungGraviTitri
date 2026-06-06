@@ -258,7 +258,7 @@ if menu == "Beranda":
 
 
 elif menu == "Gravimetri":
-    st.write("INI GRAVIMETRI WOY")
+    st.video("video_gif/Gravimetri.gif")
     tab1, tab2, tab3, tab4, tab5, tabX = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba", "Custom"])
     with tab1:
         st.write("Kadar Air")
