@@ -823,35 +823,35 @@ elif menu == "Bahaya Bahan Kimia":
     # CSS styling
     st.markdown("""
     <style>
-        .main-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #8A9A86;
-            margin-bottom: 10px;
-        }
-        .hazard-card {
-            background-color: #EFECE2;
-            border-left: 5px solid #8A9A86;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 16px;
-        }
-        .section-label {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #8A9A86;
-            margin-bottom: 4px;
-        }
-        .badge {
-            display: inline-block;
-            background-color: #EFECE2;
-            color: #8A9A86;
-            border-radius: 12px;
-            padding: 3px 12px;
-            margin: 3px;
-            font-size: 0.9rem;
-        }
+    .main-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    }
+    .hazard-card {
+    background-color: #fff8f0;
+    border-left: 5px solid #e67e22;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    }
+    .section-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #8A9A86;
+    margin-bottom: 4px;
+    }
+    .badge {
+    display: inline-block;
+    background-color: #fdebd0;
+    color: #8A9A86;
+    border-radius: 12px;
+    padding: 3px 12px;
+    margin: 3px;
+    font-size: 0.9rem;
+    }
     </style>
     """, unsafe_allow_html=True)
     
