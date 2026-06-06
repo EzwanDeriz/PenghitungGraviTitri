@@ -3,18 +3,6 @@ import math
 from streamlit_option_menu import option_menu
 from pathlib import Path
 
-
-bg_path = Path(__file__).parent / "video_gif" / "merangkul.gif"
-bg_url = bg_path.as_url()
-st.markdown(f"""
-<style>
-    .stApp{
-        background-image: url("{bg_url}");
-        background-size: cover;
-        background-position: center;
-    }
-</style>
-""", unsafe_allow_html=True)
 # ============================================
 # FUNGSI PERHITUNGAN
 # ============================================
@@ -251,8 +239,9 @@ with st.sidebar:
 
 if menu == "Beranda":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR KIMIA ANALITIK</h1>", unsafe_allow_html=True)
+    st.markdown("---")
+    st.image("video_gif/merangkul.gif")
     left, mid, right = st.columns(3)
-    
     with mid:   
         st.markdown('---')
         st.markdown('<div style="text-align: center;">Kalkulator Kimia Analitik. Dibuat untuk membantu perhitungan Analisis Gravimetri dan Analisis Titrimetri</div>', unsafe_allow_html=True)
