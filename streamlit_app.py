@@ -245,8 +245,8 @@ if menu == "Beranda":
     1. Allysa Desvita Almasya R.   (2560566)
     2. Bagas Nanang Suryana        (2560595)
     3. Ezwan Pradhana Deriz        (2560621) 
-    4. M. Fathurahman              (2560242) 
-    5. Reva Dwi Nurhalika          (2560275)
+    4. Muhammad Fathurrahman       (2560681) 
+    5. Reva Dwi Nurhalika          (2560750)
     ''')
         st.markdown('---')
     
