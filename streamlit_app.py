@@ -818,147 +818,147 @@ elif menu == "Bahaya Bahan Kimia":
         page_icon="🧪",
         layout="centered"
     )
-    
-    # CSS styling
-    st.markdown("""
-    <style>
-    .main-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    }
-    .hazard-card {
-    background-color: #fff8f0;
-    border-left: 5px solid #e67e22;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 16px;
-    }
-    .section-label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #8A9A86;
-    margin-bottom: 4px;
-    }
-    .badge {
-    display: inline-block;
-    background-color: #fdebd0;
-    color: #8A9A86;
-    border-radius: 12px;
-    padding: 3px 12px;
-    margin: 3px;
-    font-size: 0.9rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
-    # Data hazard
-    hazards = {
-        "Korosif": {
-            "emoji": "🧪",
-            "color": "#e74c3c",
-            "desc": "Menyebabkan kerusakan serius pada kulit dan/atau mata. Dapat merusak logam.",
-            "examples": ["Asam Sulfat (H₂SO₄)", "Natrium Hidroksida (NaOH)", "Amonium Nitrat", "Hidrogen Klorida (HCl)"]
-        },
-        "Mudah Meledak": {
-            "emoji": "💥",
-            "color": "#c0392b",
-            "desc": "Sangat tidak stabil secara termal, dapat meledak atau bereaksi secara eksplosif.",
-            "examples": ["TNT (Trinitrotoluena)", "Nitroglycerin", "Peroksida Hidrogen (konsentrat)", "Azida Natrium"]
-        },
-        "Mudah Terbakar": {
-            "emoji": "🔥",
-            "color": "#e67e22",
-            "desc": "Mudah terbakar di udara pada suhu normal. Menyala saat terkena percikan api.",
-            "examples": ["Etanol", "Bensin", "Aseton", "Toluene"]
-        },
-        "Beracun": {
-            "emoji": "☠️",
-            "color": "#8e44ad",
-            "desc": "Fatal jika tertelan, terhirup atau bersentuhan dengan kulit. Sangat beracun.",
-            "examples": ["Sianida (CN⁻)", "Stricnin", "Ricin", "Tembaga Sulfat"]
-        },
-        "Berbahaya Kesehatan": {
-            "emoji": "⚠️",
-            "color": "#d35400",
-            "desc": "Mungkin menyebabkan kanker, mutasi genetik, atau kerusakan reproduksi.",
-            "examples": ["Benzena", "Formaldehida", "Asbes", "Timbal"]
-        },
-        "Berbahaya Lingkungan": {
-            "emoji": "🌊",
-            "color": "#1abc9c",
-            "desc": "Sangat beracun bagi kehidupan air. Berbahaya bagi lingkungan.",
-            "examples": ["Merkuri", "PCB (Poliklorinasi Bifenil)", "DDT", "Organofosfat"]
-        },
-        "Oksidator": {
-            "emoji": "🧯",
-            "color": "#f39c12",
-            "desc": "Mungkin menyebabkan atau memperkuat jalanan. Melepaskan oksigen.",
-            "examples": ["Kalium Permanganat (KMnO₄)", "Natrium Nitrat (NaNO₃)", "Hidrogen Peroksida", "Amonium Perklorat"]
-        },
-        "Gas Tekan": {
-            "emoji": "💨",
-            "color": "#2980b9",
-            "desc": "Gas di bawah tekanan. Dapat meledak jika dipanaskan.",
-            "examples": ["Oksigen (O₂)", "Nitrogen (N₂)", "Karbon Dioksida (CO₂)", "Hidrogen (H₂)"]
+        
+        # CSS styling
+        st.markdown("""
+        <style>
+        .main-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
         }
-    }
-    
-    # Session state untuk navigasi
-    if "page" not in st.session_state:
-        # Langsung ke menu hazard, menu utama dihapus
-        st.session_state.page = "hazard_menu"
-    if "selected_hazard" not in st.session_state:
-        st.session_state.selected_hazard = None
-    
-    def go_to(page, hazard=None):
-        st.session_state.page = page
-        st.session_state.selected_hazard = hazard
-    
-    # ───────────────────────────────
-    # HALAMAN: MENU HAZARD (Halaman Awal)
-    # ───────────────────────────────
-    if st.session_state.page == "hazard_menu":
-        st.markdown('<div class="main-title">📋 PILIH SIMBOL HAZARD</div>', unsafe_allow_html=True)
-        st.markdown("---")
-    
-        cols = st.columns(2)
-        for i, (name, data) in enumerate(hazards.items()):
-            with cols[i % 2]:
-                if st.button(f"{data['emoji']} {name}", use_container_width=True, key=f"btn_{name}"):
-                    go_to("hazard_detail", name)
-                    st.rerun()
-    
-        st.markdown("---")
-        st.caption("Aplikasi edukasi simbol bahaya bahan kimia berdasarkan standar GHS (Globally Harmonized System).")
-    
-    # ───────────────────────────────
-    # HALAMAN: DETAIL HAZARD
-    # ───────────────────────────────
-    elif st.session_state.page == "hazard_detail":
-        name = st.session_state.selected_hazard
-        data = hazards[name]
-    
-        st.markdown(f"<h2 style='color:{data['color']}'>{data['emoji']} {name}</h2>", unsafe_allow_html=True)
-        st.caption("Simbol Hazard Kimia GHS")
-        st.markdown("---")
-    
-    
-        st.markdown('<div class="section-label">1️⃣ PENJELASAN BAHAYA</div>', unsafe_allow_html=True)
-        st.write(data["desc"])
-    
-        st.markdown('<br><div class="section-label">2️⃣ CONTOH BAHAN KIMIA</div>', unsafe_allow_html=True)
-        for ex in data["examples"]:
-            st.markdown(f'<span class="badge">• {ex}</span>', unsafe_allow_html=True)
-    
-        st.markdown('</div>', unsafe_allow_html=True)
-    
-        st.markdown("---")
-        if st.button("⬅️ Kembali ke Daftar Simbol", use_container_width=True):
-            go_to("hazard_menu")
-            st.rerun() 
+        .hazard-card {
+        background-color: #fff8f0;
+        border-left: 5px solid #e67e22;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin-bottom: 16px;
+        }
+        .section-label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #8A9A86;
+        margin-bottom: 4px;
+        }
+        .badge {
+        display: inline-block;
+        background-color: #fdebd0;
+        color: #8A9A86;
+        border-radius: 12px;
+        padding: 3px 12px;
+        margin: 3px;
+        font-size: 0.9rem;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        # Data hazard
+        hazards = {
+            "Korosif": {
+                "emoji": "🧪",
+                "color": "#e74c3c",
+                "desc": "Menyebabkan kerusakan serius pada kulit dan/atau mata. Dapat merusak logam.",
+                "examples": ["Asam Sulfat (H₂SO₄)", "Natrium Hidroksida (NaOH)", "Amonium Nitrat", "Hidrogen Klorida (HCl)"]
+            },
+            "Mudah Meledak": {
+                "emoji": "💥",
+                "color": "#c0392b",
+                "desc": "Sangat tidak stabil secara termal, dapat meledak atau bereaksi secara eksplosif.",
+                "examples": ["TNT (Trinitrotoluena)", "Nitroglycerin", "Peroksida Hidrogen (konsentrat)", "Azida Natrium"]
+            },
+            "Mudah Terbakar": {
+                "emoji": "🔥",
+                "color": "#e67e22",
+                "desc": "Mudah terbakar di udara pada suhu normal. Menyala saat terkena percikan api.",
+                "examples": ["Etanol", "Bensin", "Aseton", "Toluene"]
+            },
+            "Beracun": {
+                "emoji": "☠️",
+                "color": "#8e44ad",
+                "desc": "Fatal jika tertelan, terhirup atau bersentuhan dengan kulit. Sangat beracun.",
+                "examples": ["Sianida (CN⁻)", "Stricnin", "Ricin", "Tembaga Sulfat"]
+            },
+            "Berbahaya Kesehatan": {
+                "emoji": "⚠️",
+                "color": "#d35400",
+                "desc": "Mungkin menyebabkan kanker, mutasi genetik, atau kerusakan reproduksi.",
+                "examples": ["Benzena", "Formaldehida", "Asbes", "Timbal"]
+            },
+            "Berbahaya Lingkungan": {
+                "emoji": "🌊",
+                "color": "#1abc9c",
+                "desc": "Sangat beracun bagi kehidupan air. Berbahaya bagi lingkungan.",
+                "examples": ["Merkuri", "PCB (Poliklorinasi Bifenil)", "DDT", "Organofosfat"]
+            },
+            "Oksidator": {
+                "emoji": "🧯",
+                "color": "#f39c12",
+                "desc": "Mungkin menyebabkan atau memperkuat jalanan. Melepaskan oksigen.",
+                "examples": ["Kalium Permanganat (KMnO₄)", "Natrium Nitrat (NaNO₃)", "Hidrogen Peroksida", "Amonium Perklorat"]
+            },
+            "Gas Tekan": {
+                "emoji": "💨",
+                "color": "#2980b9",
+                "desc": "Gas di bawah tekanan. Dapat meledak jika dipanaskan.",
+                "examples": ["Oksigen (O₂)", "Nitrogen (N₂)", "Karbon Dioksida (CO₂)", "Hidrogen (H₂)"]
+            }
+        }
+        
+        # Session state untuk navigasi
+        if "page" not in st.session_state:
+            # Langsung ke menu hazard, menu utama dihapus
+            st.session_state.page = "hazard_menu"
+        if "selected_hazard" not in st.session_state:
+            st.session_state.selected_hazard = None
+        
+        def go_to(page, hazard=None):
+            st.session_state.page = page
+            st.session_state.selected_hazard = hazard
+        
+        # ───────────────────────────────
+        # HALAMAN: MENU HAZARD (Halaman Awal)
+        # ───────────────────────────────
+        if st.session_state.page == "hazard_menu":
+            st.markdown('<div class="main-title">📋 PILIH SIMBOL HAZARD</div>', unsafe_allow_html=True)
+            st.markdown("---")
+        
+            cols = st.columns(2)
+            for i, (name, data) in enumerate(hazards.items()):
+                with cols[i % 2]:
+                    if st.button(f"{data['emoji']} {name}", use_container_width=True, key=f"btn_{name}"):
+                        go_to("hazard_detail", name)
+                        st.rerun()
+        
+            st.markdown("---")
+            st.caption("Aplikasi edukasi simbol bahaya bahan kimia berdasarkan standar GHS (Globally Harmonized System).")
+        
+        # ───────────────────────────────
+        # HALAMAN: DETAIL HAZARD
+        # ───────────────────────────────
+        elif st.session_state.page == "hazard_detail":
+            name = st.session_state.selected_hazard
+            data = hazards[name]
+        
+            st.markdown(f"<h2 style='color:{data['color']}'>{data['emoji']} {name}</h2>", unsafe_allow_html=True)
+            st.caption("Simbol Hazard Kimia GHS")
+            st.markdown("---")
+        
+        
+            st.markdown('<div class="section-label">1️⃣ PENJELASAN BAHAYA</div>', unsafe_allow_html=True)
+            st.write(data["desc"])
+        
+            st.markdown('<br><div class="section-label">2️⃣ CONTOH BAHAN KIMIA</div>', unsafe_allow_html=True)
+            for ex in data["examples"]:
+                st.markdown(f'<span class="badge">• {ex}</span>', unsafe_allow_html=True)
+        
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+            st.markdown("---")
+            if st.button("⬅️ Kembali ke Daftar Simbol", use_container_width=True):
+                go_to("hazard_menu")
+                st.rerun() 
          
 elif menu == "Latihan Soal":
     import streamlit as st
