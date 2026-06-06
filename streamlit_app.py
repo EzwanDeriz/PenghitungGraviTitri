@@ -240,6 +240,7 @@ with st.sidebar:
 if menu == "Beranda":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>SELAMAT DATANG</h1>", unsafe_allow_html=True)
     left, mid, right = st.columns(3)
+    
     with mid:   
         st.markdown('---')
         st.markdown('<div style="text-align: center;">Kalkulator Kimia Analitik. Dibuat untuk membantu perhitungan dalam Kimia Analitik</div>', unsafe_allow_html=True)
@@ -254,7 +255,6 @@ if menu == "Beranda":
     5. Reva Dwi Nurhalika          (2560750)
     ''')
         st.markdown('---')
-    st.image("gambar_gambar/Latsol 1.jpg.jpeg")
     
 
 elif menu == "Gravimetri":
