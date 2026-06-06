@@ -178,7 +178,7 @@ def kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
 
 #PENETAPAN KADAR Na2CO3 DALAM WARDER
 def kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
-    kadar_persen = 2 * (b-a) * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
+    kadar_persen = ((b-a)*2) * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen 
 
 
@@ -605,7 +605,7 @@ elif menu == "Titrimetri":
                 "Berat ekivalen Boraks": 190,
                 "Berat ekivalen Kalium Dikromat": 49,
                 "Berat ekivalen Asam Asetat": 60,
-                "Berat ekivalen Natrium Karbonat": 40,
+                "Berat ekivalen Natrium Karbonat": 53,
                 "Berat ekivalen Besi": 56,
                 "Berat ekivalen Kalium Dikromat": 49,
                 "Berat ekivalen Klorida": 37.5,
@@ -646,7 +646,7 @@ elif menu == "Titrimetri":
             "Berat ekivalen Boraks": 190,
             "Berat ekivalen Kalium Dikromat": 49,
             "Berat ekivalen Asam Asetat": 60,
-            "Berat ekivalen Natrium Karbonat": 40,
+            "Berat ekivalen Natrium Karbonat": 53,
             "Berat ekivalen Besi": 56,
             "Berat ekivalen Kalium Dikromat": 49,
             "Berat ekivalen Klorida": 37.5,
@@ -684,7 +684,7 @@ elif menu == "Titrimetri":
             "Berat ekivalen Boraks": 190,
             "Berat ekivalen Kalium Dikromat": 49,
             "Berat ekivalen Asam Asetat": 60,
-            "Berat ekivalen Natrium Karbonat": 40,
+            "Berat ekivalen Natrium Karbonat": 53,
             "Berat ekivalen Besi": 56,
             "Berat ekivalen Kalium Dikromat": 49,
             "Berat ekivalen Klorida": 37.5,
