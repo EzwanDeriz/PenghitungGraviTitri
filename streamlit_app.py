@@ -287,7 +287,7 @@ elif menu == "Gravimetri":
         
         if st.button("Hitung Kadar", key="T1"):
             kadar_analit =  perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
-            st.write("Kadar Air = ", round(kadar_analit, 4))
+            st.write(f"Kadar Air = {kadar_analit:.2f}%"))
             st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
             
     with tab2:
@@ -315,7 +315,7 @@ elif menu == "Gravimetri":
         
         if st.button("Hitung Kadar", key="T2"):
             kadar_analit = perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
-            st.write("Kadar Abu = ", round(kadar_analit, 4))
+            st.write(f"Kadar Abu = {kadar_analit:.2f}%")
             st.success(f"Kadar Abu adalah {kadar_analit:.2f}%")
     with tab3:
         st.write("Kadar Sulfat")
@@ -522,8 +522,8 @@ elif menu == "Titrimetri":
         st.write("Volume titran: ", round(vol_titran, 2), "mL")
         if st.button("Hitung Normalitas", key = "T1"):
             normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
-            st.write("Normalitas = ", round(normalitas, 4))
-            st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+            st.write(f"Normalitas = {normalitas:.4f}mgrek/mL")
+            st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
         
     with tab7:
         st.write("Ini Penetapan Kadar")
@@ -559,13 +559,13 @@ elif menu == "Titrimetri":
             st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
-            st.write("Volume titrat: ", round(volume_sampel, 2), "mL")
+            st.write(f"Volume titran: {vol_titran:.2f}mL")
+            st.write(f"Volume titrat: {volume_sampel:.2f}mL")
             
             if st.button("Hitung Kadar", key = "T10"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen = ", round(kadar_persen, 2), "%")
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
+                st.write(f"Kadar Persen =  {kadar_prsen:.2f}%")
+                st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
         with tab11:
             st.write("Kadar NaOH dan Na2CO3")
             tabA, tabB = st.tabs (["Kadar NaOH", "Kadar Na2CO3"])
@@ -608,8 +608,8 @@ elif menu == "Titrimetri":
                 
                 if st.button("Hitung Kadar", key = "TA"):
                     kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                    st.write("Kadar Persen NaOH = ", round(kadar_persen, 2))
-                    st.success(f"Kadar Persen NaOH adalah {round(kadar_persen, 2)} %")
+                    st.write(f"Kadar Persen NaOH = {kadar_persen:.2f}%")
+                    st.success(f"Kadar Persen NaOH adalah {kadar_persen:.2f}%")
                 
             with tabB:
                 be = {
@@ -649,8 +649,8 @@ elif menu == "Titrimetri":
                 
                 if st.button("Hitung Kadar", key = "TB"):
                     kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                    st.write("Kadar Persen Na2CO3 = ", round(kadar_persen, 2))
-                    st.success(f"Kadar Persen Na2CO3 adalah {round(kadar_persen, 2)} %")
+                    st.write(f"Kadar Persen Na2CO3 = {kadar_persen:.2f}%")
+                    st.success(f"Kadar Persen Na2CO3 adalah {kadar_persen:.2f}%")
 
         with tab12:
             be = {
@@ -683,12 +683,12 @@ elif menu == "Titrimetri":
             st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            st.write("Volume titran: ", volume_sampel, "mL")
             
             if st.button("Hitung Kadar", key = "T12"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
+                st.write(f"Kadar Persen = {kadar_persen:.2f}%")
+                st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
                 
         with tab13:
             be = {
@@ -721,12 +721,12 @@ elif menu == "Titrimetri":
             st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            st.write(f"Volume titran: {vol_titran:.2f}mL")
             
             if st.button("Hitung Kadar", key = "T13"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")    
+                st.write(f"Kadar Persen = {kadar_persen:.2f}%")
+                st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")    
     with tab8:
         st.write("Ini Kompleksometri")
         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
@@ -742,11 +742,11 @@ elif menu == "Titrimetri":
             vol_titran =  st.number_input("Masukkan volume titran (mL): ", key = ("MC"))
             st.write("Bobot baku primer: ", bobot_primer, "mg")
             st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            st.write(f"Volume titran: {vol_titran:.2f}mL")
             if st.button("Hitung Molaritas", key = "TC"):
                 molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul)
-                st.write("Molaritas = ", round(molaritas, 4))
-                st.success(f"Molaritas adalah {round(molaritas, 4)} mmol/mL")
+                st.write(f"Molaritas = {molaritas:.4f}mmol/mL")
+                st.success(f"Molaritas adalah {molaritas:.4f}mmol/mL")
         
         with tabD:
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
@@ -767,13 +767,13 @@ elif menu == "Titrimetri":
             volume_sampel = st.number_input("Masukkan volume titrat (L): ", key = ("VSD"))
             st.write("Molaritas titran: ", Molaritas, "mg/mmol")
             st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Volume titran: ", round(volume_titran, 2), "mL")
-            st.write("Volume titrat: ", round(volume_sampel, 2), "L")
+            st.write(f"Volume titran: {volume_titran:.2f}mL")
+            st.write(f"Volume titrat: {volume_sampel:.2f}L")
                      
             if st.button("Hitung Kadar", key = "TD"):
                 kadar_kesadahan = kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel)
-                st.write("Kadar Kesadahan = ", round(kadar_kesadahan, 2))
-                st.success(f"Kadar Kesadahan adalah {round(kadar_kesadahan, 2)} mg/L")
+                st.write(f"Kadar Kesadahan = {kadar_kesadahan:.2f}mg/L")
+                st.success(f"Kadar Kesadahan adalah {kadar_kesadahan:.2f}mg/L")
         
     with tab9:
         st.write("Ini Custom")
@@ -786,11 +786,11 @@ elif menu == "Titrimetri":
             vol_titran =  st.number_input("Masukkan volume titran (mL): ",key = ("VTE"))
             st.write("Bobot baku primer: ", bobot_primer, "mg")
             st.write("Faktor pengali/pengenceran: ", fp)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            st.write(f"Volume titran: {vol_titran:.2f}mL")
             if st.button("Hitung Normalitas", key = "NE"):
                 normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
-                st.write("Normalitas = ", round(normalitas, 4))
-                st.success(f"Normalitas adalah {round(normalitas, 4)} mgrek/mL")
+                st.write(f"Normalitas = {normalitas:.4f}mgrek/mL")
+                st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
 
         with tabF:
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEF"))
@@ -809,12 +809,12 @@ elif menu == "Titrimetri":
             st.write("Normalitas titran: ", Normalitas, "N")
             st.write("Faktor pengali/pengenceran: ", fp)
             st.write("Faktor Konversi: ", fk)
-            st.write("Volume titran: ", round(vol_titran, 2), "mL")
+            st.write(f"Volume titran: {vol_titran:.2f}mL")
             
             if st.button("Hitung Kadar", key = "TF"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
-                st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
+                st.write(f"Kadar Persen = {kadar_persen.2f}%")
+                st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
     
     
     
@@ -1118,7 +1118,7 @@ elif menu == "Latihan Soal":
         """, unsafe_allow_html=True)
         
         if score_percentage >= 80:
-            st.success("🎉 luar biasa! Anda memahami dengan baik materi simbol hazard!")
+            st.success("🎉 luar biasa! Anda memahami dengan baik materi Analisis Gravimetri dan Titrimetri!")
         elif score_percentage >= 50:
             st.warning("📚 Cukup baik, tapi ada beberapa yang perlu dipelajari lagi!")
         else:
