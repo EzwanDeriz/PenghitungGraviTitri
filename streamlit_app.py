@@ -254,6 +254,7 @@ if menu == "Beranda":
     5. Reva Dwi Nurhalika          (2560750)
     ''')
         st.markdown('---')
+    st.image("gambar_gambar/Latsol 1.jpg.jpeg")
     
 
 elif menu == "Gravimetri":
