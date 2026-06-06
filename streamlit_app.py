@@ -494,7 +494,7 @@ elif menu == "Gravimetri":
 
 elif menu == "Titrimetri":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR ANALISIS TITRIMETRI</h1>", unsafe_allow_html=True)
-    kir, teng, kan = st.column(3)
+    kir, teng, kan = st.columns(3)
     with teng:
         st.image("video_gif/Titrimetri.gif")
     tab6, tab7, tab8, tab9 = st.tabs(["Standarisasi", "Penetapan Kadar", "Kompleksometri", "Custom"])
@@ -1186,11 +1186,6 @@ elif menu == "Latihan Soal":
     
     st.markdown("---")
     st.caption("Aplikasi edukasi simbol bahaya bahan kimia | Standar GHS")
-
-
-elif menu == "Tentang Aplikasi":
-    st.write("Ini Informasi Mengenai Aplikasi")
-
 
 
 
