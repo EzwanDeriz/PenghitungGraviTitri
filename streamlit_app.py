@@ -552,7 +552,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Kadar", key = "T10"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write("Kadar Persen = ", round(kadar_persen, 2))
-                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} mgrek/mL")
+                st.success(f"Kadar Persen adalah {round(kadar_persen, 2)} %")
         with tab11:
             st.write("Kadar NaOH dan Na2CO3")
             tabA, tabB = st.tabs (["Kadar NaOH", "Kadar Na2CO3"])
