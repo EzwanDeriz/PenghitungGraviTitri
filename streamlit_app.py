@@ -722,7 +722,7 @@ elif menu == "Titrimetri":
                 a = st.number_input("Masukkan volume awal: (mL) ", key = ("AB")) 
                 b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BB")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
-                st.write(f"Normalitas titran: {Normalitas:,2f}N")
+                st.write(f"Normalitas titran: {Normalitas:.2f}N")
                 st.write(f"Volume Awal: {a:.2f}mL")
                 st.write(f"Volume Akhir: {b:.2f}mL") 
                 st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
