@@ -45,8 +45,8 @@ st.markdown("""
     
     /* Selectbox - Classic Gray */
     .stSelectbox > div > div > div {
-        background-color: #ebf2fc;
-        color: #ffffff;
+        background-color: #D1D5DB;
+        color: #374151;
     }
     
     /* Number Input - Classic Gray */
