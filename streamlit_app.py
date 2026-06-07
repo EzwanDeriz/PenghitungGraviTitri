@@ -268,7 +268,7 @@ if menu == "Beranda":
         5. *Masukkan* data volume titran (mL) hasil titrasi *Duplo*.
         6. *Klik* tombol *Hitung Kadar* untuk memproses data.
         7. *Catat* hasil kadar akhir yang ditampilkan pada layar.
-        *catatan: Pada penentuan kadar NaOH dan Na2CO3, volume akhir adalah volume total tanpa pengurangan volume awal)
+    *catatan: Pada penentuan kadar NaOH dan Na2CO3, volume akhir adalah volume total tanpa pengurangan volume awal)
         """)
     st.markdown("""
         *Opsi C: Menu Kompleksometri (Standardisasi EDTA atau Penetapan Kesadahan)*
