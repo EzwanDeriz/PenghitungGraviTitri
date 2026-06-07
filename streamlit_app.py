@@ -268,7 +268,7 @@ if menu == "Beranda":
         5. *Masukkan* data volume titran (mL) hasil titrasi *Duplo*.
         6. *Klik* tombol *Hitung Kadar* untuk memproses data.
         7. *Catat* hasil kadar akhir yang ditampilkan pada layar.
-        (*catatan: Pada penentuan kadar NaOH dan Na2CO3, volume akhir adalah volume total tanpa pengurangan volume awal)
+        *catatan: Pada penentuan kadar NaOH dan Na2CO3, volume akhir adalah volume total tanpa pengurangan volume awal)
         """)
     st.markdown("""
         *Opsi C: Menu Kompleksometri (Standardisasi EDTA atau Penetapan Kesadahan)*
@@ -641,8 +641,8 @@ elif menu == "Titrimetri":
             )
                 fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPA")) 
                 fk = 0.001
-                a = st.number_input("Masukkan volume awal: (mL) ", key = ("AA")) 
-                b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BA")) 
+                a = st.number_input("Masukkan volume awal (a): (mL) ", key = ("AA")) 
+                b = st.number_input("Masukkan volume akhir(b): (mL) ", key = ("BA")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSA"))
                 st.write(f"Normalitas titran: {Normalitas:.4f}mg")
                 st.write(f"Volume Awal: {a:.2f}mL")
@@ -682,8 +682,8 @@ elif menu == "Titrimetri":
             )
                 fp = st.number_input("Masukkan faktor pengali/pengenceran: ", key = ("FPB")) 
                 fk = 0.001
-                a = st.number_input("Masukkan volume awal: (mL) ", key = ("AB")) 
-                b = st.number_input("Masukkan volume akhir: (mL) ", key = ("BB")) 
+                a = st.number_input("Masukkan volume awal (a): (mL) ", key = ("AB")) 
+                b = st.number_input("Masukkan volume akhir (b): (mL) ", key = ("BB")) 
                 volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSB"))
                 st.write(f"Normalitas titran: {Normalitas:.2f}N")
                 st.write(f"Volume Awal: {a:.2f}mL")
