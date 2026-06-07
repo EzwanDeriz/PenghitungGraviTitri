@@ -307,7 +307,6 @@ elif menu == "Gravimetri":
     st.markdown("---")
     tab1, tab2, tab3, tab4, tab5, tabX = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba", "Custom"])
     with tab1:
-        st.write("Kadar Air")
         # Input bobot analit dengan 4 angka belakang koma
         bobot_analit = st.number_input(
             "Masukkan bobot analit (g): ",
@@ -335,7 +334,6 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
             
     with tab2:
-        st.write("Kadar Abu")
         # Input bobot analit dengan 4 angka belakang koma
         bobot_analit = st.number_input(
             "Masukkan bobot analit (g): ",
@@ -362,7 +360,6 @@ elif menu == "Gravimetri":
             st.write(f"Kadar Abu = {kadar_analit:.2f}%")
             st.success(f"Kadar Abu adalah {kadar_analit:.2f}%")
     with tab3:
-        st.write("Kadar Sulfat")
         fg = {
             "Ar Sulfat / Mr Barium Sulfat": 96/233,
             "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
@@ -400,7 +397,6 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Sulfat adalah {kadar_analit:.2f}%")
             
     with tab4:
-        st.write("Kadar Besi")
         fg = {
         "Ar Sulfat / Mr Barium Sulfat": 96/233,
         "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
@@ -434,7 +430,6 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab5:
-        st.write("Kadar Ba")
         fg = {
         "Ar Sulfat / Mr Barium Sulfat": 96/233,
         "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
