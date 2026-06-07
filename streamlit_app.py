@@ -1,8 +1,7 @@
 import streamlit as st
 import math
 from streamlit_option_menu import option_menu
-
-
+#Kode Style CSS untuk WEB
 st.markdown("""
     <style>
     /* Background Utama - Warm Beige */
@@ -143,81 +142,43 @@ st.markdown("""
     unsafe_allow_html=True
 )
 
-
-
-
-
-
-#WEB PENGHITUNG KADAR ANALIT PADA GRAVIMETRI DAN TITRIMETRI
-#PERHITUNGAN KADAR AIR DAN ABU
+#Fungsi-Fungsi Kalkulator
 def perhitungan_kadar_air_abu(bobot_analit, bobot_sampel):
     kadar_analit = bobot_analit / bobot_sampel * 100
     return kadar_analit
-
-
 #PERHITUNGAN KADAR B/B
 def perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel):
     kadar_analit = faktor_gravi * (bobot_analit / bobot_sampel) * 100
     return kadar_analit
-
-
 #PERHITUNGAN KADAR B/V
 def perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel):
     kadar_analit = faktor_gravi * (bobot_analit / vol_sampel) * 100
     return kadar_analit
-
-
-#STANDARISASI ASAM BASA
+#STANDARISASI
 def standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen):
     normalitas = (bobot_primer / (fp * vol_titran * berat_ekivalen))
     return normalitas
-
-
 #PERHITUNGAN KADAR PERSEN 
 def kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
     kadar_persen = vol_titran * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
-
-
 #PENETAPAN KADAR Na2CO3 DALAM WARDER
 def kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
     kadar_persen = (b-a) * 2 * Normalitas * berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
-
-
 #PENETAPAN KADAR NaOH DALAM WARDER 
 def kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel):
     kadar_persen = ((2*a)-b) * Normalitas* berat_ekivalen * fk * fp * 100 / volume_sampel
     return kadar_persen
-
-
-#STANDARISASI LARUTAN KMnO4 
-def standarisasi_KMnO4(bobot_primer, fp, vol_titran, berat_ekivalen):
-    normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
-    return normalitas
-
-
-#STANDARISASI LARUTAN TIOSULFAT 
-def standarisasi_tio(bobot_primer, fp, vol_titran, berat_ekivalen):
-    normalitas = bobot_primer / (fp * vol_titran * berat_ekivalen)
-    return normalitas 
-
 #STANDARISASI LARUTAN EDTA
 def standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul):
     molaritas = bobot_primer / (fp * vol_titran * berat_molekul)
     return molaritas 
-
-
 #PENETAPAN KESADAHAN JUMLAH DALAM SAMPEL AIR KOMPLEKSOMETRI EDTA 
 def kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel):
     kadar_ppm = volume_titran * Molaritas * berat_molekul / volume_sampel
     return kadar_ppm 
-
-
-# ============================================
 # MENU NAVIGASI
-# ============================================
-
 with st.sidebar:
     menu = option_menu(
         menu_title = "Menu",
@@ -231,8 +192,7 @@ with st.sidebar:
         "nav-link": {"font-size": "15px", "text-align": "left", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "blue"}}
     )
-        
-
+ #MENU BERANDA       
 if menu == "Beranda":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR KIMIA ANALITIK</h1>", unsafe_allow_html=True)
     st.markdown("---")
@@ -299,7 +259,7 @@ if menu == "Beranda":
         6. *Catat* hasil perhitungan normalitas yang keluar pada layar.
         """)
     st.markdown("""
-        *Opsi B: Menu Penetapan Kadar (Kadar Asetat, Kadar NaOH & Na_2CO_3, Kadar Besi, atau Kadar Klor)*
+        *Opsi B: Menu Penetapan Kadar (Kadar Asetat, Kadar NaOH & Na2CO3, Kadar Besi, atau Kadar Klor)*
         *(Langkah-langkah di bawah ini berlaku sama untuk keempat jenis kadar tersebut)*
         1. *Pilih* jenis larutan kadar atau zat kadar pada kolom pilihan (data Berat Ekuivalen/BE akan muncul secara otomatis).
         2. *Masukkan* data Normalitas titran (N) yang telah diketahui.
@@ -312,7 +272,7 @@ if menu == "Beranda":
     st.markdown("""
         *Opsi C: Menu Kompleksometri (Standardisasi EDTA atau Penetapan Kesadahan)*
         *(Langkah-langkah di bawah ini berlaku sama untuk kedua menu kompleksometri)*
-        1. *Pilih* berat molekul kalsium karbonat (CaCO_3) pada kolom pilihan (data berat molekul akan muncul secara otomatis).
+        1. *Pilih* berat molekul kalsium karbonat (CaCO3) pada kolom pilihan (data berat molekul akan muncul secara otomatis).
         2. *Masukkan* data bobot baku primer dalam satuan miligram (mg).
         3. *Masukkan* data faktor pengali atau faktor pengenceran sesuai kebutuhan.
         4. *Masukkan* data volume titran dalam satuan mililiter (mL).
@@ -338,9 +298,10 @@ if menu == "Beranda":
         5. *Masukkan* data volume titran (mL) *Duplo*.
         6. *Klik tombol Hitung Kadar* dan catat hasilnya.
         """)
-
+#MENU GRAVIMETRI
 elif menu == "Gravimetri":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR ANALISIS GRAVIMETRI</h1>", unsafe_allow_html=True)
+    st.markdown("---")
     kiri, tengah, kanan = st.columns(3)
     with tengah:
         st.image("video_gif/Gravimetri.gif")
@@ -508,6 +469,7 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
             
     with tabX:
+        st.markdown("---")
         tabQ, tabR =  st.tabs(["Kadar B/B", "Kadar B/v"])
         with tabQ:
             faktor_gravimetri = st.number_input(
@@ -571,12 +533,10 @@ elif menu == "Gravimetri":
                 st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
                 st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
             
-        
-        
-        
-
+#MENU TITRIMETRI
 elif menu == "Titrimetri":
     st.markdown("<h1 style='text-align: center; color: #DB7093;'>KALKULATOR ANALISIS TITRIMETRI</h1>", unsafe_allow_html=True)
+    st.markdown("---")
     kir, teng, kan = st.columns(3)
     with teng:
         st.image("video_gif/Titrimetri.gif")
@@ -610,6 +570,7 @@ elif menu == "Titrimetri":
             st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
         
     with tab7:
+        st.markdown("---")
         tab10, tab11, tab12, tab13 = st.tabs(["Kadar Asetat", "Kadar NaOH dan Na2CO3", "Kadar Besi", "Kadar Klor"])
         with tab10:
             be = {
@@ -811,6 +772,7 @@ elif menu == "Titrimetri":
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")    
     with tab8:
+        st.markdown("---")
         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
         with tabC:
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
@@ -858,7 +820,7 @@ elif menu == "Titrimetri":
                 st.success(f"Kadar Kesadahan adalah {kadar_kesadahan:.2f}mg/L")
         
     with tab9:
-        st.write("Ini Custom")
+        st.markdown("---")
         tabE, tabF= st.tabs (["Standarisasi ", "Penetapan Kadar"])
         with tabE:
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEE"))
@@ -898,7 +860,7 @@ elif menu == "Titrimetri":
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
     
-         
+#MENU LATIHAN SOAL
 elif menu == "Latihan Soal":
     st.set_page_config(
         page_title="Latihan Soal Analisis Gravimetri dan Analisis Titrimetri",
@@ -906,7 +868,7 @@ elif menu == "Latihan Soal":
         layout="centered"
     )
     
-    # CSS Styling
+    # CSS Styling Latihan Soal
     st.markdown("""
     <style>
         .main-title {
@@ -1029,12 +991,8 @@ elif menu == "Latihan Soal":
         else:
             st.session_state.quiz_finished = True
     
-    # ───────────────────────────────
-    # TAMPILAN UTAMA
-    # ───────────────────────────────
-    
+    # TAMPILAN UTAMA LATIHAN SOAL
     st.markdown('<div class="main-title">✏️ LATIHAN SOAL ANALISIS GRAVIMETRI DAN TITRIMETRI</div>', unsafe_allow_html=True)
-    
     if st.session_state.quiz_finished:
         # Halaman Hasil Akhir
         st.markdown("---")
@@ -1116,7 +1074,6 @@ elif menu == "Latihan Soal":
                 st.rerun()
     
     st.markdown("---")
-    st.caption("Aplikasi edukasi simbol bahaya bahan kimia | Standar GHS")
 
 
 
