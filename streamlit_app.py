@@ -264,11 +264,9 @@ if menu == "Beranda":
         1. *Pilih* jenis larutan kadar atau zat kadar pada kolom pilihan (data Berat Ekuivalen/BE akan muncul secara otomatis).
         2. *Masukkan* data Normalitas titran (N) yang telah diketahui.
         3. *Masukkan* data faktor pengali atau faktor pengenceran sesuai kebutuhan.
-        4. *Masukkan* data volume titran (mL) hasil titrasi *Simplo*.
-        5. *Masukkan* data volume titran (mL) hasil titrasi *Duplo*.
-        6. *Klik* tombol *Hitung Kadar* untuk memproses data.
-        7. *Catat* hasil kadar akhir yang ditampilkan pada layar.
-            *catatan: Pada penentuan kadar NaOH dan Na2CO3, volume akhir adalah volume total tanpa pengurangan volume awal)
+        4. *Masukkan* data volume titran (mL) hasil titrasi. *catatan: Pada penentuan kadar NaOH dan Na2CO3, volume akhir adalah volume total tanpa pengurangan volume awal)
+        5. *Klik* tombol *Hitung Kadar* untuk memproses data.
+        6. *Catat* hasil kadar akhir yang ditampilkan pada layar.
         """)
     st.markdown("""
         *Opsi C: Menu Kompleksometri (Standardisasi EDTA atau Penetapan Kesadahan)*
