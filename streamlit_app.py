@@ -839,6 +839,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Kadar", key = "TD"):
                 kadar_kesadahan = kadar_kesadahan(volume_titran, Molaritas, berat_molekul, volume_sampel)
                 st.write(f"Kadar Kesadahan = {kadar_kesadahan:.2f}mg/L")
+                st.success(f"Kadar Kesadahan = {volume_titran:.2f} x {molaritas:.0f} x {berat_molekul:.0f} / {volume_sampel:.2f}")
                 st.success(f"Kadar Kesadahan adalah {kadar_kesadahan:.2f}mg/L")
         
     with tab9:
@@ -857,6 +858,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Normalitas", key = "NE"):
                 normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
                 st.write(f"Normalitas = {normalitas:.4f}mgrek/mL")
+                st.success(f"Molaritas = ({bobot_primer:.2f} / {fp:.2f} x {vol_titran:.2f} x {berat_ekivalen:.0f})")
                 st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
 
         with tabF:
@@ -876,12 +878,13 @@ elif menu == "Titrimetri":
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VSF"))
             st.write(f"Normalitas titran: {Normalitas:.4f}N")
             st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
-            st.write(f"Faktor Konversi: {fk:.2f}")
+            st.write(f"Faktor Konversi: {fk:.3f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             
             if st.button("Hitung Kadar", key = "TF"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
+                st.success(f"% Kadar Persen = (({vol_titran:.2f} x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
     
 #MENU LATIHAN SOAL
