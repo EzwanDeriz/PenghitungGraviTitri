@@ -334,6 +334,7 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
             
     with tab2:
+        st.image("gambar_gambar/abu.jpeg")
         # Input bobot analit dengan 4 angka belakang koma
         bobot_analit = st.number_input(
             "Masukkan bobot analit (g): ",
