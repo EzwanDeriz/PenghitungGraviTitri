@@ -800,6 +800,7 @@ elif menu == "Titrimetri":
                 st.success(f"Molaritas adalah {molaritas:.4f}mmol/mL")
         
         with tabD:
+            st.image("gambar_gambar/komplekso.jpeg")
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
             selected_bm = st.selectbox(
                 "Pilih Berat Molekul", list(bm.keys()), key = ("BMD"))
