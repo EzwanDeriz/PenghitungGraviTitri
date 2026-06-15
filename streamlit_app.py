@@ -708,6 +708,7 @@ elif menu == "Titrimetri":
                 if st.button("Hitung Kadar", key = "TB"):
                     kadar_persen = kadar_Na2CO3(b, a, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                     st.write(f"Kadar Persen Na2CO3 = {kadar_persen:.2f}%")
+                    st.success(f"% Kadar Persen = (((2({a:.2f} - {b:.2f})) x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                     st.success(f"Kadar Persen Na2CO3 adalah {kadar_persen:.2f}%")
 
         with tab12:
