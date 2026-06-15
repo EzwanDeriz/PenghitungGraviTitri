@@ -360,6 +360,7 @@ elif menu == "Gravimetri":
         if st.button("Hitung Kadar", key="T2"):
             kadar_analit = perhitungan_kadar_air_abu(bobot_analit, bobot_sampel)
             st.write(f"Kadar Abu = {kadar_analit:.2f}%")
+            st.success(f"% Kadar Abu = ({bobot_analit:.4f} / {bobot_sampel:.4f}) x 100% = {kadar_analit:.2f}%")
             st.success(f"Kadar Abu adalah {kadar_analit:.2f}%")
     with tab3:
         st.image("gambar_gambar/sulfat.jpeg")
