@@ -810,7 +810,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Molaritas", key = "TC"):
                 molaritas = standarisasi_edta(bobot_primer, fp, vol_titran, berat_molekul)
                 st.write(f"Molaritas = {molaritas:.4f}mmol/mL")
-                st.success(f"Molaritas = ({bobot_primer:.2f} / {fp:.2f} x {vol_titran:.2f} x {berat_molekul:.0f}))
+                st.success(f"Molaritas = ({bobot_primer:.2f} / {fp:.2f} x {vol_titran:.2f} x {berat_molekul:.0f})")
                 st.success(f"Molaritas adalah {molaritas:.4f}mmol/mL")
         
         with tabD:
