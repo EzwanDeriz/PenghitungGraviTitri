@@ -781,6 +781,7 @@ elif menu == "Titrimetri":
         st.markdown("---")
         tabC, tabD = st.tabs (["Standarisasi EDTA", "Penetapan Kesadahan"])
         with tabC:
+            st.image("gambar_gambar/m.jpeg")
             bm = {"Berat Molekul Kalsium Karbonat": 100,}
             selected_bm = st.selectbox(
                 "Pilih Berat Molekul", list(bm.keys()), key = ("BMC"))
