@@ -334,7 +334,7 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Air adalah {kadar_analit:.2f}%")
             
     with tab2:
-        st.image("gambar_gambar/abu.jpeg")
+        st.image("gambar_gambar/kadar abu.jpeg")
         # Input bobot analit dengan 4 angka belakang koma
         bobot_analit = st.number_input(
             "Masukkan bobot analit (g): ",
@@ -543,6 +543,7 @@ elif menu == "Titrimetri":
     st.markdown("---")
     tab6, tab7, tab8, tab9 = st.tabs(["Standarisasi", "Penetapan Kadar", "Kompleksometri", "Custom"])
     with tab6:
+        st.image("gambar_gambar/standarisasi.jpeg")
         be = {
         "Berat ekivalen Asam Oksalat": 63,
         "Berat ekivalen Boraks": 190,
@@ -573,6 +574,7 @@ elif menu == "Titrimetri":
         st.markdown("---")
         tab10, tab11, tab12, tab13 = st.tabs(["Kadar Asetat", "Kadar NaOH dan Na2CO3", "Kadar Besi", "Kadar Klor"])
         with tab10:
+            st.image("gambar_gambar/ch3cooh.jpeg")
             be = {
             "Berat ekivalen Asam Oksalat": 63,
             "Berat ekivalen Boraks": 190,
@@ -614,6 +616,7 @@ elif menu == "Titrimetri":
             st.write("Kadar NaOH dan Na2CO3")
             tabA, tabB = st.tabs (["Kadar NaOH", "Kadar Na2CO3"])
             with tabA:
+                st.image("gambar_gambar/naoh.jpeg")
                 be = {
                 "Berat ekivalen Asam Oksalat": 63,
                 "Berat ekivalen Boraks": 190,
@@ -656,6 +659,7 @@ elif menu == "Titrimetri":
                     st.success(f"Kadar Persen NaOH adalah {kadar_persen:.2f}%")
                 
             with tabB:
+                st.image("gambar_gambar/na2co3.jpeg")
                 be = {
                 "Berat ekivalen Asam Oksalat": 63,
                 "Berat ekivalen Boraks": 190,
@@ -697,6 +701,7 @@ elif menu == "Titrimetri":
                     st.success(f"Kadar Persen Na2CO3 adalah {kadar_persen:.2f}%")
 
         with tab12:
+            st.image("gambar_gambar/fe bperv.jpeg")
             be = {
             "Berat ekivalen Asam Oksalat": 63,
             "Berat ekivalen Boraks": 190,
@@ -735,6 +740,7 @@ elif menu == "Titrimetri":
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
                 
         with tab13:
+            st.image("gambar_gambar/cl.jpeg")
             be = {
             "Berat ekivalen Asam Oksalat": 63,
             "Berat ekivalen Boraks": 190,
