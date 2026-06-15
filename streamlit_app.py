@@ -187,7 +187,7 @@ with st.sidebar:
             "Titrimetri",
             "% RPD",
             "Latihan Soal"],
-        icons = ["house-door", "calculator", "calculator", "pencil", "percent"],
+        icons = ["house-door", "calculator", "calculator", "percent", "pencil"],
         styles = {
         "icon": {"font-size": "15px"}, 
         "nav-link": {"font-size": "15px", "text-align": "left", "--hover-color": "#eee"},
