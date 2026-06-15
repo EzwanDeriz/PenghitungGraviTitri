@@ -471,7 +471,6 @@ elif menu == "Gravimetri":
         tabQ, tabR =  st.tabs(["Kadar B/B", "Kadar B/v"])
         with tabQ:
             st.image("gambar_gambar/bperb.jpeg")
-            st.image("gambar_gambar/.jpeg")
             faktor_gravimetri = st.number_input(
                 "Masukkan faktor gravimetri: ",
                  min_value=0.0,
