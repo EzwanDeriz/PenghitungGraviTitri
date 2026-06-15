@@ -308,7 +308,7 @@ elif menu == "Gravimetri":
     tab1, tab2, tab3, tab4, tab5, tabX = st.tabs(["Kadar Air", "Kadar Abu", "Kadar Sulfat", "Kadar Besi", "Kadar Ba", "Custom"])
     with tab1:
         with tengah:
-            st.image("air.jpeg")
+            st.image("gambar_gambar/air.jpeg")
         # Input bobot analit dengan 4 angka belakang koma
         bobot_analit = st.number_input(
             "Masukkan bobot analit (g): ",
