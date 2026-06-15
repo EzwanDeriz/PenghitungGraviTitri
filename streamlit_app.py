@@ -901,8 +901,9 @@ elif menu == "% RPD":
             format="%.4f",
             key="N2")
     rerata = (nilai1 + nilai2) / 2
-    rpd = abs((nilai1-nilai2)/rerata)
+    rpd = abs((nilai1-nilai2)/rerata) * 100
     if st.button("Hitung %RPD", key = "RPD"):
+        st.success(f"%RPD = ((|{nilai1} - {nilai2}|) / {rerata}) x 100%"
         st.success(f"Nilai % RPD didapatkan sebesar: {rpd:.2f} %")
 #MENU LATIHAN SOAL
 elif menu == "Latihan Soal":
