@@ -900,12 +900,7 @@ elif menu == "% RPD":
             step=0.0001,
             format="%.4f",
             key="N2")
-    rerata = st.number_input(
-            "Masukkan rerata nilai: ",
-            min_value=0.0,
-            step=0.0001,
-            format="%.4f",
-            key="R1")
+    rerata = (nilai1 + nilai2) / 2
     rpd = abs((nilai1-nilai2)/rerata)
     if st.button("Hitung %RPD", key = "RPD"):
         st.success(f"Nilai % RPD didapatkan sebesar: {rpd:.2f} %")
