@@ -833,7 +833,7 @@ elif menu == "Titrimetri":
         with tabE:
             st.image("gambar_gambar/standarisasi custom.jpeg")
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEE"))
-            st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
+            st.write(f"Berat Ekivalen = {berat_ekivalen:.0f}mg/mgrek")
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ",key = ("BPE"))
             fp =  st.number_input("Masukkan faktor pengali/pengenceran: ",key = ("FPE")) 
             vol_titran =  st.number_input("Masukkan volume titran (mL): ",key = ("VTE"))
