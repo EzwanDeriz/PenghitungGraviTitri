@@ -185,8 +185,9 @@ with st.sidebar:
         options = ["Beranda", 
             "Gravimetri", 
             "Titrimetri",
+            "% RPD",
             "Latihan Soal"],
-        icons = ["house-door", "calculator", "calculator", "pencil"],
+        icons = ["house-door", "calculator", "calculator", "pencil", "percent"],
         styles = {
         "icon": {"font-size": "15px"}, 
         "nav-link": {"font-size": "15px", "text-align": "left", "--hover-color": "#eee"},
@@ -886,7 +887,28 @@ elif menu == "Titrimetri":
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
                 st.success(f"% Kadar Persen = (({vol_titran:.2f} x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
-    
+elif menu == "% RPD":
+    nilai1 = st.number_input(
+            "Masukkan nilai ke-1: ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="N1")
+    nilai2 = st.number_input(
+            "Masukkan nilai ke-2: ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="N2")
+    rerata = st.number_input(
+            "Masukkan rerata nilai: ",
+            min_value=0.0,
+            step=0.0001,
+            format="%.4f",
+            key="R1")
+    rpd = abs((nilai1-nilai2)/rerata)
+    if st.button("Hitung %RPD", key = "RPD"):
+        st.success(f"Nilai % RPD didapatkan sebesar: {rpd:.2f} %")
 #MENU LATIHAN SOAL
 elif menu == "Latihan Soal":
     st.set_page_config(
