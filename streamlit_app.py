@@ -469,7 +469,7 @@ elif menu == "Gravimetri":
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
             st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
             st.success(f"% Kadar Ba = ({faktor_gravi}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
-            st.success(f"Kadar Ba adalah {kadar_analit:.2f}%")
+            st.success(f"% Kadar Ba adalah {kadar_analit:.2f}%")
             
     with tabX:
         st.markdown("---")
@@ -505,7 +505,7 @@ elif menu == "Gravimetri":
                 kadar_analit = perhitungan_kadar_bperb(faktor_gravimetri, bobot_analit, bobot_sampel)
                 st.write(f"Kadar b/b = {kadar_analit:.2f}", "%")
                 st.success(f"% Kadar b/b = ({faktor_gravimetri}) x ({bobot_analit:.4f} / {bobot_sampel:.4f}) x 100% = {kadar_analit:.2f}%")
-                st.success(f"Kadar b/b adalah {kadar_analit:.2f}%")
+                st.success(f"% Kadar b/b adalah {kadar_analit:.2f}%")
                 
         with tabR:
             st.image("gambar_gambar/custom bperv.jpeg")
@@ -538,7 +538,7 @@ elif menu == "Gravimetri":
                 kadar_analit = perhitungan_kadar_bperv(faktor_gravimetri, bobot_analit, vol_sampel)
                 st.write(f"Kadar b/v = {kadar_analit:.2f}", "%")
                 st.success(f"% Kadar b/v = ({faktor_gravimetri}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
-                st.success(f"Kadar b/v adalah {kadar_analit:.2f} %")
+                st.success(f"% Kadar b/v adalah {kadar_analit:.2f} %")
             
 #MENU TITRIMETRI
 elif menu == "Titrimetri":
@@ -575,6 +575,7 @@ elif menu == "Titrimetri":
         if st.button("Hitung Normalitas", key = "T1"):
             normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
             st.write(f"Normalitas = {normalitas:.4f}mgrek/mL")
+            st.success(f"Normalitas = {bobot_primer} / ({fp} x {vol_titran} x {berat_ekivalen}) = {normalitas:.4f} mgrek/mL")
             st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
         
     with tab7:
