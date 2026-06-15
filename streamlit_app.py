@@ -831,7 +831,7 @@ elif menu == "Titrimetri":
         st.markdown("---")
         tabE, tabF= st.tabs (["Standarisasi ", "Penetapan Kadar"])
         with tabE:
-            st.image("gambar_gambar/standrisasi.jpeg")
+            st.image("gambar_gambar/.jpeg")
             berat_ekivalen = st.number_input("Masukkan berat ekivalen (mg/mgrek): ",key = ("BEE"))
             st.write("Berat Ekivalen = ", berat_ekivalen, "mg/mgrek")
             bobot_primer = st.number_input("Masukkan bobot baku primer (mg): ",key = ("BPE"))
