@@ -659,7 +659,7 @@ elif menu == "Titrimetri":
                 st.write(f"Volume Awal: {a:.2f}mL")
                 st.write(f"Volume Akhir: {b:.2f}mL")
                 st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
-                st.write(f"Faktor Konversi: {fk:.2f}")
+                st.write(f"Faktor Konversi: {fk:.3f}")
                 st.write(f"Volume titrat: {volume_sampel:.2f}ml")
                 
                 if st.button("Hitung Kadar", key = "TA"):
@@ -701,7 +701,7 @@ elif menu == "Titrimetri":
                 st.write(f"Volume Awal: {a:.2f}mL")
                 st.write(f"Volume Akhir: {b:.2f}mL") 
                 st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
-                st.write(f"Faktor Konversi: {fk:.2f}")
+                st.write(f"Faktor Konversi: {fk:.3f}")
                 st.write(f"Volume titrat: {volume_sampel:.2f}mL")
                 
                 if st.button("Hitung Kadar", key = "TB"):
@@ -740,12 +740,13 @@ elif menu == "Titrimetri":
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS12"))
             st.write(f"Normalitas titran: {Normalitas:.2f}N")
             st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
-            st.write(f"Faktor Konversi: {fk:.2f}")
+            st.write(f"Faktor Konversi: {fk:.3f}")
             st.write(f"Volume titran: {volume_sampel:.2f}mL")
             
             if st.button("Hitung Kadar", key = "T12"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
+                st.success(f"% Kadar Persen = (({vol_titran:.2f} x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
                 
         with tab13:
@@ -779,12 +780,13 @@ elif menu == "Titrimetri":
             volume_sampel = st.number_input("Masukkan volume titrat (mL): ", key = ("VS13"))
             st.write(f"Normalitas titran: {Normalitas:.4f}N")
             st.write(f"Faktor pengali/pengenceran: {fp:.2f}")
-            st.write(f"Faktor Konversi: {fk:.2f}")
+            st.write(f"Faktor Konversi: {fk:.3f}")
             st.write(f"Volume titran: {vol_titran:.2f}mL")
             
             if st.button("Hitung Kadar", key = "T13"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write(f"Kadar Persen = {kadar_persen:.2f}%")
+                st.success(f"% Kadar Persen = (({vol_titran:.2f} x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")    
     with tab8:
         st.markdown("---")
