@@ -433,6 +433,7 @@ elif menu == "Gravimetri":
         if st.button("Hitung Kadar", key = "T4"):
             kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
             st.write(f"Kadar Besi = {kadar_analit:.2f}", "%")
+            st.success(f"% Kadar Besi = ({selected_fg}) x ({bobot_analit:.4f} / {bobot_sampel:.4f}) x 100% = {kadar_analit:.2f}%")
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab5:
@@ -467,6 +468,7 @@ elif menu == "Gravimetri":
         if st.button("Hitung Kadar", key = "T5"):
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
             st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
+            st.success(f"% Kadar Ba = ({selected_fg}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
             st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
             
     with tabX:
