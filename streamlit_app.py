@@ -665,7 +665,7 @@ elif menu == "Titrimetri":
                 if st.button("Hitung Kadar", key = "TA"):
                     kadar_persen = kadar_NaOH(a, b, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                     st.write(f"Kadar Persen NaOH = {kadar_persen:.2f}%")
-                    st.success(f"% Kadar Persen = (((2{a.:2f} - {b:.2f}) x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
+                    st.success(f"% Kadar Persen = (((2{a:.2f} - {b:.2f}) x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                     st.success(f"Kadar Persen NaOH adalah {kadar_persen:.2f}%")
                 
             with tabB:
