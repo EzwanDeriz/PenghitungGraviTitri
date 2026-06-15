@@ -576,7 +576,7 @@ elif menu == "Titrimetri":
             normalitas = standarisasi_asam_basa(bobot_primer, fp, vol_titran, berat_ekivalen)
             st.write(f"Normalitas = {normalitas:.4f}mgrek/mL")
             st.success(f"Normalitas = {bobot_primer} / ({fp} x {vol_titran} x {berat_ekivalen}) = {normalitas:.4f} mgrek/mL")
-            st.success(f"Normalitas adalah {normalitas:.4f}mgrek/mL")
+            st.success(f"Normalitas adalah {normalitas:.4f} mgrek/mL")
         
     with tab7:
         st.markdown("---")
@@ -619,6 +619,7 @@ elif menu == "Titrimetri":
             if st.button("Hitung Kadar", key = "T10"):
                 kadar_persen = kadar_persen(vol_titran, Normalitas, berat_ekivalen, fk, fp, volume_sampel)
                 st.write(f"Kadar Persen =  {kadar_persen:.2f}%")
+                st.success(f"% Kadar Persen = (({vol_titran} x {Normalitas} x {berat_ekivalen}) / {volume_sampel}) x {fk} x {fp} x 100%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
         with tab11:
             st.write("Kadar NaOH dan Na2CO3")
