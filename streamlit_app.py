@@ -361,6 +361,7 @@ elif menu == "Gravimetri":
             st.write(f"Kadar Abu = {kadar_analit:.2f}%")
             st.success(f"Kadar Abu adalah {kadar_analit:.2f}%")
     with tab3:
+        st.image("gambar_gambar/sulfat.jpeg")
         fg = {
             "Ar Sulfat / Mr Barium Sulfat": 96/233,
             "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
@@ -398,6 +399,7 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Sulfat adalah {kadar_analit:.2f}%")
             
     with tab4:
+        st.image("gambar_gambar/fe.jpeg")
         fg = {
         "Ar Sulfat / Mr Barium Sulfat": 96/233,
         "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
@@ -431,6 +433,7 @@ elif menu == "Gravimetri":
             st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
             
     with tab5:
+        st.image("gambar_gambar/ba.jpeg")
         fg = {
         "Ar Sulfat / Mr Barium Sulfat": 96/233,
         "2 Ar Besi / Mr Besi (iii) Oksida": 112/160,
@@ -467,6 +470,8 @@ elif menu == "Gravimetri":
         st.markdown("---")
         tabQ, tabR =  st.tabs(["Kadar B/B", "Kadar B/v"])
         with tabQ:
+            st.image("gambar_gambar/bperb.jpeg")
+            st.image("gambar_gambar/.jpeg")
             faktor_gravimetri = st.number_input(
                 "Masukkan faktor gravimetri: ",
                  min_value=0.0,
@@ -494,10 +499,11 @@ elif menu == "Gravimetri":
             
             if st.button("Hitung Kadar", key = "TX"):
                 kadar_analit = perhitungan_kadar_bperb(faktor_gravimetri, bobot_analit, bobot_sampel)
-                st.write(f"Kadar Besi = {kadar_analit:.2f}", "%")
-                st.success(f"Kadar Besi adalah {kadar_analit:.2f}%")
+                st.write(f"Kadar b/b = {kadar_analit:.2f}", "%")
+                st.success(f"Kadar b/b adalah {kadar_analit:.2f}%")
                 
         with tabR:
+            st.image("gambar_gambar/custom bperv.jpeg")
             faktor_gravimetri = st.number_input(
                 "Masukkan faktor gravimetri: ",
                 min_value=0.0,
@@ -525,8 +531,8 @@ elif menu == "Gravimetri":
              
             if st.button("Hitung Kadar", key = "TR"):
                 kadar_analit = perhitungan_kadar_bperv(faktor_gravimetri, bobot_analit, vol_sampel)
-                st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
-                st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
+                st.write(f"Kadar b/v = {kadar_analit:.2f}", "b/v")
+                st.success(f"Kadar b/v adalah {kadar_analit:.2f}b/v")
             
 #MENU TITRIMETRI
 elif menu == "Titrimetri":
