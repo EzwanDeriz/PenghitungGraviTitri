@@ -900,11 +900,14 @@ elif menu == "% RPD":
             step=0.0001,
             format="%.4f",
             key="N2")
-    rerata = (nilai1 + nilai2) / 2
-    rpd = abs((nilai1) - (nilai2)) / (rerata) * 100
-    if st.button("Hitung %RPD", key = "RPD"):
-        st.success(f"%RPD = ((|{nilai1} - {nilai2}|) / {rerata}) x 100%")
-        st.success(f"Nilai % RPD didapatkan sebesar: {rpd:.2f} %")
+    if st.button("Hitung %RPD", key="RPD"):
+        rerata = (nilai1 + nilai2) / 2
+        if rerata == 0:
+            st.error("Nilai tidak boleh keduanya 0.")
+        else:
+            rpd = abs(nilai1 - nilai2) / rerata * 100
+            st.success(f"%RPD = ((|{nilai1:.4f} - {nilai2:.4f}|) / {rerata:.4f}) × 100%")
+            st.success(f"Nilai %RPD = {rpd:.2f}%")
 #MENU LATIHAN SOAL
 elif menu == "Latihan Soal":
     st.set_page_config(
