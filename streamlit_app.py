@@ -469,7 +469,7 @@ elif menu == "Gravimetri":
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
             st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
             st.success(f"% Kadar Ba = ({faktor_gravi}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
-            st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
+            st.success(f"Kadar Ba adalah {kadar_analit:.2f}%")
             
     with tabX:
         st.markdown("---")
@@ -536,9 +536,9 @@ elif menu == "Gravimetri":
              
             if st.button("Hitung Kadar", key = "TR"):
                 kadar_analit = perhitungan_kadar_bperv(faktor_gravimetri, bobot_analit, vol_sampel)
-                st.write(f"Kadar b/v = {kadar_analit:.2f}", "b/v")
+                st.write(f"Kadar b/v = {kadar_analit:.2f}", "%")
                 st.success(f"% Kadar b/v = ({faktor_gravimetri}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
-                st.success(f"Kadar b/v adalah {kadar_analit:.2f}b/v")
+                st.success(f"Kadar b/v adalah {kadar_analit:.2f} %")
             
 #MENU TITRIMETRI
 elif menu == "Titrimetri":
