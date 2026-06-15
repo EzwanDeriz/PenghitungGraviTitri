@@ -398,7 +398,7 @@ elif menu == "Gravimetri":
         if st.button("Hitung Kadar", key="T3"):
             kadar_analit = perhitungan_kadar_bperb(faktor_gravi, bobot_analit, bobot_sampel)
             st.write(f"Kadar Sulfat = {kadar_analit:.2f}", "%")
-            st.success(f"% Kadar Sulfat = ({selected_fg}) x ({bobot_analit:.4f} / {bobot_sampel:.4f}) x 100% = {kadar_analit:.2f}%")
+            st.success(f"% Kadar Sulfat = ({faktor_gravi}) x ({bobot_analit:.4f} / {bobot_sampel:.4f}) x 100% = {kadar_analit:.2f}%")
             st.success(f"Kadar Sulfat adalah {kadar_analit:.2f}%")
             
     with tab4:
@@ -468,7 +468,7 @@ elif menu == "Gravimetri":
         if st.button("Hitung Kadar", key = "T5"):
             kadar_analit = perhitungan_kadar_bperv(faktor_gravi, bobot_analit, vol_sampel)
             st.write(f"Kadar Ba = {kadar_analit:.2f}", "b/v")
-            st.success(f"% Kadar Ba = ({selected_fg}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
+            st.success(f"% Kadar Ba = ({faktor_gravi}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
             st.success(f"Kadar Ba adalah {kadar_analit:.2f}b/v")
             
     with tabX:
@@ -504,6 +504,7 @@ elif menu == "Gravimetri":
             if st.button("Hitung Kadar", key = "TX"):
                 kadar_analit = perhitungan_kadar_bperb(faktor_gravimetri, bobot_analit, bobot_sampel)
                 st.write(f"Kadar b/b = {kadar_analit:.2f}", "%")
+                st.success(f"% Kadar b/b = ({faktor_gravimetri}) x ({bobot_analit:.4f} / {bobot_sampel:.4f}) x 100% = {kadar_analit:.2f}%")
                 st.success(f"Kadar b/b adalah {kadar_analit:.2f}%")
                 
         with tabR:
@@ -536,6 +537,7 @@ elif menu == "Gravimetri":
             if st.button("Hitung Kadar", key = "TR"):
                 kadar_analit = perhitungan_kadar_bperv(faktor_gravimetri, bobot_analit, vol_sampel)
                 st.write(f"Kadar b/v = {kadar_analit:.2f}", "b/v")
+                st.success(f"% Kadar b/v = ({faktor_gravimetri}) x ({bobot_analit:.4f} / {vol_sampel:.2f}) x 100% = {kadar_analit:.2f}%")
                 st.success(f"Kadar b/v adalah {kadar_analit:.2f}b/v")
             
 #MENU TITRIMETRI
