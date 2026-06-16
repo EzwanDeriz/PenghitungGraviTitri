@@ -888,7 +888,7 @@ elif menu == "Titrimetri":
                 st.success(f"% Kadar Persen = (({vol_titran:.2f} x {Normalitas:.4f} x {berat_ekivalen}) / {volume_sampel:.2f}) x {fk} x {fp} x 100%")
                 st.success(f"Kadar Persen adalah {kadar_persen:.2f}%")
 elif menu == "% RPD":
-     st.markdown("<h1 style='text-align: center; color: #DB7093;'>PERHITUNGAN % RPD</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #DB7093;'>PERHITUNGAN % RPD</h1>", unsafe_allow_html=True)
     st.markdown("---")
     nilai1 = st.number_input(
             "Masukkan nilai ke-1: ",
